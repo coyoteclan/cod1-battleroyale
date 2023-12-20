@@ -53,7 +53,7 @@ main()
         level.instantKill_melee = false;
     }
     level.damageFeedback = true;
-    if(getCvar("br_damagefeedback") == "0") {
+    if(getCvar("br_hitmarker") == "0") {
         level.damageFeedback = false;
     }
 
