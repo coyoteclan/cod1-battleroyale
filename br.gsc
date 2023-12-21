@@ -61,7 +61,7 @@ main()
 
     level.zoneDuration = 100;
     if(isDefined(getCvar("br_zoneDuration"))) {
-        level.zoneDuration = getCvar("br_zoneDuration")
+        level.zoneDuration = getCvar("br_zoneDuration");
     }
     level.killcamDuration = 7;
     if(isDefined(getCvar("br_killcamDuration"))) {
