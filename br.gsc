@@ -412,6 +412,7 @@ Callback_PlayerConnect()
         else if(menu == game["menu_quickresponses"])
             quickresponses(response);
     }
+    self thread maps\mp\gametypes\_shop::health();
 }
 Callback_PlayerDisconnect()
 {
