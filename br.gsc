@@ -196,12 +196,14 @@ Callback_StartGameType()
     game["menu_quickcommands"] = "quickcommands";
     game["menu_quickstatements"] = "quickstatements";
     game["menu_quickresponses"] = "quickresponses";
+    game["menu_shop"] = "shop";
     precacheMenu(game["menu_camouflage"]);
     precacheMenu(game["menu_weapon_all"]);
     precacheMenu(game["menu_viewmap"]);
     precacheMenu(game["menu_quickcommands"]);
     precacheMenu(game["menu_quickstatements"]);
     precacheMenu(game["menu_quickresponses"]);
+    precacheMenu(game["menu_shop"]);
 
     //SHADERS
     precacheShader("black");
