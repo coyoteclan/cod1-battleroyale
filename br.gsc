@@ -1784,7 +1784,7 @@ quickcommands(response)
     switch(self.pers["camouflage"])
     {
     case "american":
-        switch(response)		
+        switch(response)
         {
         case "1":
             soundalias = "american_follow_me";
