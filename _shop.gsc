@@ -1,5 +1,6 @@
 health() {
     self endon("death");
+    self endon("spawned_spectator");
 
     if(!isPlayer(self)) {
         return;

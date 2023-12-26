@@ -414,7 +414,6 @@ Callback_PlayerConnect()
         else if(menu == game["menu_quickresponses"])
             quickresponses(response);
     }
-    self thread maps\mp\gametypes\_shop::health();
 }
 Callback_PlayerDisconnect()
 {
@@ -621,6 +620,7 @@ spawnPlayer(origin, angles)
     }
     
     self setClientCvar("cg_objectiveText", level.objectiveText);
+    self thread maps\mp\gametypes\_shop::health();
 }
 spawnIntermission()
 {
