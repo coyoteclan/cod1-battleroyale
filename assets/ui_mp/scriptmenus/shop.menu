@@ -1,0 +1,917 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_MENUTABS				96 64
+#define ORIGIN_MENUWINDOW			96 96
+#define ORIGIN_SUBMENU				360 120
+#define ORIGIN_MAPIMAGE				360 240
+
+{
+	menuDef
+	{
+		name			"callvote"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+		style			WINDOW_STYLE_EMPTY
+		onEsc 
+		{
+			scriptMenuResponse "close";
+			close callvote;
+		}
+		onClose
+		{
+			scriptMenuResponse "close";
+		}
+
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 448 288
+			origin			ORIGIN_MENUWINDOW
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
+			decoration
+		}
+
+// MENU TABS
+		itemDef 
+		{
+			name			"button_mainmenu"
+			visible			1
+			rect			0 0 89 32
+			origin			ORIGIN_MENUTABS
+			style			WINDOW_STYLE_SHADER 
+			background		"ui_mp/assets/hud@tab_left_unselected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"@MPMENU_MAIN_MENU"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		45
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open main;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			"button_team"
+			visible			1
+			rect			89 0 90 32
+			origin			ORIGIN_MENUTABS
+			style			WINDOW_STYLE_SHADER 
+			background		"ui_mp/assets/hud@tab_center_unselected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"@MPMENU_TEAM"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		45
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "team";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			"button_weapon"
+			visible			1
+			rect			179 0 90 32
+			origin			ORIGIN_MENUTABS
+			style			WINDOW_STYLE_SHADER 
+			background		"ui_mp/assets/hud@tab_center_unselected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"@MPMENU_WEAPON"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		45
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			cvartest		"scr_showweapontab"
+			showCvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "weapon";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}		
+		itemDef
+		{
+			name			"button_viewmap"
+			visible			1
+			rect			269 0 90 32
+			origin			ORIGIN_MENUTABS
+			style			WINDOW_STYLE_SHADER 
+			background		"ui_mp/assets/hud@tab_center_unselected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"@MPMENU_VIEW_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		45
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "viewmap";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}		
+		itemDef
+		{
+			name			"button_callvote"
+			visible			1
+			rect			358 0 89 32
+			origin			ORIGIN_MENUTABS
+			style			WINDOW_STYLE_SHADER 
+			background		"ui_mp/assets/hud@tab_right_selected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"Buy Menu"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		42
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			decoration
+		}
+
+		
+		
+		/*		UPGRADES		*/
+		itemDef 
+		{
+			name			"upgrades_main"
+			visible			1
+			rect			0 0 160 20
+			origin			100 100
+			forecolor		1 1 1 1
+			text			"Upgrades"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"upgrades_100pt"
+			visible			1
+			rect			0 0 160 20
+			origin			220 100
+			forecolor		1 1 1 1
+			text			"100 pt"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}	
+		itemDef 
+		{
+			name			"upgrades_250pt"
+			visible			1
+			rect			0 0 160 20
+			origin			260 100
+			forecolor		1 1 1 1
+			text			"250 pt"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}	
+		itemDef 
+		{
+			name			"upgrades_500pt"
+			visible			1
+			rect			0 0 160 20
+			origin			300 100
+			forecolor		1 1 1 1
+			text			"500 pt"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}				
+		itemDef 
+		{
+			name			"upgrades_armor"
+			visible			1
+			rect			0 0 160 20
+			origin			120 120
+			forecolor		1 1 1 1
+			text			"Armor"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"upgrades_armor_10"
+			visible			1
+			rect			0 0 40 20
+			origin			220 120
+			forecolor		0 1 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"100"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_armor_10";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_armor_25"
+			visible			1
+			rect			0 0 40 20
+			origin			260 120
+			forecolor		0.5 0.5 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"250"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_armor_25";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_armor_50"
+			visible			1
+			rect			0 0 40 20
+			origin			300 120
+			forecolor		1 0 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"500"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_armor_50";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_explo"
+			visible			1
+			rect			0 0 160 20
+			origin			120 140
+			forecolor		1 1 1 1
+			text			"Explosion Armor"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"upgrades_explo_10"
+			visible			1
+			rect			0 0 40 20
+			origin			220 140
+			forecolor		0 1 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"10"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_explo_10";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_explo_25"
+			visible			1
+			rect			0 0 40 20
+			origin			260 140
+			forecolor		0.5 0.5 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"250"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_explo_25";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_explo_50"
+			visible			1
+			rect			0 0 40 20
+			origin			300 140
+			forecolor		1 0 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"500"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_explo_50";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_damage"
+			visible			1
+			rect			0 0 160 20
+			origin			120 160
+			forecolor		1 1 1 1
+			text			"Damage Increase"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"upgrades_damage_10"
+			visible			1
+			rect			0 0 40 20
+			origin			220 160
+			forecolor		0 1 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"10%"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_damage_10";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"upgrades_damage_25"
+			visible			1
+			rect			0 0 40 20
+			origin			260 160
+			forecolor		0.5 0.5 0 1
+			type			ITEM_TYPE_BUTTON
+			text			"25%"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_damage_25";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		
+		/*		BUYABLES		*/
+		itemDef 
+		{
+			name			"buyables_main"
+			visible			1
+			rect			0 0 160 20
+			origin			100 180
+			forecolor		1 1 1 1
+			text			"Buyables"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"buyables_healthpack"
+			visible			1
+			rect			0 0 150 20
+			origin			120 200
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Healthpack (100 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_healthpack";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close callvote }
+		
+		itemDef 
+		{
+			name			"buyables_proxy"
+			visible			1
+			rect			0 0 150 20
+			origin			120 220
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Proxy (100 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_proxy";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		
+		/*		BUYABLES		*/
+		itemDef 
+		{
+			name			"killstreaks_main"
+			visible			1
+			rect			0 0 160 20
+			origin			350 100
+			forecolor		1 1 1 1
+			text			"Killstreaks"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"killstreaks_rocket"
+			visible			1
+			rect			0 0 150 20
+			origin			350 120
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Rocket Attack (2500 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "rocket";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_mortar"
+			visible			1
+			rect			0 0 150 20
+			origin			350 140
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Mortar Strike (5000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mortar";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_arty"
+			visible			1
+			rect			0 0 150 20
+			origin			350 160
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Artillery Barrage (7500 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "artillery";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_gatlin"
+			visible			1
+			rect			0 0 150 20
+			origin			350 180
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Gatlin Gun (10000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "gatlin";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_airstrike"
+			visible			1
+			rect			0 0 150 20
+			origin			350 200
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Airstrike (15000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "airstrike";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_carpet"
+			visible			1
+			rect			0 0 150 20
+			origin			350 220
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Carpet Bomb (20000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "carpetbomb";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"killstreaks_nuke"
+			visible			1
+			rect			0 0 150 20
+			origin			350 240
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Nuke (25000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "nuke";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+
+		itemDef 
+		{
+			name			"weapons_main"
+			visible			1
+			rect			0 0 160 20
+			origin			350 260
+			forecolor		1 1 1 1
+			text			"Weapons"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapons_panzerfaust"
+			visible			1
+			rect			0 0 150 20
+			origin			350 280
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Panzerfaust (5 round, 1000 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_panzer";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"weapons_flashgrenade"
+			visible			1
+			rect			0 0 150 20
+			origin			350 300
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Flashbangs (500 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_flashnades";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		/*		BARRICADES		*/
+		itemDef 
+		{
+			name			"barricades_main"
+			visible			1
+			rect			0 0 160 20
+			origin			100 240
+			forecolor		1 1 1 1
+			text			"Barricades"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"barricades_crate"
+			visible			1
+			rect			0 0 150 20
+			origin			120 260
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Crate (100 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_crate";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "c" { play "mouse_click"; scriptMenuResponse "buy_crate"; close callvote }
+		
+		itemDef 
+		{
+			name			"barricades_barrel"
+			visible			1
+			rect			0 0 150 20
+			origin			120 280
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Barrel (200 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_barrel";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close callvote }
+		
+		itemDef
+		{
+			name			"button_random"
+			visible			1
+			rect			89 0 90 32
+			origin			350 360
+			//style			WINDOW_STYLE_SHADER 
+			//background		"ui_mp/assets/hud@tab_center_unselected.tga"
+			type			ITEM_TYPE_BUTTON
+			text			"Random (100 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		45
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "random";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "r" { play "mouse_click"; scriptMenuResponse "random"; close callvote }
+		
+		itemDef 
+		{
+			name			"other_main"
+			visible			1
+			rect			0 0 160 20
+			origin			350 320
+			forecolor		1 1 1 1
+			text			"Other stuff"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+		itemDef 
+		{
+			name			"buy_nightvision"
+			visible			1
+			rect			0 0 150 20
+			origin			350 340
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Nightvision (500 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_nightvision";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+}
