@@ -1,0 +1,2 @@
+hud@compassface.tga: https://github.com/eyza-cod2/zpam3/blob/master/source/images/compassface.iwi
+bx_parachute: Prawy

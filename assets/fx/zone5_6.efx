@@ -1,0 +1,37 @@
+Cylinder
+{
+	name				zone5_6
+
+	flags				useAlpha relative
+
+	life				6000
+
+	alpha
+	{
+		start			0.65
+	}
+
+	size
+	{
+		start			800
+		end				300
+		flags			linear
+	}
+
+	size2
+	{
+		start			800
+		end				300
+		flags			linear
+	}
+
+	length
+	{
+		start			13000
+	}
+
+	shaders
+	[
+		gfx/effects/zonecolor
+	]
+}

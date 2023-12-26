@@ -1,0 +1,33 @@
+Cylinder
+{
+	name				zone2
+
+	flags				useAlpha
+
+	life				1000
+
+	alpha
+	{
+		start			0.65
+	}
+
+	size
+	{
+		start			3800
+	}
+
+	size2
+	{
+		start			3800
+	}
+
+	length
+	{
+		start			13000
+	}
+
+	shaders
+	[
+		gfx/effects/zonecolor
+	]
+}
