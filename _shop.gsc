@@ -33,5 +33,5 @@ throwHealth() {
         self.hpacks -= 1;
     }
     else
-        self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(")
+        self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");
 }
