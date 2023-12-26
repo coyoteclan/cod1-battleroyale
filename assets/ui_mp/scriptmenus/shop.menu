@@ -8,7 +8,7 @@
 {
 	menuDef
 	{
-		name			"callvote"
+		name			"shop"
 		fullscreen		0
 		rect			0 0 640 480
 		focuscolor		1 1 1 1
@@ -17,7 +17,7 @@
 		onEsc 
 		{
 			scriptMenuResponse "close";
-			close callvote;
+			close shop;
 		}
 		onClose
 		{
@@ -40,7 +40,7 @@
 		}
 
 // MENU TABS
-		itemDef 
+		/*itemDef 
 		{
 			name			"button_mainmenu"
 			visible			1
