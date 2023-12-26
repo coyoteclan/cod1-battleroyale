@@ -296,8 +296,10 @@ Callback_PlayerConnect()
         if(response == "open" || response == "close")
             continue;
 
-        if((response != "spectator" && response != "viewmap") && level.battleStarted)
-            continue;
+        if(level.battleStarted)
+            if(menu == game["menu_camouflage"] || menu == game["menu_weapon_all"])
+                if(response != "spectator" && response != "viewmap")
+                    continue; //Prevent player from spawning after battle started
         
         if(menu == game["menu_camouflage"])
         {
