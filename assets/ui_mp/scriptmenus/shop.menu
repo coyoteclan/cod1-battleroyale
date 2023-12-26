@@ -500,7 +500,7 @@
 		}
 		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close callvote }
 		
-		itemDef 
+		/*itemDef 
 		{
 			name			"buyables_proxy"
 			visible			1
@@ -541,7 +541,7 @@
 			textaligny		20
 			decoration
 		}
-		itemDef 
+		/*itemDef 
 		{
 			name			"killstreaks_rocket"
 			visible			1
@@ -564,7 +564,7 @@
 			{
 				play "mouse_over";
 			}
-		}
+		}*/
 		
 		itemDef 
 		{
@@ -616,7 +616,7 @@
 			}
 		}
 		
-		itemDef 
+		/*itemDef 
 		{
 			name			"killstreaks_gatlin"
 			visible			1
@@ -639,7 +639,7 @@
 			{
 				play "mouse_over";
 			}
-		}
+		}*/
 		
 		itemDef 
 		{
@@ -691,7 +691,7 @@
 			}
 		}
 		
-		itemDef 
+		/*itemDef 
 		{
 			name			"killstreaks_nuke"
 			visible			1
@@ -714,7 +714,7 @@
 			{
 				play "mouse_over";
 			}
-		}
+		}*/
 		
 
 		itemDef 
@@ -757,13 +757,13 @@
 		}
 		itemDef 
 		{
-			name			"weapons_flashgrenade"
+			name			"weapons_smokegrenade"
 			visible			1
 			rect			0 0 150 20
 			origin			350 300
 			forecolor		1 1 1 1
 			type			ITEM_TYPE_BUTTON
-			text			"Flashbangs (500 pt)"
+			text			"Smoke Grenades (500 pt)"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10
@@ -771,7 +771,7 @@
 			action
 			{
 				play "mouse_click";
-				scriptMenuResponse "buy_flashnades";
+				scriptMenuResponse "buy_smokenades";
 				close callvote;
 			}
 			onFocus
@@ -780,7 +780,7 @@
 			}
 		}
 		
-		/*		BARRICADES		*/
+		/*		BARRICADES		
 		itemDef 
 		{
 			name			"barricades_main"
@@ -845,9 +845,9 @@
 				play "mouse_over";
 			}
 		}
-		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close callvote }
+		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close callvote }*/
 		
-		itemDef
+		/*itemDef
 		{
 			name			"button_random"
 			visible			1
@@ -912,6 +912,6 @@
 			{
 				play "mouse_over";
 			}
-		}
+		}*/
 	}
 }
