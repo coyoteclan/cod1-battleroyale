@@ -20,10 +20,8 @@ ___
   - applying animations might require to add a `setAnim` GSC command to CoDExtended, like libcod
 ___
 #### [Some videos](https://www.youtube.com/playlist?list=PLTiI1XPSd-uVS_saGvqfgk7hgguxHc1Y0)
+#### [More Videos](https://cod1br.rf.gd/)
 ___
-
-### [More Videos](soon...)
-
 #### Some credits
 - *zh_frenzy* map: thanks to zilch
 - The [Killtube](https://www.killtube.org/) community
