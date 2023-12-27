@@ -73,7 +73,7 @@ main()
     //MODEL PATHS
     level.model_zone = "xmodel/playerhead_default"; //TODO: create an invisible model instead
     level.model_plane = "xmodel/c47";
-    level.model_parachute = "xmodel/bx_parachute";
+    level.model_parachute = "xmodel/br_parachute2"; //This parachute looks better :)
 
     level.camouflages = [];
     level.camouflages[0] = "american";
