@@ -401,6 +401,17 @@ Callback_PlayerConnect()
                 spawnPlayer();
             }
         }
+        else if(menu == game["shop"])
+        {
+            switch(response)
+            {
+                case "buy_healthpack":
+                self.hpacks++;
+                break;
+                default:
+                break;
+            }
+        }
         else if(menu == game["menu_viewmap"])
         {
             switch(response)
