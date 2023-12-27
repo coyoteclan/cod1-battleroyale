@@ -368,6 +368,11 @@ Callback_PlayerConnect()
                 self openMenu(game["menu_viewmap"]);
                 continue;
             }
+            else if(response == "shop")
+            {
+                self openMenu(game["shop"]);
+                continue;
+            }
             if(!isDefined(self.pers["camouflage"]))
                 continue;
             if(self.jumped)
