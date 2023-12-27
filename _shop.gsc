@@ -5,7 +5,8 @@ health() {
     if(!isPlayer(self)) {
         return;
     }
-    if(!isDefined(self.hpacks)) {
+    self.hpacks = 1;
+    if(getCvarInt("br_healthpacks")) {
         self.hpacks = getCvarInt("br_healthpacks");
     }
     //hud_hpacks destroy();
@@ -14,8 +15,8 @@ health() {
     self.hud_hpacks.x = 9;
     self.hud_hpacks.y = 286;
     self.hud_hpacks.label = &"Healthpacks^1: ^7";
-    self.hpnum = self.hpacks;
-    self.hud_hpacks setValue(hpnum);
+    //self.hpnum = self.hpacks;
+    self.hud_hpacks setValue(self.hpacks);
 }
 
 throwHealth() {
