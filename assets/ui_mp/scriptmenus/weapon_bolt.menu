@@ -151,7 +151,7 @@
 		{
 			name			"button_shop"
 			visible			1
-			rect			269 0 90 32
+			rect			358 0 89 32
 			origin			ORIGIN_MENUTABS
 			style			WINDOW_STYLE_SHADER 
 			background		"ui_mp/assets/hud@tab_center_unselected.tga"
