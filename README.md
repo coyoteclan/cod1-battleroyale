@@ -20,7 +20,7 @@ ___
   - applying animations might require to add a `setAnim` GSC command to CoDExtended, like libcod
 ___
 #### [Some videos](https://www.youtube.com/playlist?list=PLTiI1XPSd-uVS_saGvqfgk7hgguxHc1Y0)
-#### [More Videos](https://cod1br.rf.gd/)
+#### [More](https://coyote.rf.gd/battleroyale)
 ___
 #### Some credits
 - *zh_frenzy* map: thanks to zilch
@@ -29,5 +29,4 @@ ___
   - Thanks to Cato
 - [CoDExtended](https://github.com/xtnded/codextended)
 - [vCoDMods](https://www.vcodmods.com/)
-- Base parachute mode
-: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- Base parachute model: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
