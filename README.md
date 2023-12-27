@@ -3,7 +3,7 @@ Supported multiplayer patch: **1.1**
 ### Some setup instructions
 
 - make the server to use ***fs_game*** not to override some players *main* folder files.
-- pack everything in the ***assets*** into ***zz_assets.pk3*** (or any namd) and put  in the *fs_game* folder, this file must be downloaded by the client.
+- pack everything in the ***assets*** into ***zz_assets.pk3*** (or any name) and put  in the *fs_game* folder, this file must be downloaded by the client.
 - setup ***br.gsc*** in a *pk3* file like a stock gametype and put it in the *fs_game* folder.
   - give the priority to this pk3 over the assets one, because the assets pk3 contains a file named *br.gsc* too
 - use the *zh_frenzy* map version of this repo.
