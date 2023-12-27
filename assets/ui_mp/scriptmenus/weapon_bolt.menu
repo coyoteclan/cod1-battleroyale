@@ -404,6 +404,44 @@
 		}
 		execKey "6" { play "mouse_click"; scriptMenuResponse "springfield_mp"; close weapon_bolt }
 
+		itemDef 
+		{
+			name			"button_springfield"
+			visible			1
+			rect			16 144 160 23
+			origin			ORIGIN_MENUWINDOW
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"7. Shop"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			//cvartest		"br_allowshop"
+			//hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "shop";
+				close weapon_bolt;
+			}
+			onFocus
+			{
+				hide nagant_info;
+				hide kar98k_info;
+				hide enfield_info;
+
+				hide kar98ksniper_info;
+				hide nagantsniper_info;
+				hide springfield_info;
+
+				play "mouse_over";
+				//show shop_info;
+				//show weapon_propertiestext;
+			}
+		}
+		execKey "7" { play "mouse_click"; scriptMenuResponse "shop"; close weapon_bolt }
+
 // WEAPON IMAGES
 		
 		//KAR
