@@ -405,7 +405,7 @@ Callback_PlayerConnect()
                 spawnPlayer();
             }
         }
-        else if(menu == game["shop"])
+        else if(menu == game["menu_shop"])
         {
             maps\mp\gametypes\_shop::menuHandler(response);
             /*switch(response)
