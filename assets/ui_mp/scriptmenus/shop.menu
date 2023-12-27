@@ -58,7 +58,7 @@
 			action
 			{
 				play "mouse_click";
-				close callvote;
+				close shop;
 				open main;
 			}
 			onFocus
@@ -85,7 +85,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "team";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -113,7 +113,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "weapon";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -139,7 +139,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "viewmap";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -148,7 +148,7 @@
 		}		
 		itemDef
 		{
-			name			"button_callvote"
+			name			"button_shop"
 			visible			1
 			rect			358 0 89 32
 			origin			ORIGIN_MENUTABS
@@ -254,7 +254,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_armor_10";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -278,7 +278,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_armor_25";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -302,7 +302,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_armor_50";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -340,7 +340,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_explo_10";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -364,7 +364,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_explo_25";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -388,7 +388,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_explo_50";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -426,7 +426,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_damage_10";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -450,7 +450,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_damage_25";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -491,14 +491,14 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_healthpack";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
 				play "mouse_over";
 			}
 		}
-		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close callvote }
+		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close shop }
 		
 		/*itemDef 
 		{
@@ -517,7 +517,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_proxy";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -558,7 +558,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "rocket";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -583,7 +583,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "mortar";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -608,7 +608,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "artillery";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -633,7 +633,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "gatlin";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -658,7 +658,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "airstrike";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -683,7 +683,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "carpetbomb";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -708,7 +708,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "nuke";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -748,7 +748,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_panzer";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -772,7 +772,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_smokenades";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
@@ -812,14 +812,14 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_crate";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
 				play "mouse_over";
 			}
 		}
-		execKey "c" { play "mouse_click"; scriptMenuResponse "buy_crate"; close callvote }
+		execKey "c" { play "mouse_click"; scriptMenuResponse "buy_crate"; close shop }
 		
 		itemDef 
 		{
@@ -838,14 +838,14 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_barrel";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
 				play "mouse_over";
 			}
 		}
-		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close callvote }*/
+		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close shop }*/
 		
 		/*itemDef
 		{
@@ -866,14 +866,14 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "random";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
 				play "mouse_over";
 			}
 		}
-		execKey "r" { play "mouse_click"; scriptMenuResponse "random"; close callvote }
+		execKey "r" { play "mouse_click"; scriptMenuResponse "random"; close shop }
 		
 		itemDef 
 		{
@@ -906,7 +906,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "buy_nightvision";
-				close callvote;
+				close shop;
 			}
 			onFocus
 			{
