@@ -298,7 +298,7 @@ Callback_PlayerConnect()
 
         if(level.battleStarted)
             if(menu == game["menu_camouflage"] || menu == game["menu_weapon_all"])
-                if(response != "spectator" && response != "viewmap")
+                if(response != "spectator" && response != "viewmap" && response != "shop")
                     continue; //Prevent player from spawning after battle started
         
         if(menu == game["menu_camouflage"])
@@ -354,6 +354,10 @@ Callback_PlayerConnect()
             case "viewmap":
                 self openMenu(game["menu_viewmap"]);
                 break;
+            
+            case "shop":
+                self openMenu(game["menu_shop"]);
+                break;
             }
         }
         else if(menu == game["menu_weapon_all"])
@@ -370,7 +374,7 @@ Callback_PlayerConnect()
             }
             else if(response == "shop")
             {
-                self openMenu(game["shop"]);
+                self openMenu(game["menu_shop"]);
                 continue;
             }
             if(!isDefined(self.pers["camouflage"]))
@@ -403,14 +407,15 @@ Callback_PlayerConnect()
         }
         else if(menu == game["shop"])
         {
-            switch(response)
+            maps\mp\gametypes\_shop::menuHandler(response);
+            /*switch(response)
             {
                 case "buy_healthpack":
-                self.hpacks++;
-                break;
+                    self.hpacks++;
+                    break;
                 default:
-                break;
-            }
+                    break;
+            }*/
         }
         else if(menu == game["menu_viewmap"])
         {
@@ -422,6 +427,10 @@ Callback_PlayerConnect()
 
             case "weapon":
                 self openMenu(game["menu_weapon_all"]);
+                break;
+            
+            case "shop":
+                self openMenu(game["menu_shop"]);
                 break;
             }
         }

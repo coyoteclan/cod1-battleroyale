@@ -1,3 +1,14 @@
+menuHandler(response) {
+    switch(response)
+    {
+        case "buy_healthpack":
+            self.hpacks++;
+            break;
+        default:
+            break;
+    }
+}
+
 health() {
     self endon("death");
     self endon("spawned_spectator");
