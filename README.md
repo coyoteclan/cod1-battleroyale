@@ -1,5 +1,6 @@
 ## Battle royale gametype for Call of Duty 1 (2003)
 Supported multiplayer patch: **1.1**
+Not compatible with CoDaM.
 ### Some setup instructions
 
 - make the server to use ***fs_game*** not to override some players *main* folder files.
