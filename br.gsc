@@ -196,6 +196,7 @@ Callback_StartGameType()
     game["menu_quickcommands"] = "quickcommands";
     game["menu_quickstatements"] = "quickstatements";
     game["menu_quickresponses"] = "quickresponses";
+    game["menu_utilities"] = "utilities";
     game["menu_shop"] = "shop";
     precacheMenu(game["menu_camouflage"]);
     precacheMenu(game["menu_weapon_all"]);
@@ -203,6 +204,7 @@ Callback_StartGameType()
     precacheMenu(game["menu_quickcommands"]);
     precacheMenu(game["menu_quickstatements"]);
     precacheMenu(game["menu_quickresponses"]);
+    precacheMenu(game["menu_utilities"]);
     precacheMenu(game["menu_shop"]);
 
     //SHADERS
@@ -434,6 +436,8 @@ Callback_PlayerConnect()
                 break;
             }
         }
+        else if(menu == game["menu_utilities"])
+            utilities_menu(response);
         else if(menu == game["menu_quickcommands"])
             quickcommands(response);
         else if(menu == game["menu_quickstatements"])
@@ -1801,6 +1805,16 @@ removeKillcamElements()
 //KILLCAM FUNCTIONS END
 
 //VSAY
+utilities_menu(response)
+{
+    switch(response)
+    {
+        case "1":
+            maps\mp\gametypes\_shop::throwHealth();
+            break;
+    }
+}
+
 quickcommands(response)
 {
     if(!isDefined(self.pers["camouflage"]) || isDefined(self.spamdelay))

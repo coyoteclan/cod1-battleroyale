@@ -111,7 +111,7 @@
 			text			"4. Use Healthpack"
 			decoration
 		}
-		execKey "4" { scriptMenuResponse "use_hpack"; close quickmessage }
+		execKey "4" { close quickmessage; open utilities }
 		
 		itemDef
 		{
