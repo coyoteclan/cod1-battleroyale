@@ -3,6 +3,7 @@ Supported multiplayer patch: **1.1**
 Not compatible with CoDaM.
 ### Some setup instructions
 - See the [wiki](https://github.com/coyoteclan/cod1-battleroyale/wiki)
+
 __
 ### Some TODO
 - Prevent players from getting stuck in each other when exiting plane
