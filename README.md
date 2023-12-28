@@ -1,11 +1,11 @@
 ## Battle royale gametype for Call of Duty 1 (2003)
 Supported multiplayer patch: **1.1**
 Not compatible with CoDaM.
-__
+___
 ### Some setup instructions
 - See the [wiki](https://github.com/coyoteclan/cod1-battleroyale/wiki)
 
-__
+___
 ### Some TODO
 - Prevent players from getting stuck in each other when exiting plane
   - MiscMod's [_newspawn function](https://github.com/cato-a/CoDaM_MiscMod/blob/4db1d420b87b766eb9bffb352a7d9c13eaa0c851/___CoDaM_MiscMod/codam/_mm_mmm.gsc#L379) might help
