@@ -373,30 +373,6 @@
 		}
 		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close shop }
 		
-		/*itemDef 
-		{
-			name			"buyables_proxy"
-			visible			1
-			rect			0 0 150 20
-			origin			120 220
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Proxy (100 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "buy_proxy";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
 		
 		
 		/*		BUYABLES		*/
@@ -414,30 +390,7 @@
 			textaligny		20
 			decoration
 		}
-		/*itemDef 
-		{
-			name			"killstreaks_rocket"
-			visible			1
-			rect			0 0 150 20
-			origin			350 120
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Rocket Attack (2500 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "rocket";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}*/
+		
 		
 		itemDef 
 		{
@@ -489,107 +442,7 @@
 			}
 		}
 		
-		/*itemDef 
-		{
-			name			"killstreaks_gatlin"
-			visible			1
-			rect			0 0 150 20
-			origin			350 180
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Gatlin Gun (10000 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "gatlin";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}*/
 		
-		itemDef 
-		{
-			name			"killstreaks_airstrike"
-			visible			1
-			rect			0 0 150 20
-			origin			350 200
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Airstrike (15000 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "airstrike";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		
-		itemDef 
-		{
-			name			"killstreaks_carpet"
-			visible			1
-			rect			0 0 150 20
-			origin			350 220
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Carpet Bomb (20000 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "carpetbomb";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		
-		/*itemDef 
-		{
-			name			"killstreaks_nuke"
-			visible			1
-			rect			0 0 150 20
-			origin			350 240
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Nuke (25000 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "nuke";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}*/
-		
-
 		itemDef 
 		{
 			name			"weapons_main"
@@ -612,7 +465,7 @@
 			origin			350 280
 			forecolor		1 1 1 1
 			type			ITEM_TYPE_BUTTON
-			text			"Panzerfaust (5 round, 1000 pt)"
+			text			"Panzerfaust (3 round, 1000 pt)"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10
@@ -630,13 +483,13 @@
 		}
 		itemDef 
 		{
-			name			"weapons_smokegrenade"
+			name			"weapons_grenade"
 			visible			1
 			rect			0 0 150 20
 			origin			350 300
 			forecolor		1 1 1 1
 			type			ITEM_TYPE_BUTTON
-			text			"Smoke Grenades (500 pt)"
+			text			"Grenades (500 pt)"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10
@@ -644,7 +497,7 @@
 			action
 			{
 				play "mouse_click";
-				scriptMenuResponse "buy_smokenades";
+				scriptMenuResponse "buy_nades";
 				close shop;
 			}
 			onFocus
@@ -652,139 +505,5 @@
 				play "mouse_over";
 			}
 		}
-		
-		/*		BARRICADES		
-		itemDef 
-		{
-			name			"barricades_main"
-			visible			1
-			rect			0 0 160 20
-			origin			100 240
-			forecolor		1 1 1 1
-			text			"Barricades"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			decoration
-		}
-		itemDef 
-		{
-			name			"barricades_crate"
-			visible			1
-			rect			0 0 150 20
-			origin			120 260
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Crate (100 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "buy_crate";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "c" { play "mouse_click"; scriptMenuResponse "buy_crate"; close shop }
-		
-		itemDef 
-		{
-			name			"barricades_barrel"
-			visible			1
-			rect			0 0 150 20
-			origin			120 280
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Barrel (200 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "buy_barrel";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "b" { play "mouse_click"; scriptMenuResponse "buy_barrel"; close shop }*/
-		
-		/*itemDef
-		{
-			name			"button_random"
-			visible			1
-			rect			89 0 90 32
-			origin			350 360
-			//style			WINDOW_STYLE_SHADER 
-			//background		"ui_mp/assets/hud@tab_center_unselected.tga"
-			type			ITEM_TYPE_BUTTON
-			text			"Random (100 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		45
-			textaligny		24
-			textalign		ITEM_ALIGN_CENTER
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "random";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "r" { play "mouse_click"; scriptMenuResponse "random"; close shop }
-		
-		itemDef 
-		{
-			name			"other_main"
-			visible			1
-			rect			0 0 160 20
-			origin			350 320
-			forecolor		1 1 1 1
-			text			"Other stuff"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			decoration
-		}
-		itemDef 
-		{
-			name			"buy_nightvision"
-			visible			1
-			rect			0 0 150 20
-			origin			350 340
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Nightvision (500 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "buy_nightvision";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}*/
 	}
 }
