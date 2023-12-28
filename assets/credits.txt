@@ -1,2 +1,5 @@
 hud@compassface.tga: https://github.com/eyza-cod2/zpam3/blob/master/source/images/compassface.iwi
-bx_parachute: Prawy
+Base parachute model: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+
+Shop from Cheese's Zombie mod:
+https://github.com/thecheeseman/zombies_v5_r13
