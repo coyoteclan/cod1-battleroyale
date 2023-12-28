@@ -3,6 +3,8 @@ menuHandler(response) {
     {
         case "buy_healthpack":
             self.hpacks++;
+            wait 1;
+            self.hud_hpacks setValue(self.hpacks);
             break;
         default:
             break;
