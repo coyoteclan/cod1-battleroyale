@@ -24,11 +24,11 @@ ___
 #### [More](https://coyote.rf.gd/battleroyale)
 ___
 #### Some credits
-- *zh_frenzy* map: thanks to zilch
+- ***zh_frenzy*** map: thanks to zilch
 - The [Killtube](https://www.killtube.org/) community
 - [cod.pm](https://cod.pm/)
   - Thanks to Cato
 - [CoDExtended](https://github.com/xtnded/codextended)
 - [vCoDMods](https://www.vcodmods.com/)
-- Base parachute model: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
-- Shop from Cheese's [Zombies Mod](https://github.com/thecheeseman/zombies_v5_r13)
+- ***Base*** parachute model*: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- ***Shop*** from Cheese's [Zombies Mod](https://github.com/thecheeseman/zombies_v5_r13)
