@@ -154,7 +154,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "shop";
-				close shop;
+				close camouflage;
 			}
 			onFocus
 			{
