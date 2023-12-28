@@ -45,6 +45,7 @@ throwHealth() {
             level.healthqueuecurrent = 0;
 
         self.hpacks -= 1;
+        self.hud_hpacks setValue(self.hpacks);
     }
     else
         self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");
