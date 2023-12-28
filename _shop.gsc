@@ -35,6 +35,27 @@ init()
 }
 
 menuHandler(response) {
+    if(self.sessionstate != "playing")
+        return;
+    
+    if(!isDefined(level.points[response])) {
+        self iprintln("That item is not available on shop!");
+        return;
+    }
+    if(self.points < level.points[response]) {
+        self iprintln("You're too ^1poor^7. Can't ^3afford ^7that!");
+        return;
+    }
+    else {
+        if(self buyItem(response)) {
+            self iprintlnbold( "You bought ^2" + level.pointsnames[ response ] + "^7 for " + level.points[ response ] + " points." );
+            self.points -= level.points[response];
+
+        }
+    }
+}
+
+buyItem(response) {
     switch(response)
     {
         case "buy_healthpack":
