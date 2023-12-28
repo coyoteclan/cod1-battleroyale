@@ -1,6 +1,7 @@
 ## Battle royale gametype for Call of Duty 1 (2003)
 Supported multiplayer patch: **1.1**
 Not compatible with CoDaM.
+__
 ### Some setup instructions
 - See the [wiki](https://github.com/coyoteclan/cod1-battleroyale/wiki)
 
