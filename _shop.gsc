@@ -1,3 +1,39 @@
+init()
+{
+	[[ level.logwrite ]]( "maps\\mp\\gametypes\\_buymenu.gsc::init()", true );
+	
+	level.points = [];
+	level.points[ "buy_armor_10" ] = 100;
+	level.points[ "buy_armor_25" ] = 250;
+	level.points[ "buy_armor_50" ] = 500;
+	level.points[ "buy_explo_10" ] = 100;
+	level.points[ "buy_explo_25" ] = 250;
+	level.points[ "buy_explo_50" ] = 500;
+	level.points[ "buy_damage_10" ] = 100;
+	level.points[ "buy_damage_25" ] = 250;
+	level.points[ "buy_healthpack" ] = 100;
+	level.points[ "mortar" ] = 5000;
+	level.points[ "random" ] = 100;
+	level.points[ "buy_panzer" ] = 1000;
+	level.points[ "buy_nades" ] = 500;
+	level.points[ "nothing" ] = 0;
+	
+	level.pointsnames = [];
+	level.pointsnames[ "buy_armor_10" ] = "100 Armor";
+	level.pointsnames[ "buy_armor_25" ] = "250 Armor";
+	level.pointsnames[ "buy_armor_50" ] = "500 Armor";
+	level.pointsnames[ "buy_explo_10" ] = "100 Explosion Armor";
+	level.pointsnames[ "buy_explo_25" ] = "250 Explosion Armor";
+	level.pointsnames[ "buy_explo_50" ] = "500 Explosion Armor";
+	level.pointsnames[ "buy_damage_10" ] = "10% Damage Increase";
+	level.pointsnames[ "buy_damage_25" ] = "25% Damage Increase";
+	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
+	level.pointsnames[ "mortar" ] = "Mortar Strike";
+	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
+	level.pointsnames[ "buy_nades" ] = "Flashbangs";
+
+}
+
 menuHandler(response) {
     switch(response)
     {
