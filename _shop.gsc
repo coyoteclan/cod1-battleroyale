@@ -16,7 +16,7 @@ health() {
     if(!isPlayer(self)) {
         return;
     }
-    self.hpacks = 1;
+    self.hpacks = (int)1;
     if(getCvarInt("br_healthpacks")) {
         self.hpacks = getCvarInt("br_healthpacks");
     }
