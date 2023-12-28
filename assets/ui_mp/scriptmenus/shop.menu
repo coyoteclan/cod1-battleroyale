@@ -417,31 +417,6 @@
 			}
 		}
 		
-		itemDef 
-		{
-			name			"killstreaks_arty"
-			visible			1
-			rect			0 0 150 20
-			origin			350 160
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"Artillery Barrage (7500 pt)"
-			textfont		UI_FONT_NORMAL
-			textscale		.20
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "artillery";
-				close shop;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		
 		
 		itemDef 
 		{
