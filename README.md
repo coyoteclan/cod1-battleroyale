@@ -2,15 +2,8 @@
 Supported multiplayer patch: **1.1**
 Not compatible with CoDaM.
 ### Some setup instructions
-
-- make the server to use ***fs_game*** not to override some players *main* folder files.
-- pack everything in the ***assets*** into ***zz_assets.pk3*** (or any name) and put  in the *fs_game* folder, this file must be downloaded by the client.
-- setup ***br.gsc*** in a *pk3* file like a stock gametype and put it in the *fs_game* folder.
-  - give the priority to this pk3 over the assets one, because the assets pk3 contains a file named *br.gsc* too
-- use the *zh_frenzy* map version of this repo.
-- use the CoDExtended server extension.
-  - i suggest [my fork](https://github.com/raphael12333/codextended-server) e.g. to allow non-living players to talk without showing messages to alive players
-___
+- See the [wiki](https://github.com/coyoteclan/cod1-battleroyale/wiki)
+__
 ### Some TODO
 - Prevent players from getting stuck in each other when exiting plane
   - MiscMod's [_newspawn function](https://github.com/cato-a/CoDaM_MiscMod/blob/4db1d420b87b766eb9bffb352a7d9c13eaa0c851/___CoDaM_MiscMod/codam/_mm_mmm.gsc#L379) might help
