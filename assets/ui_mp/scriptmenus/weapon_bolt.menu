@@ -166,7 +166,7 @@
 			{
 				play "mouse_click";
 				scriptMenuResponse "shop";
-				close shop;
+				close weapon_bolt;
 			}
 			onFocus
 			{
