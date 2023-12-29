@@ -95,6 +95,7 @@ throwHealth() {
 
         self.hpacks -= 1;
         self.hud_hpacks setValue(self.hpacks);
+        wait 10;
     }
     else
         self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");

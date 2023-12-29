@@ -644,7 +644,7 @@ spawnPlayer(origin, angles)
     }
     
     self setClientCvar("cg_objectiveText", level.objectiveText);
-    self thread maps\mp\gametypes\_shop::health();
+    self thread maps\mp\gametypes\_shop::shophud();
 }
 spawnIntermission()
 {
