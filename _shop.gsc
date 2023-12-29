@@ -1,6 +1,5 @@
 init()
 {
-	[[ level.logwrite ]]( "maps\\mp\\gametypes\\_buymenu.gsc::init()", true );
 	
 	level.points = [];
 	level.points[ "buy_armor_10" ] = 100;
