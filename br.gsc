@@ -526,26 +526,26 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
         sMeansOfDeath = "MOD_HEAD_SHOT";
         if(isPlayer(attacker))
             attacker.points += level.points_headshot;
-            attacker.hud_points setValue(attacker.points);
+            //attacker.hud_points setValue(attacker.points);
     }
 
     // If the player was killed by a head shot, let players know it was a head shot kill
     if(sMeansOfDeath == "MOD_MELEE") {
         if(isPlayer(attacker))
             attacker.points += level.points_melee;
-            attacker.hud_points setValue(attacker.points);
+            //attacker.hud_points setValue(attacker.points);
     }
     
     // If the player was killed by a head shot, let players know it was a head shot kill
     if(sMeansOfDeath == "MOD_GRENADE") {
         if(isPlayer(attacker))
             attacker.points += level.points_melee;
-            attacker.hud_points setValue(attacker.points);
+            //attacker.hud_points setValue(attacker.points);
     }
     if(sHitLoc != "head" && sMeansOfDeath != "MOD_MELEE" && sMeansOfDeath != "MOD_GRENADE") {
         if(isPlayer(attacker))
             attacker.points += level.points_kill;
-            attacker.hud_points setValue(attacker.points);
+            //attacker.hud_points setValue(attacker.points);
     }
 
     // send out an obituary message to all clients about the kill
@@ -674,7 +674,7 @@ spawnPlayer(origin, angles)
     }
     
     self setClientCvar("cg_objectiveText", level.objectiveText);
-    self maps\mp\gametypes\_shop::shophud();
+    self thread maps\mp\gametypes\_shop::shophud();
 }
 spawnIntermission()
 {

@@ -53,7 +53,7 @@ buyItem(response) {
         case "buy_healthpack":
             self.hpacks++;
             wait 1;
-            self.hud_hpacks setValue(self.hpacks);
+            //self.hud_hpacks setValue(self.hpacks);
             //break;
             return true;
         default:
@@ -82,25 +82,28 @@ shophud() {
     if(getCvarInt("br_startbodyarmor")) {
         self.bodyarmor = getCvarInt("br_startbodyarmor");
     }
-
     self.hud_points = newClientHudElem(self);
     self.hud_points.x = 531;
     self.hud_points.y = 310;
     self.hud_points.label = &"Points^1: ^7";
-    self.hud_points setValue(self.points);
 
     self.hud_hpacks = newClientHudElem(self);
     self.hud_hpacks.x = 531;
     self.hud_hpacks.y = 326;
     self.hud_hpacks.label = &"Healthpacks^1: ^7";
-    //self.hpnum = self.hpacks;
-    self.hud_hpacks setValue(self.hpacks);
-    
+
     self.hud_armor = newClientHudElem(self);
     self.hud_armor.x = 531;
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
-    self.hud_armor setValue(self.bodyarmor);
+    for(;;)
+    {
+        self.hud_points setValue(self.points);
+
+        self.hud_hpacks setValue(self.hpacks);
+        
+        self.hud_armor setValue(self.bodyarmor);
+    }
 }
 
 throwHealth() {
@@ -116,7 +119,7 @@ throwHealth() {
             level.healthqueuecurrent = 0;
 
         self.hpacks -= 1;
-        self.hud_hpacks setValue(self.hpacks);
+        //self.hud_hpacks setValue(self.hpacks);
         wait 10;
     }
     else
@@ -128,7 +131,7 @@ AliveTimeReward() {
     {
         wait level.alivetime;
         self.points += level.alivepoints;
-        self.hud_points setValue(self.points);
+        //self.hud_points setValue(self.points);
         wait 0.5;
     }
 }
