@@ -410,14 +410,6 @@ Callback_PlayerConnect()
         else if(menu == game["menu_shop"])
         {
             self maps\mp\gametypes\_shop::menuHandler(response);
-            /*switch(response)
-            {
-                case "buy_healthpack":
-                    self.hpacks++;
-                    break;
-                default:
-                    break;
-            }*/
         }
         else if(menu == game["menu_viewmap"])
         {
