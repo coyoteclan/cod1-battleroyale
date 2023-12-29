@@ -126,6 +126,10 @@ AliveTimeReward() {
     {
         wait level.alivetime;
         self.points += level.alivepoints;
+        nothing = "^7";
+        self.hud_points setValue(nothing);
+        self iprintln("Points value set to nothing.");
+        wait 3;
         self.hud_points setValue(self.points);
         wait 0.5;
     }
