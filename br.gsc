@@ -74,7 +74,7 @@ main()
     level.points_grenade = 100;
     level.points_kill = 70;
     level.alivetime = 30;
-    level.alivepoints = 5;
+    level.alivepoints = 100;
 
 
     //MODEL PATHS
