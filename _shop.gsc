@@ -94,6 +94,12 @@ shophud() {
     self.hud_hpacks.label = &"Healthpacks^1: ^7";
     //self.hpnum = self.hpacks;
     self.hud_hpacks setValue(self.hpacks);
+    
+    self.hud_armor = newClientHudElem(self);
+    self.hud_armor.x = 531;
+    self.hud_armor.y = 342;
+    self.hud_armor.label = &"Armor^1: ^7";
+    self.hud_armor setValue(self.bodyarmor);
 }
 
 throwHealth() {
