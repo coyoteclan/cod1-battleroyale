@@ -67,15 +67,30 @@ shophud() {
     if(!isPlayer(self)) {
         return;
     }
+    self.points = (int)10;
+    if(getCvarInt("br_startpoints")) {
+        self.points = getCvarInt("br_startpoints");
+    }
+
     self.hpacks = (int)1;
     if(getCvarInt("br_healthpacks")) {
         self.hpacks = getCvarInt("br_healthpacks");
     }
     //hud_hpacks destroy();
+    self.bodyarmor = (int)0;
+    if(getCvarInt("br_bodyarmor")) {
+        self.bodyarmor = getCvarInt("br_bodyarmor");
+    }
+
+    self.hud_points = newClientHudElem(self);
+    self.hud_points.x = 531;
+    self.hud_points.y = 310;
+    self.hud_points.label = &"Points^1: ^7";
+    self.hud_points setValue(self.points);
 
     self.hud_hpacks = newClientHudElem(self);
-    self.hud_hpacks.x = 9;
-    self.hud_hpacks.y = 286;
+    self.hud_hpacks.x = 531;
+    self.hud_hpacks.y = 326;
     self.hud_hpacks.label = &"Healthpacks^1: ^7";
     //self.hpnum = self.hpacks;
     self.hud_hpacks setValue(self.hpacks);
