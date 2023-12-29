@@ -127,6 +127,7 @@ AliveTimeReward() {
     {
         wait level.alivetime;
         self.points += level.alivepoints;
+        self.hud_points setValue(self.points);
         wait 0.5;
     }
 }
