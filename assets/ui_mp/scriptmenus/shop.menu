@@ -205,7 +205,7 @@
 			origin			220 160
 			forecolor		0 1 0 1
 			type			ITEM_TYPE_BUTTON
-			text			"10%"
+			text			"+10"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10
@@ -229,7 +229,7 @@
 			origin			260 160
 			forecolor		0.5 0.5 0 1
 			type			ITEM_TYPE_BUTTON
-			text			"25%"
+			text			"+25"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10
