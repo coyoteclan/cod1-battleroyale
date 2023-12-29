@@ -73,9 +73,8 @@ main()
     level.points_melee = 150;
     level.points_grenade = 100;
     level.points_kill = 70;
-    level.alivetime = 10;
-    
-
+    level.alivetime = 30;
+    level.alivepoints = 5;
 
 
     //MODEL PATHS
@@ -523,8 +522,31 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
         return;
 
     // If the player was killed by a head shot, let players know it was a head shot kill
-    if(sHitLoc == "head" && sMeansOfDeath != "MOD_MELEE")
+    if(sHitLoc == "head" && sMeansOfDeath != "MOD_MELEE") {
         sMeansOfDeath = "MOD_HEAD_SHOT";
+        if(isPlayer(attacker))
+            attacker.points += level.points_headshot;
+            attacker.hud_points setValue(attacker.points);
+    }
+
+    // If the player was killed by a head shot, let players know it was a head shot kill
+    if(sMeansOfDeath == "MOD_MELEE") {
+        if(isPlayer(attacker))
+            attacker.points += level.points_melee;
+            attacker.hud_points setValue(attacker.points);
+    }
+    
+    // If the player was killed by a head shot, let players know it was a head shot kill
+    if(sMeansOfDeath == "MOD_GRENADE") {
+        if(isPlayer(attacker))
+            attacker.points += level.points_melee;
+            attacker.hud_points setValue(attacker.points);
+    }
+    if(sHitLoc != "head" && sMeansOfDeath != "MOD_MELEE" && sMeansOfDeath != "MOD_GRENADE") {
+        if(isPlayer(attacker))
+            attacker.points += level.points_kill;
+            attacker.hud_points setValue(attacker.points);
+    }
 
     // send out an obituary message to all clients about the kill
     obituary(self, attacker, sWeapon, sMeansOfDeath);
