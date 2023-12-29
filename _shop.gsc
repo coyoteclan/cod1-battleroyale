@@ -54,9 +54,10 @@ buyItem(response) {
             self.hpacks++;
             wait 1;
             self.hud_hpacks setValue(self.hpacks);
-            break;
+            //break;
+            return true;
         default:
-            break;
+            return false;
     }
 }
 
