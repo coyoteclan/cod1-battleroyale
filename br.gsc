@@ -263,6 +263,7 @@ Callback_StartGameType()
 
     thread manageZoneLifecycle();
     thread checkBattleReady();
+    thread maps\mp\gametypes\_shop::init();
 }
 Callback_PlayerConnect()
 {
