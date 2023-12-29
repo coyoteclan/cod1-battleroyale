@@ -73,13 +73,13 @@ shophud() {
     }
 
     self.hpacks = (int)1;
-    if(getCvarInt("br_healthpacks")) {
-        self.hpacks = getCvarInt("br_healthpacks");
+    if(getCvarInt("br_starthealthpacks")) {
+        self.hpacks = getCvarInt("br_starthealthpacks");
     }
     //hud_hpacks destroy();
     self.bodyarmor = (int)0;
-    if(getCvarInt("br_bodyarmor")) {
-        self.bodyarmor = getCvarInt("br_bodyarmor");
+    if(getCvarInt("br_startbodyarmor")) {
+        self.bodyarmor = getCvarInt("br_startbodyarmor");
     }
 
     self.hud_points = newClientHudElem(self);
