@@ -409,7 +409,7 @@ Callback_PlayerConnect()
         }
         else if(menu == game["menu_shop"])
         {
-            maps\mp\gametypes\_shop::menuHandler(response);
+            self maps\mp\gametypes\_shop::menuHandler(response);
             /*switch(response)
             {
                 case "buy_healthpack":
