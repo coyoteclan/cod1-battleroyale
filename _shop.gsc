@@ -99,13 +99,10 @@ shophud() {
     for(;;)
     {
         wait 1;
-        self.hud_points reset();
         self.hud_points setValue(self.points);
 
-        self.hud_hpacks reset();
         self.hud_hpacks setValue(self.hpacks);
         
-        self.hud_armor reset();
         self.hud_armor setValue(self.bodyarmor);
         wait 0.5;
     }
