@@ -38,7 +38,7 @@ menuHandler(response) {
         return;
     }
     else {
-        self buyItem(response);
+        //self buyItem(response);
         if(self buyItem(response)) {
             self iprintlnbold( "You bought ^2" + level.pointsnames[ response ] + "^7 for " + level.points[ response ] + " points." );
             self.points -= level.points[response];
