@@ -121,3 +121,12 @@ throwHealth() {
     else
         self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");
 }
+
+AliveTimeReward() {
+    while(isPlayer(self) && isAlive(self))
+    {
+        wait level.alivetime;
+        self.points += level.alivepoints;
+        wait 0.5;
+    }
+}

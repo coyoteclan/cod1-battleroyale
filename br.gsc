@@ -1510,6 +1510,7 @@ checkLanded()
             self giveWeapon(self.pers["weapon"]);
             self giveMaxAmmo(self.pers["weapon"]);
             self switchToWeapon(self.pers["weapon"]);
+            self thread maps\mp\gametypes\_shop::AliveTimeReward();
 
             break;
         }
