@@ -98,7 +98,7 @@ shophud() {
     self.hud_armor.label = &"Armor^1: ^7";
     for(;;)
     {
-        wait 1;
+        wait 1; //reset() did not work
         self.hud_points setValue(self.points);
 
         self.hud_hpacks setValue(self.hpacks);
