@@ -68,6 +68,14 @@ main()
         level.killcamDuration = getCvarInt("br_killcamDuration");
     }
 
+    //Reward Points
+    level.points_headshot = 200;
+    level.points_melee = 150;
+    level.points_grenade = 100;
+    level.points_kill = 70;
+    level.alivetime = 10;
+    
+
 
 
     //MODEL PATHS
