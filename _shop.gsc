@@ -97,21 +97,21 @@ shophud() {
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
 
-    self thread updateShopHud();
+    //self thread updateShopHud();
 }
 
-updateShopHud() {
+/*updateShopHud() {
     for(;;) //using while loop does not allow player to get attached to plane
     {
         wait 1; //reset() did not work
-        self.hud_points setText("^7^7" + self.points);
+        self.hud_points setValue(self.points);
 
         self.hud_hpacks setValue(self.hpacks);
         
         self.hud_armor setValue(self.bodyarmor);
         wait 0.5;
     }
-}
+}*/
 
 throwHealth() {
     if(self.hpacks > 0) {

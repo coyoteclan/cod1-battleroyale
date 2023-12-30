@@ -1514,6 +1514,18 @@ checkLanded()
             self switchToWeapon(self.pers["weapon"]);
             self thread maps\mp\gametypes\_shop::AliveTimeReward();
             //self thread maps\mp\gametypes\_shop::updateShopHud();
+            updateShopHud() {
+                for(;;) //using while loop does not allow player to get attached to plane
+                {
+                    wait 1; //reset() did not work
+                    self.hud_points setValue(self.points);
+
+                    self.hud_hpacks setValue(self.hpacks);
+                    
+                    self.hud_armor setValue(self.bodyarmor);
+                    wait 0.5;
+                }
+}
 
             break;
         }
