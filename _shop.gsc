@@ -85,17 +85,17 @@ shophud() {
     self.hud_points = newClientHudElem(self);
     self.hud_points.x = 531;
     self.hud_points.y = 310;
-    self.hud_points.label = &"Points^1: ^7";
+    //self.hud_points.label = &"Points^1: ^7";
 
     self.hud_hpacks = newClientHudElem(self);
     self.hud_hpacks.x = 531;
     self.hud_hpacks.y = 326;
-    self.hud_hpacks.label = &"Healthpacks^1: ^7";
+    //self.hud_hpacks.label = &"Healthpacks^1: ^7";
 
     self.hud_armor = newClientHudElem(self);
     self.hud_armor.x = 531;
     self.hud_armor.y = 342;
-    self.hud_armor.label = &"Armor^1: ^7";
+    //self.hud_armor.label = &"Armor^1: ^7";
     for(;;)
     {
         wait 1; //reset() did not work
