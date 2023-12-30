@@ -97,7 +97,7 @@ shophud() {
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
 
-    self updateShopHud();
+    //self updateShopHud();
 }
 
 updateShopHud() {
