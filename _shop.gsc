@@ -97,11 +97,11 @@ shophud() {
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
 
-    //self updateShopHud();
+    self updateShopHud();
 }
 
 updateShopHud() {
-    while(isPlayer(self) && isAlive(self))
+    while(1)
     {
         wait 1; //reset() did not work
         self.hud_points setValue(self.points);
