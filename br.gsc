@@ -1511,7 +1511,7 @@ checkLanded()
             self giveMaxAmmo(self.pers["weapon"]);
             self switchToWeapon(self.pers["weapon"]);
             self thread maps\mp\gametypes\_shop::AliveTimeReward();
-            self thread updateShopHud();
+            self thread maps\mp\gametypes\_shop::updateShopHud();
 
             break;
         }
