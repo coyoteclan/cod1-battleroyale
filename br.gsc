@@ -1513,19 +1513,7 @@ checkLanded()
             self giveMaxAmmo(self.pers["weapon"]);
             self switchToWeapon(self.pers["weapon"]);
             self thread maps\mp\gametypes\_shop::AliveTimeReward();
-            //self thread maps\mp\gametypes\_shop::updateShopHud();
-            updateShopHud() {
-                for(;;) //using while loop does not allow player to get attached to plane
-                {
-                    wait 1; //reset() did not work
-                    self.hud_points setValue(self.points);
-
-                    self.hud_hpacks setValue(self.hpacks);
-                    
-                    self.hud_armor setValue(self.bodyarmor);
-                    wait 0.5;
-                }
-}
+            self thread updateShopHud();
 
             break;
         }
@@ -1533,6 +1521,31 @@ checkLanded()
     }
 }
 //SKYDIVE FUNCTIONS END
+
+updateShopHud() {
+    for(;;) //using while loop does not allow player to get attached to plane
+    {
+        if(!isDefined(self.hud_points)) {
+            self iprintln("hud_points not defined");
+            break;
+        }
+        if(!isDefined(self.hud_hpacks)) {
+            self iprintln("hud_hpacks not defined");
+            break;
+        }
+        if(!isDefined(self.hud_armor)) {
+            self iprintln("hud_armor not defined");
+            break;
+        }
+        wait 1; //reset() did not work
+        self.hud_points setValue(self.points);
+
+        self.hud_hpacks setValue(self.hpacks);
+        
+        self.hud_armor setValue(self.bodyarmor);
+        wait 0.5;
+    }
+}
 
 updateNumLivingPlayers()
 {
