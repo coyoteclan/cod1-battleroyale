@@ -104,7 +104,7 @@ updateShopHud() {
     for(;;) //using while loop does not allow player to get attached to plane
     {
         wait 1; //reset() did not work
-        self.hud_points setValue(self.points);
+        self.hud_points setText("" + self.points);
 
         self.hud_hpacks setValue(self.hpacks);
         
