@@ -96,6 +96,11 @@ shophud() {
     self.hud_armor.x = 531;
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
+
+    self thread updateShopHud();
+}
+
+updateShopHud() {
     for(;;)
     {
         wait 1; //reset() did not work
