@@ -1839,6 +1839,17 @@ utilities_menu(response)
         case "1":
             maps\mp\gametypes\_shop::throwHealth();
             break;
+        case "2":
+            iPrintLn("You have " + self.hpacks + " healthpacks.");
+            break;
+        case "3":
+            iPrintLn("You have " + self.bodyarmor + " armor.");
+            break;
+        case "4":
+            iPrintLn("You have " + self.points + " points.");
+            break;
+        default:
+            break;
     }
 }
 
