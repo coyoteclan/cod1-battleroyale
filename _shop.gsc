@@ -97,21 +97,7 @@ shophud() {
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
 
-    //self thread updateShopHud();
 }
-
-/*updateShopHud() {
-    for(;;) //using while loop does not allow player to get attached to plane
-    {
-        wait 1; //reset() did not work
-        self.hud_points setValue(self.points);
-
-        self.hud_hpacks setValue(self.hpacks);
-        
-        self.hud_armor setValue(self.bodyarmor);
-        wait 0.5;
-    }
-}*/
 
 throwHealth() {
     if(self.hpacks > 0) {
@@ -126,7 +112,6 @@ throwHealth() {
             level.healthqueuecurrent = 0;
 
         self.hpacks -= 1;
-        //self.hud_hpacks setValue(self.hpacks);
         wait 10;
     }
     else
@@ -138,7 +123,6 @@ AliveTimeReward() {
     {
         wait level.alivetime;
         self.points += level.alivepoints;
-        //self.hud_points setValue(self.points);
         wait 0.5;
     }
 }
