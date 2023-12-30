@@ -71,7 +71,7 @@
 		}
 		execKey "1" { scriptMenuResponse "1"; close quickcommands; }
 	
-		/*itemDef
+		itemDef
 		{
 			name			"window"
 			group			ingamebox
@@ -81,7 +81,7 @@
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
 			textscale		.25
-			text			"@QUICKMESSAGE_2_MOVE_IN"
+			text			"2. Check Healthpacks"//temporary
 			decoration
 		}
 		execKey "2" { scriptMenuResponse "2"; close quickcommands }
@@ -96,7 +96,7 @@
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
 			textscale		.25
-			text			"@QUICKMESSAGE_3_FALL_BACK"
+			text			"3. Check armor"
 			decoration
 		}
 		execKey "3" { scriptMenuResponse "3"; close quickcommands }
@@ -111,12 +111,12 @@
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
 			textscale		.25
-			text			"@QUICKMESSAGE_4_SUPPRESSING_FIRE"
+			text			"4. Check Points"
 			decoration
 		}
 		execKey "4" { scriptMenuResponse "4"; close quickcommands }
 	
-		itemDef
+		/*itemDef
 		{
 			name			"window"
 			group			ingamebox
