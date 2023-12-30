@@ -101,7 +101,7 @@ shophud() {
 }
 
 updateShopHud() {
-    while(1)
+    for(;;) //using while loop does not allow player to get attached to plane
     {
         wait 1; //reset() did not work
         self.hud_points setValue(self.points);
