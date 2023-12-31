@@ -8,9 +8,9 @@ init()
 	level.points[ "buy_damage_10" ] = 100;
 	level.points[ "buy_damage_25" ] = 250;
 	level.points[ "buy_healthpack" ] = 100;
-	level.points[ "mortar" ] = 5000;
-	level.points[ "buy_panzer" ] = 1000;
-	level.points[ "buy_nades" ] = 500;
+	level.points[ "mortar" ] = 1000;
+	level.points[ "buy_panzer" ] = 500;
+	level.points[ "buy_nades" ] = 200;
 	
 	level.pointsnames = [];
 	level.pointsnames[ "buy_armor_10" ] = "100 Armor";
@@ -101,6 +101,36 @@ buyItem(response) {
                 self.bodyarmor = 500;
                 return true;
             }
+        
+        case "buy_damage_10":
+            if(self.damageinc >= 25) {
+                self iprintlnbold("You already have max damage increase.");
+                return false;
+            }
+            else if(self.damageinc + 10 > 25) {
+                self.damageinc = 25;
+                return true;
+            }
+            else {
+                self.damageinc += 10;
+                return true;
+            }
+        
+        case "buy_damage_25":
+            if(self.damageinc >= 25) {
+                self iprintlnbold("You already have max damager increase.");
+                return false;
+            }
+            else if(self.damageinc + 25 > 25) {
+                self.damageinc = 25;
+                return true;
+            }
+            else {
+                self.damageinc += 25;
+                return true;
+            }
+        
+        case "buy_panzer"
         default:
             return false;
     }
@@ -127,6 +157,9 @@ shophud() {
     if(getCvarInt("br_startbodyarmor")) {
         self.bodyarmor = getCvarInt("br_startbodyarmor");
     }
+
+    self.damageinc = (int)0;
+
     self.hud_points = newClientHudElem(self);
     self.hud_points.x = 531;
     self.hud_points.y = 310;
@@ -141,6 +174,11 @@ shophud() {
     self.hud_armor.x = 531;
     self.hud_armor.y = 342;
     self.hud_armor.label = &"Armor^1: ^7";
+
+    self.hud_damageinc = newClientHudElem(self);
+    self.hud_damageinc.x = 531;
+    self.hud_damageinc.y = 358;
+    self.hud_damageinc.label = &"Damage Upgrade^1: ^7";
 
 }
 
