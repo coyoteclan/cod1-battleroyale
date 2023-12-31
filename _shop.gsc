@@ -137,6 +137,7 @@ buyItem(response) {
             return true;
         
         case "buy_nades":
+            self iprintln("I'M IN BUY_NADES");
             nadeammo = self getweaponslotammo("grenade");
             self iprintln("Nades: ^7" + nadeammo);
             new_ammo = nadeammo + 3;
