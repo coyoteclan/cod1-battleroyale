@@ -379,7 +379,7 @@
 			origin			350 300
 			forecolor		1 1 1 1
 			type			ITEM_TYPE_BUTTON
-			text			"Grenades (500 pt)"
+			text			"Grenades (3 nades, 200 pt)"
 			textfont		UI_FONT_NORMAL
 			textscale		.20
 			textalignx		10

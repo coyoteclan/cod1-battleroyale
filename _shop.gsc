@@ -21,7 +21,7 @@ init()
 	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
 	level.pointsnames[ "mortar" ] = "Mortar Strike";
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
-	level.pointsnames[ "buy_nades" ] = "Flashbangs";
+	level.pointsnames[ "buy_nades" ] = "Grenades";
 
 }
 
@@ -134,6 +134,14 @@ buyItem(response) {
             self setWeaponSlotWeapon("primaryb", "panzerfaust_mp");
             self setWeaponSlotAmmo("primaryb", "3");
             self switchToWeapon( "panzerfaust_mp" );
+            return true;
+        
+        case "buy_nades":
+            nadeammo = self getweaponslotammo("grenade");
+            new_ammo = nadeammo + 3;
+
+            self setWeaponSlotAmmo("grenade", new_ammo);
+            return true;
         default:
             return false;
     }
