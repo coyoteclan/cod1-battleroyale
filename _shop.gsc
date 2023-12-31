@@ -65,7 +65,7 @@ buyItem(response) {
             else {
                 self.bodyarmor += 100;
                 wait 0.5;
-                return true
+                return true;
             }
         
         case "buy_armor_25":
