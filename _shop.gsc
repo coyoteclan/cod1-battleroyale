@@ -138,6 +138,7 @@ buyItem(response) {
         
         case "buy_nades":
             nadeammo = self getweaponslotammo("grenade");
+            self iprintln("Nades: ^7" + nadeammo);
             new_ammo = nadeammo + 3;
 
             self setWeaponSlotAmmo("grenade", new_ammo);

@@ -264,6 +264,7 @@ Callback_StartGameType()
     precacheItem("mosin_nagant_sniper_mp");
     precacheItem("kar98k_mp");
     precacheItem("kar98k_sniper_mp");
+    precacheItem("panzerfaust_mp");
     //PISTOLS
     precacheItem("colt_mp");
     precacheItem("luger_mp");
