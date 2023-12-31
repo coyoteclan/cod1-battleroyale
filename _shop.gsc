@@ -132,6 +132,7 @@ buyItem(response) {
         
         case "buy_panzer":
             self setWeaponSlotWeapon("primaryb", "panzerfaust_mp");
+            wait 0.5;
             self setWeaponSlotAmmo("primaryb", "3");
             self switchToWeapon( "panzerfaust_mp" );
             return true;
@@ -141,6 +142,7 @@ buyItem(response) {
             nadeammo = self getweaponslotammo("grenade");
             self iprintln("Nades: ^7" + nadeammo);
             new_ammo = nadeammo + 3;
+            wait 0.5;
 
             self setWeaponSlotAmmo("grenade", new_ammo);
             return true;
