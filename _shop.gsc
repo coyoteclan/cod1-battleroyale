@@ -62,9 +62,13 @@ buyItem(response) {
                 self iprintlnbold("You already have max armor!");
                 return false;
             }
+            else if(self.bodyarmor + 100 > 500) {
+                self.bodyarmor = 500;
+                wait 0.5;
+                return true;
+            }
             else {
                 self.bodyarmor += 100;
-                wait 0.5;
                 return true;
             }
         
@@ -73,9 +77,13 @@ buyItem(response) {
                 self iprintlnbold("You already have max armor!");
                 return false;
             }
+            else if(self.bodyarmor + 250 > 500) {
+                self.bodyarmor = 500;
+                wait 0.5;
+                return true;
+            }
             else {
                 self.bodyarmor += 250;
-                wait 0.5;
                 return true;
             }
         
@@ -90,10 +98,7 @@ buyItem(response) {
                 return true;
             }
             else if(self.bodyarmor > 0) {
-                for(i=0;i>500;i++) {
-                    self.bodyarmor++;
-                    wait 0.5;
-                }//I added this as a test, if it works, will use it for all
+                self.bodyarmor = 500;
                 return true;
             }
         default:
