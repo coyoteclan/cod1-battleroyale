@@ -193,7 +193,7 @@ shophud() {
     self.hud_damageinc = newClientHudElem(self);
     self.hud_damageinc.x = 531;
     self.hud_damageinc.y = 358;
-    self.hud_damageinc.label = &"Damage Upgrade^1: ^7";
+    self.hud_damageinc.label = &"Damage+^1: ^7";
 
 }
 
