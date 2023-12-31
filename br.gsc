@@ -277,7 +277,7 @@ Callback_StartGameType()
     precacheItem("item_health");
 
     maps\mp\gametypes\_teams::initGlobalCvars();
-    maps\mp\gametypes\_teams::restrictPlacedWeapons();
+    //maps\mp\gametypes\_teams::restrictPlacedWeapons();
 
     setClientNameMode("auto_change");
 
