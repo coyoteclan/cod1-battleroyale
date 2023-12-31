@@ -130,7 +130,10 @@ buyItem(response) {
                 return true;
             }
         
-        case "buy_panzer"
+        case "buy_panzer":
+            self setWeaponSlotWeapon("primaryb", "panzerfaust_mp");
+            self setWeaponSlotAmmo("primaryb", "3");
+            self switchToWeapon( "panzerfaust_mp" );
         default:
             return false;
     }
