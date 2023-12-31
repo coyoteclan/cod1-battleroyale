@@ -3,11 +3,19 @@ init()
 	
 	level.points = [];
 	level.points[ "buy_armor_10" ] = 100;
+	if(getCvarInt("price_armor_100"))
+	    level.points[ "buy_armor_10" ] = getCvarInt("price_armor_100");
 	level.points[ "buy_armor_25" ] = 250;
+	if(getCvarInt("price_armor_250"))
+	    level.points[ "buy_armor_25" ] = getCvarInt("price_armor_250");
 	level.points[ "buy_armor_50" ] = 500;
+	if(getCvarInt("price_armor_500"))
+	    level.points[ "buy_armor_50" ] = getCvarInt("price_armor_500");
 	level.points[ "buy_damage_10" ] = 100;
 	level.points[ "buy_damage_25" ] = 250;
 	level.points[ "buy_healthpack" ] = 100;
+	if(getCvarInt("price_healthpack"))
+	    level.points[ "buy_healthpack" ] = getCvarInt("price_healthpack");
 	level.points[ "mortar" ] = 5000;
 	level.points[ "buy_panzer" ] = 1000;
 	level.points[ "buy_nades" ] = 500;
