@@ -52,10 +52,50 @@ buyItem(response) {
     {
         case "buy_healthpack":
             self.hpacks++;
-            wait 1;
+            wait 0.5;
             //self.hud_hpacks setValue(self.hpacks);
             //break;
             return true;
+            
+        case "buy_armor_10":
+            if(self.bodyarmor >= 500) {
+                self iprintlnbold("You already have max armor!");
+                return false;
+            }
+            else {
+                self.bodyarmor += 100;
+                wait 0.5;
+                return true
+            }
+        
+        case "buy_armor_25":
+            if(self.bodyarmor >= 500) {
+                self iprintlnbold("You already have max armor!");
+                return false;
+            }
+            else {
+                self.bodyarmor += 250;
+                wait 0.5;
+                return true;
+            }
+        
+        case "buy_armor_50":
+            if(self.bodyarmor >= 500) {
+                self iprintlnbold("You already have max armor!");
+                return false;
+            }
+            else if(self.bodyarmor == 0) {
+                self.bodyarmor += 500;
+                wait 0.5;
+                return true;
+            }
+            else if(self.bodyarmor > 0) {
+                for(i=0;i>500;i++) {
+                    self.bodyarmor++;
+                    wait 0.5;
+                }//I added this as a test, if it works, will use it for all
+                return true;
+            }
         default:
             return false;
     }
