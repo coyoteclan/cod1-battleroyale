@@ -69,7 +69,7 @@
 			text			"1. Use Healthpack"
 			decoration
 		}
-		execKey "1" { scriptMenuResponse "1"; close quickcommands; }
+		execKey "1" { scriptMenuResponse "1"; close utilities }
 	
 		itemDef
 		{
@@ -84,7 +84,7 @@
 			text			"2. Check Healthpacks"//temporary
 			decoration
 		}
-		execKey "2" { scriptMenuResponse "2"; close quickcommands }
+		execKey "2" { scriptMenuResponse "2"; close utilities }
 	
 		itemDef
 		{
@@ -99,7 +99,7 @@
 			text			"3. Check armor"
 			decoration
 		}
-		execKey "3" { scriptMenuResponse "3"; close quickcommands }
+		execKey "3" { scriptMenuResponse "3"; close utilities }
 	
 		itemDef
 		{
@@ -114,7 +114,7 @@
 			text			"4. Check Points"
 			decoration
 		}
-		execKey "4" { scriptMenuResponse "4"; close quickcommands }
+		execKey "4" { scriptMenuResponse "4"; close utilities }
 	
 		/*itemDef
 		{
