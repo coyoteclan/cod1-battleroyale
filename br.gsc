@@ -70,11 +70,28 @@ main()
 
     //Reward Points
     level.points_headshot = 200;
+    if(getCvarInt("br_headshotpoints"))
+        level.points_headshot = getCvarInt("br_headshotpoints");
+    
     level.points_melee = 150;
+    if(getCvarInt("br_meleepoints"))
+        level.points_melee = getCvarInt("br_meleepoints");
+    
     level.points_grenade = 100;
+    if(getCvarInt("br_nadekillpoints"))
+        level.points_grenade = getCvarInt("br_nadekillpoints");
+    
     level.points_kill = 70;
+    if(getCvarInt("br_normalkillpoints"))
+        level.points_kill = getCvarInt("br_normalkillpoints");
+    
     level.alivetime = 30;
-    level.alivepoints = 100;
+    if(getCvarInt("br_survivetime"))
+        level.alivetime = getCvarInt("br_survivetime");
+    
+    level.alivepoints = 20;
+    if(getCvarInt("br_survivalpoints"))
+        level.alivepoints = getCvarInt("br_survivalpoints");
 
 
     //MODEL PATHS
