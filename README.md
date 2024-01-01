@@ -14,6 +14,8 @@ ___
 - Show the full zone on compass instead of just the center
 - Create models and animations for skydiving
   - applying animations might require to add a `setAnim` GSC command to CoDExtended, like libcod
+- Fix the bugs that you may find :)
+Tell us the bugs you may find and we will fix them.
 ___
 #### [Some videos](https://www.youtube.com/playlist?list=PLTiI1XPSd-uVS_saGvqfgk7hgguxHc1Y0)
 #### [More](https://coyote.rf.gd/battleroyale)
