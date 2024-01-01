@@ -8,9 +8,9 @@ init()
 	level.points[ "buy_damage_10" ] = 100;
 	level.points[ "buy_damage_25" ] = 250;
 	level.points[ "buy_healthpack" ] = 100;
-	level.points[ "mortar" ] = 1000;
+	//level.points[ "mortar" ] = 1000;
 	level.points[ "buy_panzer" ] = 500;
-	level.points[ "buy_nades" ] = 200;
+	level.points[ "buy_nades" ] = 400;
 	
 	level.pointsnames = [];
 	level.pointsnames[ "buy_armor_10" ] = "100 Armor";
@@ -19,7 +19,7 @@ init()
 	level.pointsnames[ "buy_damage_10" ] = "+10 Damage Increase";
 	level.pointsnames[ "buy_damage_25" ] = "+25 Damage Increase";
 	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
-	level.pointsnames[ "mortar" ] = "Mortar Strike";
+	//level.pointsnames[ "mortar" ] = "Mortar Strike";
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
 

@@ -1910,6 +1910,8 @@ utilities_menu(response)
         case "4":
             iPrintLn("You have " + self.points + " points.");
             break;
+        case "5":
+            iPrintLn("You have " + self.damageinc + "damage increase.");
         default:
             break;
     }
