@@ -503,6 +503,9 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
             if(level.instantKill_melee)
                 iDamage = iDamage + 100;
         }
+        if(self.damageinc > 0) {
+            iDamage += self.damageinc;
+        }
         if(eAttacker != self && level.damageFeedback)
             eAttacker thread showDamageFeedback();
     }
@@ -1564,13 +1567,20 @@ updateShopHud() {
             self iprintln("hud_armor not defined");
             break;
         }
-        wait 1; //reset() did not work
+        if(!isDefined(self.hud_damageinc)) {
+            self iprintln("hud_damageinc not defined");
+            break;
+        }
+        wait 1;
         self.hud_points setValue(self.points);
 
         self.hud_hpacks setValue(self.hpacks);
         
         self.hud_armor setValue(self.bodyarmor);
+
+        self.hud_damageinc setValue(self.damageinc);
         wait 0.5;
+
     }
 }
 
