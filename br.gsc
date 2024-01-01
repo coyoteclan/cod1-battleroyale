@@ -2674,8 +2674,8 @@ loadout()
     case "russian":
         self giveWeapon("luger_mp");
         self giveMaxAmmo("luger_mp");
-        self giveWeapon("rgd-33russianfrag_mp");
-        self giveMaxAmmo("rgd-33russianfrag_mp");
+        self giveWeapon("fraggrenade_mp");
+        self giveMaxAmmo("fraggrenade_mp");
         break;
         
     case "german":

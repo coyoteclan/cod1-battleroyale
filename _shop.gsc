@@ -133,16 +133,13 @@ buyItem(response) {
         case "buy_panzer":
             self setWeaponSlotWeapon("primaryb", "panzerfaust_mp");
             wait 0.5;
-            self setWeaponSlotAmmo("primaryb", "3");
             self switchToWeapon( "panzerfaust_mp" );
             return true;
         
         case "buy_nades":
-            nadeammo = self getweaponslotammo("grenade");
-            new_ammo = nadeammo + 3;
-            wait 0.5;
+            self setWeaponSlotWeapon("grenade", "rgd-33russianfrag_mp");
 
-            self setWeaponSlotAmmo("grenade", new_ammo);
+            self switchToWeapon( "rgd-33russianfrag_mp" );
             return true;
         default:
             return false;
