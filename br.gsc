@@ -506,6 +506,17 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
         if(eAttacker != self && level.damageFeedback)
             eAttacker thread showDamageFeedback();
     }
+    if(self.bodyarmor > 0) {
+        if(self.bodyarmor < iDamage) {
+            passthru = iDamage - self.bodyarmor;
+            self.bodyarmor = 0;
+            iDamage = passthru;
+        }
+        else {
+            self.bodyarmor -= iDamage;
+            iDamage = 0;
+        }
+    }
 
     if(!level.battleStarted)
         return;
