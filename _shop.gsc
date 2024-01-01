@@ -141,6 +141,7 @@ buyItem(response) {
 
             self switchToWeapon( "rgd-33russianfrag_mp" );
             return true;
+
         default:
             return false;
     }
