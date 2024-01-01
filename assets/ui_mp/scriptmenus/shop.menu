@@ -307,7 +307,7 @@
 		}
 		
 		
-		itemDef 
+		/*itemDef 
 		{
 			name			"killstreaks_mortar"
 			visible			1
@@ -330,7 +330,7 @@
 			{
 				play "mouse_over";
 			}
-		}
+		}*/
 		
 		
 		itemDef 
