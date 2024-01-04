@@ -230,7 +230,7 @@ Callback_StartGameType()
     precacheMenu(game["menu_quickcommands"]);
     precacheMenu(game["menu_quickstatements"]);
     precacheMenu(game["menu_quickresponses"]);
-    precacheMenu(game["menu_utilities"]);
+    precacheMenu(game["menu_info"]);
     precacheMenu(game["menu_shop"]);
     precacheMenu(game["menu_inventory"]);
 
