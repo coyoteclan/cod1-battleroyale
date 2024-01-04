@@ -1585,6 +1585,8 @@ updateShopHud() {
         self.hud_armor setValue(self.bodyarmor);
 
         self.hud_damageinc setValue(self.damageinc);
+
+        self.hud_ammobox setValue(self.ammobox);
         wait 0.5;
 
     }

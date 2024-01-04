@@ -228,7 +228,7 @@ throwHealth() {
         wait 10;
     }
     else
-        self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");
+        self iprintln("You are ^1broke^7, you don't have any healthpacks ^3:(");
 }
 
 placeAmmobox() {
@@ -237,6 +237,8 @@ placeAmmobox() {
         wait 0.5;
         //self thread giveAmmo();
     }
+    else
+        self iprintln("You are ^1broke^7, you don't have any ammobox ^3:(");
 }
 
 giveAmmo() {
