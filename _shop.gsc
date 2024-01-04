@@ -25,7 +25,7 @@ init()
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
 
-    ammoboxes = [];
+    level.ammoboxes = [];
 
 }
 
@@ -233,7 +233,7 @@ throwHealth() {
 
 placeAmmobox() {
     if(self.ammobox > 0) {
-        ammoboxes[i] = spawn(level.model_ammobox, self.origin);
+        level.ammoboxes[i] = spawn(level.model_ammobox, self.origin);
         wait 0.5;
         //self thread giveAmmo();
     }
