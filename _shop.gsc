@@ -234,7 +234,7 @@ throwHealth() {
 placeAmmobox() {
     if(self.ammobox > 0) {
         ammoboxes[i] = spawn("script_model", self.origin);
-        ammoboxes[i] = setModel(level.model_ammobox);
+        //ammoboxes[i] = setModel(level.model_ammobox);
         wait 0.5;
         //self thread giveAmmo();
     }
