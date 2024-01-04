@@ -713,6 +713,7 @@ spawnPlayer(origin, angles)
     
     self setClientCvar("cg_objectiveText", level.objectiveText);
     self maps\mp\gametypes\_shop::shophud();
+    self maps\mp\gametypes\_classes::assignClass();
 }
 spawnIntermission()
 {
