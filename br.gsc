@@ -1917,6 +1917,9 @@ utilities_menu(response)
         case "6":
             iPrintLn("Health: ^7" + self.health + " Max Health: " + self.maxhealth);
             break;
+        case "7":
+            iPrintLn("Ammoboxes: ^7" + self.ammobox);
+            break;
         default:
             break;
     }

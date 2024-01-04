@@ -207,7 +207,7 @@ shophud() {
 
     self.hud_ammobox = newClientHudElem(self);
     self.hud_ammobox.x = 531;
-    self.hud_ammobox.y = 358;
+    self.hud_ammobox.y = 374;
     self.hud_ammobox.label = &"Ammobox^1: ^7";
 
 }
@@ -233,8 +233,7 @@ throwHealth() {
 
 placeAmmobox() {
     if(self.ammobox > 0) {
-        ammoboxes[i] = spawn("script_model", self.origin);
-        //ammoboxes[i] = setModel(level.model_ammobox);
+        ammoboxes[i] = spawn(level.model_ammobox, self.origin);
         wait 0.5;
         //self thread giveAmmo();
     }
