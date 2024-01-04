@@ -11,7 +11,7 @@ assignClass()
             self.class = &"Armored";
             self.maxhealth = 125;
             self.bodyarmor += 100;
-            self.hacks += (int)1;
+            self.hpacks += (int)1;
             break;
         
         case "german":
