@@ -287,6 +287,32 @@
 			}
 		}
 		execKey "h" { play "mouse_click"; scriptMenuResponse "buy_healthpack"; close shop }
+
+		itemDef 
+		{
+			name			"buyables_ammobox"
+			visible			1
+			rect			0 0 150 20
+			origin			140 220
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Ammobox (150 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_ammobox";
+				close shop;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "a" { play "mouse_click"; scriptMenuResponse "buy_ammobox"; close shop }
 		
 		
 		

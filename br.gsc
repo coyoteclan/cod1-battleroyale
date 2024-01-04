@@ -98,6 +98,7 @@ main()
     level.model_zone = "xmodel/playerhead_default"; //TODO: create an invisible model instead
     level.model_plane = "xmodel/c47";
     level.model_parachute = "xmodel/br_parachute2"; //This parachute looks better :)
+    level.model_ammobox = "xmodel/crate_misc_green2";
 
     level.camouflages = [];
     level.camouflages[0] = "american";
@@ -246,6 +247,7 @@ Callback_StartGameType()
     precacheModel(level.model_zone);
     precacheModel(level.model_plane);
     precacheModel(level.model_parachute);
+    precacheModel(level.model_ammobox);
 
     //PLAYER MODELS
     mptype\american_airborne::precache();
@@ -1912,6 +1914,9 @@ utilities_menu(response)
             break;
         case "5":
             iPrintLn("You have " + self.damageinc + "damage increase.");
+        case "6":
+            iPrintLn("Health: ^7" + self.health + " Max Health: " + self.maxhealth);
+            break;
         default:
             break;
     }

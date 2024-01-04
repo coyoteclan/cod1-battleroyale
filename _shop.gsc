@@ -8,6 +8,7 @@ init()
 	level.points[ "buy_damage_10" ] = 100;
 	level.points[ "buy_damage_25" ] = 250;
 	level.points[ "buy_healthpack" ] = 100;
+    level.points[ "buy_ammobox" ] = 150;
 	//level.points[ "mortar" ] = 1000;
 	level.points[ "buy_panzer" ] = 500;
 	level.points[ "buy_nades" ] = 400;
@@ -19,9 +20,12 @@ init()
 	level.pointsnames[ "buy_damage_10" ] = "+10 Damage Increase";
 	level.pointsnames[ "buy_damage_25" ] = "+25 Damage Increase";
 	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
+    level.pointsnames[ "buy_ammobox" ] = "an Ammobox";
 	//level.pointsnames[ "mortar" ] = "Mortar Strike";
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
+
+    ammoboxes = [];
 
 }
 
@@ -55,6 +59,11 @@ buyItem(response) {
             wait 0.5;
             //self.hud_hpacks setValue(self.hpacks);
             //break;
+            return true;
+        
+        case "buy_ammobox":
+            self.ammobox++;
+            wait 0.5;
             return true;
             
         case "buy_armor_10":
@@ -174,6 +183,8 @@ shophud() {
 
     self.damageinc = (int)0;
 
+    self.ammobox = (int)0;
+
     self.hud_points = newClientHudElem(self);
     self.hud_points.x = 531;
     self.hud_points.y = 310;
@@ -194,6 +205,11 @@ shophud() {
     self.hud_damageinc.y = 358;
     self.hud_damageinc.label = &"Damage^1: ^4+^7";
 
+    self.hud_ammobox = newClientHudElem(self);
+    self.hud_ammobox.x = 531;
+    self.hud_ammobox.y = 358;
+    self.hud_ammobox.label = &"Ammobox^1: ^7";
+
 }
 
 throwHealth() {
@@ -213,6 +229,19 @@ throwHealth() {
     }
     else
         self iprintln("You are ^2broke^7, you don't have any healthpacks ^3:(");
+}
+
+placeAmmobox() {
+    if(self.ammobox > 0) {
+        ammoboxes[i] = spawn("script_model", self.origin);
+        ammoboxes[i] = setModel(level.model_ammobox);
+        wait 0.5;
+        //self thread giveAmmo();
+    }
+}
+
+giveAmmo() {
+    
 }
 
 AliveTimeReward() {
