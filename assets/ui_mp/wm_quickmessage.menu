@@ -108,16 +108,30 @@
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
 			textscale		.25
-			text			"4. Utilities"
+			text			"4. Inventory"
 			decoration
 		}
-		execKey "4" { close quickmessage; open utilities }
-		
+		execKey "4" { close quickmessage; open inventory }
+
 		itemDef
 		{
 			name			"window"
 			visible			1
 			rect			10 84 0 0
+			origin			ORIGIN_QUICKMESSAGE
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"5. Info"
+			decoration
+		}
+		execKey "5" { close quickmessage; open info }
+		
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			10 100 0 0
 			origin			ORIGIN_QUICKMESSAGE
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
