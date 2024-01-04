@@ -221,8 +221,9 @@ Callback_StartGameType()
     game["menu_quickcommands"] = "quickcommands";
     game["menu_quickstatements"] = "quickstatements";
     game["menu_quickresponses"] = "quickresponses";
-    game["menu_utilities"] = "utilities";
+    game["menu_info"] = "info";
     game["menu_shop"] = "shop";
+    game["menu_inventory"] = "inventory";
     precacheMenu(game["menu_camouflage"]);
     precacheMenu(game["menu_weapon_all"]);
     precacheMenu(game["menu_viewmap"]);
@@ -231,6 +232,7 @@ Callback_StartGameType()
     precacheMenu(game["menu_quickresponses"]);
     precacheMenu(game["menu_utilities"]);
     precacheMenu(game["menu_shop"]);
+    precacheMenu(game["menu_inventory"]);
 
     //SHADERS
     precacheShader("black");
@@ -456,8 +458,10 @@ Callback_PlayerConnect()
                 break;
             }
         }
-        else if(menu == game["menu_utilities"])
+        else if(menu == game["menu_info"])
             utilities_menu(response);
+        else if(menu == game["menu_inventory"])
+            inventory_menu(response);
         else if(menu == game["menu_quickcommands"])
             quickcommands(response);
         else if(menu == game["menu_quickstatements"])
@@ -1921,6 +1925,18 @@ utilities_menu(response)
             iPrintLn("Ammoboxes: ^7" + self.ammobox);
             break;
         default:
+            break;
+    }
+}
+
+inventory_menu(response) {
+    switch(response)
+    {
+        case "1":
+            maps\mp\gametypes\_shop::throwHealth();
+            break;
+        case "2":
+            maps\mp\gametypes\_shop::placeAmmobox();
             break;
     }
 }

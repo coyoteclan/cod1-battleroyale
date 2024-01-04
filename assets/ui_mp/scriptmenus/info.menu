@@ -1,0 +1,192 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_QUICKCOMMANDS		32 256
+
+{
+	menuDef
+	{
+		name			"utilities"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
+		{
+			setCvar cl_bypassMouseInput "1"
+		}
+		onClose
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 192
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
+			decoration
+		}
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			0 -32 128 32
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			text			"Utilities"
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 20 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"1. Use Healthpack"
+			decoration
+		}
+		execKey "1" { scriptMenuResponse "1"; close utilities }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 36 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"2. Check Healthpacks"
+			decoration
+		}
+		execKey "2" { scriptMenuResponse "2"; close utilities }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 52 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"3. Check armor"
+			decoration
+		}
+		execKey "3" { scriptMenuResponse "3"; close utilities }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 68 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"4. Check Points"
+			decoration
+		}
+		execKey "4" { scriptMenuResponse "4"; close utilities }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 84 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"5. Check Damage+"
+			decoration
+		}
+		execKey "5" { scriptMenuResponse "5"; close utilities }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 100 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"6. Health info"
+			decoration
+		}
+		execKey "6" { scriptMenuResponse "6"; close utilities }
+
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 116 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"7. Ammoboxes"
+			decoration
+		}
+		execKey "7" { scriptMenuResponse "7"; close utilities }
+	
+		/*itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			10 132 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"@QUICKMESSAGE_8_SQUAD_REGROUP"
+			decoration
+		}
+		execKey "8" { scriptMenuResponse "8"; close quickcommands }
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			10 148 0 0
+			origin			ORIGIN_QUICKCOMMANDS
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			text			"@QUICKMESSAGE_ESC_EXIT"
+			decoration
+		}*/
+	}
+}

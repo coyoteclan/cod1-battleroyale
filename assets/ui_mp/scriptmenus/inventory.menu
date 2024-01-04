@@ -5,7 +5,7 @@
 {
 	menuDef
 	{
-		name			"utilities"
+		name			"inventory"
 		fullscreen		0
 		rect			0 0 640 480
 		focuscolor		1 1 1 1
@@ -48,7 +48,7 @@
 			border			1
 			bordercolor		1 1 1 1
 			type			ITEM_TYPE_TEXT
-			text			"Utilities"
+			text			"Inventory"
 			textfont		UI_FONT_NORMAL
 			textscale		.25
 			textalignx		10
@@ -69,7 +69,7 @@
 			text			"1. Use Healthpack"
 			decoration
 		}
-		execKey "1" { scriptMenuResponse "1"; close utilities }
+		execKey "1" { scriptMenuResponse "1"; close inventory }
 	
 		itemDef
 		{
@@ -81,12 +81,12 @@
 			forecolor		1 1 1 1
 			textfont		UI_FONT_NORMAL
 			textscale		.25
-			text			"2. Check Healthpacks"
+			text			"2. Place Ammobox"
 			decoration
 		}
-		execKey "2" { scriptMenuResponse "2"; close utilities }
+		execKey "2" { scriptMenuResponse "2"; close inventory }
 	
-		itemDef
+		/*itemDef
 		{
 			name			"window"
 			group			ingamebox
@@ -99,7 +99,7 @@
 			text			"3. Check armor"
 			decoration
 		}
-		execKey "3" { scriptMenuResponse "3"; close utilities }
+		execKey "3" { scriptMenuResponse "3"; close inventory }
 	
 		itemDef
 		{
@@ -114,7 +114,7 @@
 			text			"4. Check Points"
 			decoration
 		}
-		execKey "4" { scriptMenuResponse "4"; close utilities }
+		execKey "4" { scriptMenuResponse "4"; close inventory }
 	
 		itemDef
 		{
@@ -129,7 +129,7 @@
 			text			"5. Check Damage+"
 			decoration
 		}
-		execKey "5" { scriptMenuResponse "5"; close utilities }
+		execKey "5" { scriptMenuResponse "5"; close inventory }
 	
 		itemDef
 		{
@@ -144,7 +144,7 @@
 			text			"Health info"
 			decoration
 		}
-		execKey "6" { scriptMenuResponse "6"; close utilities }
+		execKey "6" { scriptMenuResponse "6"; close inventory }
 
 		itemDef
 		{
@@ -159,9 +159,9 @@
 			text			"Ammoboxes"
 			decoration
 		}
-		execKey "7" { scriptMenuResponse "7"; close utilities }
+		execKey "7" { scriptMenuResponse "7"; close inventory }
 	
-		/*itemDef
+		itemDef
 		{
 			name			"window"
 			group			ingamebox
