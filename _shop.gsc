@@ -233,7 +233,7 @@ throwHealth() {
 
 placeAmmobox() {
     if(self.ammobox > 0) {
-        self.ammoboxes = spawn(level.model_ammobox, self.origin);
+        abox = spawn(level.model_ammobox, self.origin);
         wait 0.5;
         //self thread giveAmmo();
     }
