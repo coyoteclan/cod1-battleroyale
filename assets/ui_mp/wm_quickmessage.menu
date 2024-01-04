@@ -125,7 +125,7 @@
 			text			"5. Info"
 			decoration
 		}
-		execKey "5" { close quickmessage; open info }
+		execKey "5" { close quickmessage; open utilities }
 		
 		itemDef
 		{

@@ -221,7 +221,7 @@ Callback_StartGameType()
     game["menu_quickcommands"] = "quickcommands";
     game["menu_quickstatements"] = "quickstatements";
     game["menu_quickresponses"] = "quickresponses";
-    game["menu_info"] = "info";
+    game["menu_info"] = "utilities";
     game["menu_shop"] = "shop";
     game["menu_inventory"] = "inventory";
     precacheMenu(game["menu_camouflage"]);
