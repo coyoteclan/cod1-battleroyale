@@ -238,6 +238,8 @@ placeAmmobox() {
         wait 0.5;
         self.ammobox -= 1;
         //self thread giveAmmo();
+        wait level.ammoboxDuration;
+        self.abox delete();
     }
     else
         self iprintln("You are ^1broke^7, you don't have any ammobox ^3:(");
