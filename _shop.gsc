@@ -25,8 +25,6 @@ init()
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
 
-    level.ammoboxes = [];
-
 }
 
 menuHandler(response) {
