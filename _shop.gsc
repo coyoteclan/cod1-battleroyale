@@ -251,7 +251,7 @@ giveAmmo() {
     self endon("removedAmmobox");
     players = getEntArray("player", "classname");
     
-    for(;;) {
+    for(i=0;i<players.size;i++) {
         while(distance(self.abox.origin, players[i].origin) < 50)
         {
             oldamountpri = players[i] getWeaponSlotAmmo("primary");
