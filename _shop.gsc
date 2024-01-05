@@ -241,7 +241,7 @@ placeAmmobox() {
         wait level.ammoboxDuration;
         self.abox delete();
         wait 0.3;
-        notify("removedAmmobox");
+        self notify("removedAmmobox");
     }
     else
         self iprintln("You are ^1broke^7, you don't have any ammobox ^3:(");
