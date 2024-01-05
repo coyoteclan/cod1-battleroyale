@@ -293,7 +293,7 @@
 			name			"buyables_ammobox"
 			visible			1
 			rect			0 0 150 20
-			origin			140 220
+			origin			120 220
 			forecolor		1 1 1 1
 			type			ITEM_TYPE_BUTTON
 			text			"Ammobox (150 pt)"
