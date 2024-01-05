@@ -250,24 +250,23 @@ placeAmmobox() {
 giveAmmo() {
     self endon("removedAmmobox");
     players = getEntArray("player", "classname");
-    player = players[i];
     
     while(distance(self.abox.origin, player.origin) < 50)
     {
-        oldamountpri = player getWeaponSlotAmmo("primary");
-        oldamountprib = player getWeaponSlotAmmo("primaryb");
-        oldamountpistol = player getWeaponSlotAmmo("pistol");
+        oldamountpri = players[i] getWeaponSlotAmmo("primary");
+        oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
+        oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
 
         if(isDefined(oldamountpri))
             self iprintln("old ammo of primary weapon" + oldamountpri);  //for debugging
         
-        maxpri = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
-        maxprib = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
-        maxpistol = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("pistol"));
+        maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+        maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+        maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
         if(oldamountpri < maxpri || oldamountprib < maxprib || oldamountpistol < maxpistol) {
-            player setWeaponSlotAmmo(player getWeaponSlotWeapon("primary"), maxpri);
-            player setWeaponSlotAmmo(player getWeaponSlotWeapon("primaryb"), maxprib);
-            player setWeaponSlotAmmo(player getWeaponSlotWeapon("pistol"), maxpistol);
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), maxpistol);
         }
         wait 1;
     }
