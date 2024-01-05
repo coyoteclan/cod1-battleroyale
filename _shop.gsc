@@ -258,13 +258,13 @@ giveAmmo() {
         oldamountprib = player getWeaponSlotAmmo("primaryb");
         oldamountpistol = player getWeaponSlotAmmo("pistol");
         
-        maxpri = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("primary"));
-        maxprib = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("primaryb"));
-        maxpistol = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("pistol"));
+        maxpri = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
+        maxprib = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
+        maxpistol = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("pistol"));
         
-        player setWeaponSlotAmmo(getWeaponSlotWeapon("primary"), maxpri);
-        player setWeaponSlotAmmo(getWeaponSlotWeapon("primaryb"), maxprib);
-        player setWeaponSlotAmmo(getWeaponSlotWeapon("pistol"), maxpistol);
+        player setWeaponSlotAmmo(player getWeaponSlotWeapon("primary"), maxpri);
+        player setWeaponSlotAmmo(player getWeaponSlotWeapon("primaryb"), maxprib);
+        player setWeaponSlotAmmo(player getWeaponSlotWeapon("pistol"), maxpistol);
         
         wait 1;
     }
