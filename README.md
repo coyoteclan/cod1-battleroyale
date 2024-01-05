@@ -29,3 +29,4 @@ ___
 - [vCoDMods](https://www.vcodmods.com/)
 - ***Base parachute model***: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
 - ***Shop*** from Cheese's [Zombies Mod](https://github.com/thecheeseman/zombies_v5_r13)
+- ***Ammobox*** functionality logic from both Cheese and kill3r.
