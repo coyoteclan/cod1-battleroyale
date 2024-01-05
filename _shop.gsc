@@ -237,7 +237,7 @@ placeAmmobox() {
         self.abox setModel(level.model_ammobox);
         wait 0.5;
         self.ammobox -= 1;
-        self thread giveAmmo();
+        self thread giveAmmo(self.abox);
         wait level.ammoboxDuration;
         self.abox delete();
         wait 0.3;
@@ -247,33 +247,53 @@ placeAmmobox() {
         self iprintln("You are ^1broke^7, you don't have any ammobox ^3:(");
 }
 
-giveAmmo() {
+giveAmmo(abox) {
     self endon("removedAmmobox");
-    players = getEntArray("player", "classname");
     
-    for(i=0;i<players.size;i++) {
-        while(distance(self.abox.origin, players[i].origin) < 50)
-        {
-            oldamountpri = players[i] getWeaponSlotAmmo("primary");
-            oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
-            oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
+    while(isAlive(self)) {
+        players = getEntArray("player", "classname");
 
-            if(isDefined(oldamountpri))
-                self iprintln("old ammo of primary weapon" + oldamountpri);  //for debugging
-            
-            maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-            maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-            maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
-            if(oldamountpri < maxpri || oldamountprib < maxprib || oldamountpistol < maxpistol) {
-                players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
-                players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
-                players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), maxpistol);
+        for(i=0;i < players.size;i++) {
+            if(distance(box.origin, players[i].origin) < 50) {
+                oldamountpri = players[i] getWeaponSlotAmmo("primary");
+                oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
+                oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
+
+                maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+                maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+                maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
+
+                if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
+                    continue;
+                
+                players[i] playlocalsound("weap_pickup");
+                self playlocalsound("weap_pickup");
+
+                if(oldamountpri < maxpri) {
+                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
+                }
+                if(oldamountprib < maxprib) {
+                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
+                }
+                if(oldamountpistol < maxpistol) {
+                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), pistol);
+                }
+                newamountpri = players[i] getWeaponSlotAmmo("primary");
+                newamountprib = players[i] getWeaponSlotAmmo("primaryb");
+                newamountpistol = players[i] getWeaponSlotAmmo("pistol");
+
+                ammogiven = (newamountpri - oldamountpri) + (newamountprib - oldamountprib) + (newamountpistol - oldamountpistol);
+                if(players[i] != self) {
+                    if(ammogiven > 0) {
+                        self iprintln(players[i].name + "got " + ammogiven + " ammo from your ammobox");
+                    }
+                }
             }
-            wait 0.5;
         }
-        wait 0.5;
     }
 }
+
+
 
 AliveTimeReward() {
     while(isPlayer(self) && isAlive(self))
