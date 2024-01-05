@@ -257,15 +257,18 @@ giveAmmo() {
         oldamountpri = player getWeaponSlotAmmo("primary");
         oldamountprib = player getWeaponSlotAmmo("primaryb");
         oldamountpistol = player getWeaponSlotAmmo("pistol");
+
+        if(isDefined(oldamountpri))
+            self iprintln("old ammo of primary weapon" + oldamountpri);  //for debugging
         
         maxpri = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
         maxprib = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("primaryb"));
         maxpistol = player getWeaponMaxWeaponAmmo(player getweaponslotweapon("pistol"));
-        
-        player setWeaponSlotAmmo(player getWeaponSlotWeapon("primary"), maxpri);
-        player setWeaponSlotAmmo(player getWeaponSlotWeapon("primaryb"), maxprib);
-        player setWeaponSlotAmmo(player getWeaponSlotWeapon("pistol"), maxpistol);
-        
+        if(oldamountpri < maxpri || oldamountprib < maxprib || oldamountpistol < maxpistol) {
+            player setWeaponSlotAmmo(player getWeaponSlotWeapon("primary"), maxpri);
+            player setWeaponSlotAmmo(player getWeaponSlotWeapon("primaryb"), maxprib);
+            player setWeaponSlotAmmo(player getWeaponSlotWeapon("pistol"), maxpistol);
+        }
         wait 1;
     }
 }
