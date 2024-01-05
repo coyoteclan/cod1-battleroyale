@@ -240,13 +240,34 @@ placeAmmobox() {
         //self thread giveAmmo();
         wait level.ammoboxDuration;
         self.abox delete();
+        wait 0.3;
+        notify("removedAmmobox");
     }
     else
         self iprintln("You are ^1broke^7, you don't have any ammobox ^3:(");
 }
 
 giveAmmo() {
+    self endon("removedAmmobox");
+    players = getEntArray("player", "classname");
+    player = players[i];
     
+    while(distance(self.abox.origin, player.origin) < 50)
+    {
+        oldamountpri = player getWeaponSlotAmmo("primary");
+        oldamountprib = player getWeaponSlotAmmo("primaryb");
+        oldamountpistol = player getWeaponSlotAmmo("pistol");
+        
+        maxpri = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("primary"));
+        maxprib = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("primaryb"));
+        maxpistol = player getWeaponMaxWeaponAmmo(player getWeaponSlotWeapon("pistol"));
+        
+        player setWeaponSlotAmmo(getWeaponSlotWeapon("primary"), maxpri);
+        player setWeaponSlotAmmo(getWeaponSlotWeapon("primaryb"), maxprib);
+        player setWeaponSlotAmmo(getWeaponSlotWeapon("pistol"), maxpistol);
+        
+        wait 1;
+    }
 }
 
 AliveTimeReward() {
@@ -256,4 +277,65 @@ AliveTimeReward() {
         self.points += level.alivepoints;
         wait 0.5;
     }
+}
+
+getWeaponMaxWeaponAmmo( weapon )
+{
+	switch ( weapon )
+	{
+		case "kar98k_mp": 
+		case "kar98k_sniper_mp": 
+		case "springfield_mp": 
+		case "mp40_mp": 
+			return 192; break;
+		case "mp44_mp": 
+		case "thompson_mp": 
+			return 180; break;
+		case "m1garand_mp": 
+			return 96; break;
+		case "m1carbine_mp": 
+			return 180; break;
+		case "bar_mp": 
+			return 120; break;
+		case "luger_mp": 
+			return 32; break;
+		case "mosin_nagant_mp":
+			return 250; break;
+		case "ppsh_mp":
+			return 756; break;
+		case "mosin_nagant_sniper_mp":
+			return 150; break;
+		default: 
+			return 0; break;
+	}
+}
+
+getWeaponMaxClipAmmo( weapon )
+{
+	switch ( weapon )
+	{
+		case "kar98k_mp": 
+		case "kar98k_sniper_mp": 
+		case "springfield_mp": 
+		case "mosin_nagant_mp":
+			return 5; break;
+		case "mp40_mp": 
+			return 32; break;
+		case "mp44_mp": 
+		case "thompson_mp": 
+			return 30; break;
+		case "m1garand_mp": 
+		case "luger_mp": 
+			return 8; break;
+		case "m1carbine_mp": 
+			return 15; break;
+		case "bar_mp": 
+			return 20; break;
+		case "ppsh_mp":
+			return 63; break;
+		case "mosin_nagant_sniper_mp":
+			return 5; break;
+		default:
+			return 0; break;
+	}
 }
