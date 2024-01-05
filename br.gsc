@@ -67,6 +67,11 @@ main()
     if(getCvarInt("br_killcamDuration")) {
         level.killcamDuration = getCvarInt("br_killcamDuration");
     }
+    
+    level.ammoboxDuration = 30;
+    if(getCvarInt("br_ammoboxDuration")) {
+        level.ammoboxDuration = getCvarInt("br_ammoboxDuration");
+    }
 
     //Reward Points
     level.points_headshot = 200;
