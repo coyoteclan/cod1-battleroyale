@@ -231,16 +231,16 @@ throwHealth() {
 
 placeAmmobox() {
     if(self.ammobox > 0) {
-        if(isDefined(self.abox))
-            self.abox delete();
-        self.abox = spawn("script_model", self.origin + (0, 30, 0));
-        self.abox setModel(level.model_ammobox);
+        //if(isDefined(self.abox))
+            //self.abox delete();
+        abox = spawn("script_model", self.origin + (0, 30, 0));
+        abox setModel(level.model_ammobox);
         wait 0.5;
         self.ammobox -= 1;
-        self thread giveAmmo(self.abox);
-        self.abox thread emitBluelight();
+        self thread giveAmmo(abox);
+        abox thread emitBluelight();
         wait level.ammoboxDuration;
-        self.abox delete();
+        abox delete();
         wait 0.3;
         self notify("removedAmmobox");
     }
@@ -273,8 +273,8 @@ getAmmo(abox) {
         maxprib = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
         maxpistol = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("pistol"));
 
-        if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
-            continue;
+        //if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
+            //continue;
         
         //players[i] playlocalsound("weap_pickup");
         self playlocalsound("weap_pickup");
