@@ -1736,6 +1736,7 @@ showDamageFeedback()
 
     self.hitBlip fadeOverTime(1);
     self.hitBlip.alpha = 0;
+    self playlocalsound("MP_Hit_Indication");
 
     wait 0.30;
     if(isDefined(self.hitBlip))
