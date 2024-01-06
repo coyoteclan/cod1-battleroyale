@@ -112,7 +112,18 @@ main()
     level.camouflages[2] = "german";
     level.camouflages[3] = "russian";
 
-    zoneOriginStart = (1190, -1060, -520); //~center of map (zh_frenzy)
+    mapcenterX = -446;
+    mapcenterY = 272;
+    mapcenterZ = -1092;
+    
+    if(getCvarInt("br_mapcenterx"))
+        mapcenterX = getCvarInt("br_mapcenterx");
+    if(getCvarInt("br_mapcentery"))
+        mapcenterY = getCvarInt("br_mapcentery");
+    if(getCvarInt("br_mapcenterz"))
+        mapcenterZ = getCvarInt("br_mapcenterz");
+    
+    zoneOriginStart = (mapcenterX, mapcenterY, mapcenterZ); //~center of map (zh_frenzy)
     level.zone = spawn("script_model", zoneOriginStart);
     level.zone.angles = (270, 0, 0); //DEPENDS ON MODELS TAG
     level.zone.modelTag = "bip01 spine2";
@@ -866,7 +877,7 @@ startBattle()
     thread updateNumLivingPlayers();
 
     //using map zh_frenzy
-    originPlane = (2050, -18000, 8070);
+    originPlane = (5256, 118, 4742);
     anglesPlane = (0, 90, 0);
     level.plane = spawn("script_model", originPlane);
     level.plane setModel(level.model_plane);
