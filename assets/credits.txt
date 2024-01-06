@@ -3,3 +3,6 @@ Base parachute model: [Parachute - Low Poly](https://skfb.ly/ootAq) by calebcram
 
 Shop from Cheese's Zombie mod:
 https://github.com/thecheeseman/zombies_v5_r13
+
+Ammobox functionality logic from both Cheese and Kill3r
+Blue light fx from BraXi's Zombie mod
