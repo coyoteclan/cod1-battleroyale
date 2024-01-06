@@ -263,39 +263,29 @@ giveAmmo(abox) {
 
 getAmmo(abox) {
     self endon("removedAmmobox");
-    while(distance(abox.origin, players[i].origin) < 50) {
-        oldamountpri = players[i] getWeaponSlotAmmo("primary");
-        oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
-        oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
+    while(distance(abox.origin, self.origin) < 50) {
+        oldamountpri = self getWeaponSlotAmmo("primary");
+        oldamountprib = self getWeaponSlotAmmo("primaryb");
+        oldamountpistol = self getWeaponSlotAmmo("pistol");
 
-        maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-        maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-        maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
+        maxpri = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
+        maxprib = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
+        maxpistol = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("pistol"));
 
         if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
             continue;
         
-        players[i] playlocalsound("weap_pickup");
+        //players[i] playlocalsound("weap_pickup");
         self playlocalsound("weap_pickup");
 
         if(oldamountpri < maxpri) {
-            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
+            self setWeaponSlotAmmo(self getWeaponSlotWeapon("primary"), maxpri);
         }
         if(oldamountprib < maxprib) {
-            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
+            self setWeaponSlotAmmo(self getWeaponSlotWeapon("primaryb"), maxprib);
         }
         if(oldamountpistol < maxpistol) {
-            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), pistol);
-        }
-        newamountpri = players[i] getWeaponSlotAmmo("primary");
-        newamountprib = players[i] getWeaponSlotAmmo("primaryb");
-        newamountpistol = players[i] getWeaponSlotAmmo("pistol");
-
-        ammogiven = (newamountpri - oldamountpri) + (newamountprib - oldamountprib) + (newamountpistol - oldamountpistol);
-        if(players[i] != self) {
-            if(ammogiven > 0) {
-                self iprintln(players[i].name + "got " + ammogiven + " ammo from your ammobox");
-            }
+            self setWeaponSlotAmmo(self getWeaponSlotWeapon("pistol"), pistol);
         }
         wait 0.5;
     }
