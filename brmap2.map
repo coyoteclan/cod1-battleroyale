@@ -2,57 +2,57 @@
 "classname" "worldspawn"
 // brush 0
 {
-( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9132 7270 ) ( -8048 8076 7270 ) ( 7704 8076 7270 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8046 -9132 6298 ) ( -8046 8076 6298 ) ( -8046 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -7492 8076 -1978 ) ( 8260 8076 -1978 ) ( -7492 -9132 -1978 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 1
 {
-( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9132 7270 ) ( -8048 8076 7270 ) ( 7704 8076 7270 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -7564 11126 6020 ) ( 8188 11126 6020 ) ( -7564 11126 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -6562 8076 10190 ) ( 9190 8076 10190 ) ( -6562 -9132 10190 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9616 6298 ) ( -8048 -9616 6298 ) ( 7704 -9616 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 2
 {
-( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9132 7270 ) ( -8048 8076 7270 ) ( 7704 8076 7270 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -6562 8076 10190 ) ( 9190 8076 10190 ) ( -6562 -9132 10190 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
 ( 7702 8076 6298 ) ( 7702 -9132 6298 ) ( 7702 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 3
 {
-( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9132 7270 ) ( -8048 8076 7270 ) ( 7704 8076 7270 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9616 6298 ) ( -8048 -9616 6298 ) ( 7704 -9616 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -6562 8076 10190 ) ( 9190 8076 10190 ) ( -6562 -9132 10190 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -7564 11126 6020 ) ( 8188 11126 6020 ) ( -7564 11126 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 4
 {
-( -8048 -9132 7270 ) ( -8048 8076 7270 ) ( 7704 8076 7270 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 7268 ) ( -8048 -9132 7268 ) ( 7704 8076 7268 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -6562 8076 10190 ) ( 9190 8076 10190 ) ( -6562 -9132 10190 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8046 -9132 6298 ) ( -8046 8076 6298 ) ( -8046 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 5
 {
-( 8260 8076 -1980 ) ( -7492 8076 -1980 ) ( -7492 -9132 -1980 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
-( -7492 8076 -1978 ) ( 8260 8076 -1978 ) ( -7492 -9132 -1978 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
+( -6562 8076 10190 ) ( 9190 8076 10190 ) ( -6562 -9132 10190 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 8076 6298 ) ( -8048 -9132 6298 ) ( -8048 -9132 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 8188 11128 6020 ) ( -7564 11128 6020 ) ( -7564 11128 5792 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 7704 -9132 6298 ) ( 7704 8076 6298 ) ( 7704 8076 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( -8048 -9618 6298 ) ( 7704 -9618 6298 ) ( 7704 -9618 6070 ) common/caulk 0 0 0 0.25 0.25 0 0 0 0
+( 9190 8076 10188 ) ( -6562 8076 10188 ) ( -6562 -9132 10188 ) sky/mp_harbor 0 0 0 0.25 0.25 0 0 0 0
 }
 // brush 6
 {
@@ -8991,8 +8991,8 @@
 }
 // entity 1
 {
-"targetname" "practicetarget"
 "classname" "script_brushmodel"
+"targetname" "practicetarget"
 // brush 0
 {
 ( -187 185 258 ) ( -187 185 310 ) ( -187 183 310 ) _development/testtarget 0 0 0 0.35 0.25 0 0 0 0
@@ -9005,8 +9005,8 @@
 }
 // entity 2
 {
-"targetname" "practicetarget2"
 "classname" "script_brushmodel"
+"targetname" "practicetarget2"
 // brush 0
 {
 ( -586 398 258 ) ( -638 398 258 ) ( -638 396 258 ) common/caulk 40 0 0 0.25 0.25 0 0 0 0
@@ -9151,557 +9151,557 @@
 }
 // entity 9
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "220 188 520"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 10
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-1360 -808 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 11
 {
-"origin" "-1072 1748 258"
-"model" "xmodel/desk_rolltop"
 "classname" "script_model"
+"model" "xmodel/desk_rolltop"
+"origin" "-1072 1748 258"
 }
 // entity 12
 {
-"origin" "-2530 738 136"
-"export" "4"
-"model" "xmodel/Airborne"
 "classname" "actor_ally_airborne_springfield_82nd"
+"model" "xmodel/Airborne"
+"export" "4"
+"origin" "-2530 738 136"
 }
 // entity 13
 {
-"classname" "script_model"
-"model" "xmodel/sandbags_short"
-"angles" "0 90 0"
 "origin" "-2603 -328 258"
+"angles" "0 90 0"
+"model" "xmodel/sandbags_short"
+"classname" "script_model"
 }
 // entity 14
 {
-"classname" "script_model"
-"model" "xmodel/sandbags_corner"
-"angles" "0 180 0"
 "origin" "-2521 -348 258"
+"angles" "0 180 0"
+"model" "xmodel/sandbags_corner"
+"classname" "script_model"
 }
 // entity 15
 {
-"origin" "-908 1523 264"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "-908 1523 264"
 }
 // entity 16
 {
-"origin" "530 -520 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "530 -520 264"
 }
 // entity 17
 {
-"origin" "-441 217 978"
 "classname" "mp_deathmatch_intermission"
+"origin" "-441 217 978"
 }
 // entity 18
 {
-"origin" "-375 308 978"
 "classname" "mp_teamdeathmatch_intermission"
+"origin" "-375 308 978"
 }
 // entity 19
 {
-"origin" "-351 -749 265"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "-351 -749 265"
 }
 // entity 20
 {
-"classname" "mpweapon_panzerfaust"
-"model" "xmodel/weapon_panzerfaust_ammo"
 "origin" "219 1385 310"
+"model" "xmodel/weapon_panzerfaust_ammo"
+"classname" "mpweapon_panzerfaust"
 }
 // entity 21
 {
-"classname" "misc_model"
-"model" "xmodel/crate_champagne1"
 "origin" "-1016 -720 300"
+"model" "xmodel/crate_champagne1"
+"classname" "misc_model"
 }
 // entity 22
 {
-"classname" "misc_model"
-"model" "xmodel/barrel_green2snowy"
 "origin" "-1008 -720 256"
+"model" "xmodel/barrel_green2snowy"
+"classname" "misc_model"
 }
 // entity 23
 {
-"origin" "-580 -604 255"
-"angles" "0 270 0"
-"model" "xmodel/sandbags_corner_winter"
 "classname" "misc_model"
+"model" "xmodel/sandbags_corner_winter"
+"angles" "0 270 0"
+"origin" "-580 -604 255"
 }
 // entity 24
 {
-"origin" "-582 1248 256"
-"model" "xmodel/sandbags_corner_winter"
 "classname" "misc_model"
+"model" "xmodel/sandbags_corner_winter"
+"origin" "-582 1248 256"
 }
 // entity 25
 {
-"origin" "-978 -720 256"
-"model" "xmodel/barrel_green2snowy"
 "classname" "misc_model"
+"model" "xmodel/barrel_green2snowy"
+"origin" "-978 -720 256"
 }
 // entity 26
 {
-"origin" "632 1584 300"
-"model" "xmodel/crate_champagne1"
 "classname" "misc_model"
+"model" "xmodel/crate_champagne1"
+"origin" "632 1584 300"
 }
 // entity 27
 {
-"origin" "594 1584 256"
-"model" "xmodel/barrel_green2snowy"
 "classname" "misc_model"
+"model" "xmodel/barrel_green2snowy"
+"origin" "594 1584 256"
 }
 // entity 28
 {
-"classname" "misc_model"
-"model" "xmodel/barrel_green2snowy"
 "origin" "624 1584 256"
+"model" "xmodel/barrel_green2snowy"
+"classname" "misc_model"
 }
 // entity 29
 {
-"classname" "mp_searchanddestroy_spawn_axis"
-"model" "xmodel/wehrmacht_soldier"
-"angles" "0 180 0"
 "origin" "504 1456 264"
+"angles" "0 180 0"
+"model" "xmodel/wehrmacht_soldier"
+"classname" "mp_searchanddestroy_spawn_axis"
 }
 // entity 30
 {
-"origin" "504 1392 264"
-"angles" "0 180 0"
-"model" "xmodel/wehrmacht_soldier"
 "classname" "mp_searchanddestroy_spawn_axis"
+"model" "xmodel/wehrmacht_soldier"
+"angles" "0 180 0"
+"origin" "504 1392 264"
 }
 // entity 31
 {
-"angles" "0 165 0"
-"classname" "mp_searchanddestroy_intermission"
 "origin" "-423 263 978"
+"classname" "mp_searchanddestroy_intermission"
+"angles" "0 165 0"
 }
 // entity 32
 {
-"classname" "misc_model"
-"model" "xmodel/crate_misc1"
 "origin" "280 -793 256"
+"model" "xmodel/crate_misc1"
+"classname" "misc_model"
 }
 // entity 33
 {
-"origin" "309 -793 256"
-"model" "xmodel/crate_misc1"
 "classname" "misc_model"
+"model" "xmodel/crate_misc1"
+"origin" "309 -793 256"
 }
 // entity 34
 {
-"angles" "0 270 0"
-"origin" "295 -831 256"
-"model" "xmodel/crate_misc1"
 "classname" "misc_model"
+"model" "xmodel/crate_misc1"
+"origin" "295 -831 256"
+"angles" "0 270 0"
 }
 // entity 35
 {
-"angles" "0 293 0"
-"origin" "290 -783 283"
-"model" "xmodel/crate_misc1"
 "classname" "misc_model"
+"model" "xmodel/crate_misc1"
+"origin" "290 -783 283"
+"angles" "0 293 0"
 }
 // entity 36
 {
-"origin" "208 1416 256"
-"model" "xmodel/crate_misc1"
 "classname" "misc_model"
+"model" "xmodel/crate_misc1"
+"origin" "208 1416 256"
 }
 // entity 37
 {
-"classname" "misc_model"
-"model" "xmodel/crate_misc1"
 "origin" "236 1416 256"
+"model" "xmodel/crate_misc1"
+"classname" "misc_model"
 }
 // entity 38
 {
-"classname" "misc_model"
-"model" "xmodel/crate_misc1"
-"origin" "221 1377 256"
 "angles" "0 270 0"
+"origin" "221 1377 256"
+"model" "xmodel/crate_misc1"
+"classname" "misc_model"
 }
 // entity 39
 {
-"classname" "misc_model"
-"model" "xmodel/crate_misc1"
-"origin" "217 1385 283"
 "angles" "0 250 0"
+"origin" "217 1385 283"
+"model" "xmodel/crate_misc1"
+"classname" "misc_model"
 }
 // entity 40
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "-451 -879 265"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 41
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "60 -766 265"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 42
 {
-"origin" "-40 -896 265"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "-40 -896 265"
 }
 // entity 43
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "-876 -754 265"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 44
 {
-"origin" "-976 -884 265"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "-976 -884 265"
 }
 // entity 45
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "526 -733 265"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 46
 {
-"origin" "426 -863 265"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "426 -863 265"
 }
 // entity 47
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-972 -542 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 48
 {
-"origin" "-978 -782 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-978 -782 264"
 }
 // entity 49
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "606 -730 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 50
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-983 1449 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 51
 {
-"origin" "601 1501 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "601 1501 264"
 }
 // entity 52
 {
-"origin" "-975 1140 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-975 1140 264"
 }
 // entity 53
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "609 1192 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 54
 {
-"origin" "-921 309 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-921 309 264"
 }
 // entity 55
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "663 361 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 56
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "-804 1564 264"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 57
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "-424 1380 264"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 58
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "65 1386 264"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 59
 {
-"classname" "mp_teamdeathmatch_spawn"
 "origin" "602 1455 264"
+"classname" "mp_teamdeathmatch_spawn"
 }
 // entity 60
 {
-"origin" "444 1382 264"
 "classname" "mp_teamdeathmatch_spawn"
+"origin" "444 1382 264"
 }
 // entity 61
 {
-"origin" "-2557 74 258"
-"angles" "0 270 0"
-"model" "xmodel/sandbags_short"
 "classname" "script_model"
+"model" "xmodel/sandbags_short"
+"angles" "0 270 0"
+"origin" "-2557 74 258"
 }
 // entity 62
 {
-"origin" "-2639 94 258"
-"angles" "0 2.50448e-006 0"
-"model" "xmodel/sandbags_corner"
 "classname" "script_model"
+"model" "xmodel/sandbags_corner"
+"angles" "0 2.50448e-006 0"
+"origin" "-2639 94 258"
 }
 // entity 63
 {
-"origin" "-2509 1592 258"
-"angles" "0 270 0"
-"model" "xmodel/sandbags_short"
 "classname" "script_model"
+"model" "xmodel/sandbags_short"
+"angles" "0 270 0"
+"origin" "-2509 1592 258"
 }
 // entity 64
 {
-"origin" "-2591 1612 258"
-"angles" "0 2.50448e-006 0"
-"model" "xmodel/sandbags_corner"
 "classname" "script_model"
+"model" "xmodel/sandbags_corner"
+"angles" "0 2.50448e-006 0"
+"origin" "-2591 1612 258"
 }
 // entity 65
 {
-"classname" "misc_model"
-"model" "xmodel/barrel_benzin"
 "origin" "-856 1700 258"
+"model" "xmodel/barrel_benzin"
+"classname" "misc_model"
 }
 // entity 66
 {
-"origin" "-1306 -464 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-1306 -464 264"
 }
 // entity 67
 {
-"origin" "-2002 -532 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-2002 -532 264"
 }
 // entity 68
 {
-"origin" "-1778 172 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-1778 172 264"
 }
 // entity 69
 {
-"origin" "-2246 -1098 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-2246 -1098 264"
 }
 // entity 70
 {
-"origin" "-2278 280 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-2278 280 264"
 }
 // entity 71
 {
-"origin" "-1298 482 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-1298 482 264"
 }
 // entity 72
 {
-"origin" "-1728 880 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "-1728 880 264"
 }
 // entity 73
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-1432 1356 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 74
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-434 946 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 75
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-624 1740 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 76
 {
-"origin" "204 2040 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "204 2040 264"
 }
 // entity 77
 {
-"origin" "834 1638 264"
 "classname" "mp_deathmatch_spawn"
+"origin" "834 1638 264"
 }
 // entity 78
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "1032 1958 264"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 79
 {
-"origin" "426 744 520"
 "classname" "mp_deathmatch_spawn"
+"origin" "426 744 520"
 }
 // entity 80
 {
-"origin" "514 -128 520"
 "classname" "mp_deathmatch_spawn"
+"origin" "514 -128 520"
 }
 // entity 81
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "-876 -1270 278"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 82
 {
-"origin" "-516 -1188 278"
 "classname" "mp_deathmatch_spawn"
+"origin" "-516 -1188 278"
 }
 // entity 83
 {
-"classname" "mp_deathmatch_spawn"
 "origin" "448 -1102 278"
+"classname" "mp_deathmatch_spawn"
 }
 // entity 84
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-3593 2866 258"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 85
 {
-"origin" "-2611 2383 255"
-"model" "xmodel/tree_shortspruce_winter"
 "classname" "misc_model"
+"model" "xmodel/tree_shortspruce_winter"
+"origin" "-2611 2383 255"
 }
 // entity 86
 {
-"origin" "-2639 1999 257"
-"model" "xmodel/tree_shortspruce_winter"
 "classname" "misc_model"
+"model" "xmodel/tree_shortspruce_winter"
+"origin" "-2639 1999 257"
 }
 // entity 87
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-1967 2005 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 88
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-1357 1902 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 89
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-460 2023 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 90
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "679 1961 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 91
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "1670 1808 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 92
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "855 1543 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 93
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "1977 1427 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 94
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "1967 2200 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 95
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "875 665 268"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 96
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-2863 1498 236"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 97
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-2869 806 238"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 98
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-2871 -90 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 99
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-2861 -1031 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 100
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-2363 -1449 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 101
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-1379 -1431 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 102
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-648 -1463 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 103
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "445 -1410 274"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 104
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "762 -1151 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 105
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "1583 -1627 257"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }
 // entity 106
 {
-"classname" "misc_model"
-"model" "xmodel/tree_shortspruce_winter"
 "origin" "-204 -2249 233"
+"model" "xmodel/tree_shortspruce_winter"
+"classname" "misc_model"
 }

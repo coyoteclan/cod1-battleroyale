@@ -877,7 +877,7 @@ startBattle()
     thread updateNumLivingPlayers();
 
     //using map zh_frenzy
-    originPlane = (-1160, -5346, 6333);
+    originPlane = (-1160, -5346, 8000);
     anglesPlane = (0, 90, 0);
     level.plane = spawn("script_model", originPlane);
     level.plane setModel(level.model_plane);
