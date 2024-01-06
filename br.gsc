@@ -116,12 +116,12 @@ main()
     mapcenterY = 272;
     mapcenterZ = -1092;
     
-    if(getCvarInt("br_mapcenterx"))
+    /*if(getCvarInt("br_mapcenterx"))
         mapcenterX = getCvarInt("br_mapcenterx");
     if(getCvarInt("br_mapcentery"))
         mapcenterY = getCvarInt("br_mapcentery");
     if(getCvarInt("br_mapcenterz"))
-        mapcenterZ = getCvarInt("br_mapcenterz");
+        mapcenterZ = getCvarInt("br_mapcenterz");*/
     
     zoneOriginStart = (mapcenterX, mapcenterY, mapcenterZ); //~center of map (zh_frenzy)
     level.zone = spawn("script_model", zoneOriginStart);
