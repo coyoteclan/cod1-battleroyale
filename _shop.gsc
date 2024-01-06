@@ -238,6 +238,7 @@ placeAmmobox() {
         wait 0.5;
         self.ammobox -= 1;
         self thread giveAmmo(self.abox);
+        self.abox thread emitBluelight();
         wait level.ammoboxDuration;
         self.abox delete();
         wait 0.3;
@@ -293,6 +294,15 @@ giveAmmo(abox) {
     }
 }
 
+emitBluelight()
+{
+    while(1)
+    {
+        playFx(level.effect["blue_light"], self.origin);
+        
+        wait 0.1;
+    }
+}
 
 
 AliveTimeReward() {
