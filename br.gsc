@@ -112,9 +112,9 @@ main()
     level.camouflages[2] = "german";
     level.camouflages[3] = "russian";
 
-    mapcenterX = -446;
-    mapcenterY = 272;
-    mapcenterZ = -1092;
+    //mapcenterX = -446;
+    //mapcenterY = 272;
+    //mapcenterZ = -1092;
     
     /*if(getCvarInt("br_mapcenterx"))
         mapcenterX = getCvarInt("br_mapcenterx");
@@ -123,7 +123,7 @@ main()
     if(getCvarInt("br_mapcenterz"))
         mapcenterZ = getCvarInt("br_mapcenterz");*/
     
-    zoneOriginStart = (mapcenterX, mapcenterY, mapcenterZ); //~center of map (zh_frenzy)
+    zoneOriginStart = (-446, 272, -1092); //~center of map (zh_frenzy)
     level.zone = spawn("script_model", zoneOriginStart);
     level.zone.angles = (270, 0, 0); //DEPENDS ON MODELS TAG
     level.zone.modelTag = "bip01 spine2";
