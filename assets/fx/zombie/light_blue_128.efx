@@ -4,15 +4,15 @@ Light
 
 	rgb
 	{
-		start			0 0 1
-		end			0 0 1
+		start			0 0 0.66
+		end			0 0 0.66
 		flags			linear
 	}
 
 	size
 	{
-		start			256
-		end			256
-		flags		linear
+		start			300
+		end			300
+		flags			linear
 	}
 }
