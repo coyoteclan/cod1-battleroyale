@@ -112,18 +112,18 @@ main()
     level.camouflages[2] = "german";
     level.camouflages[3] = "russian";
 
-    //mapcenterX = -446;
-    //mapcenterY = 272;
-    //mapcenterZ = -1092;
+    mapcenterX = -446;
+    mapcenterY = 272;
+    mapcenterZ = -1816;
     
-    /*if(getCvarInt("br_mapcenterx"))
+    if(getCvarInt("br_mapcenterx"))
         mapcenterX = getCvarInt("br_mapcenterx");
     if(getCvarInt("br_mapcentery"))
         mapcenterY = getCvarInt("br_mapcentery");
     if(getCvarInt("br_mapcenterz"))
-        mapcenterZ = getCvarInt("br_mapcenterz");*/
+        mapcenterZ = getCvarInt("br_mapcenterz");
     
-    zoneOriginStart = (-446, 272, -1092); //~center of map (zh_frenzy)
+    zoneOriginStart = (mapcenterX, mapcenterY, mapcenterZ); //~center of map (brmap2)
     level.zone = spawn("script_model", zoneOriginStart);
     level.zone.angles = (270, 0, 0); //DEPENDS ON MODELS TAG
     level.zone.modelTag = "bip01 spine2";
@@ -877,8 +877,8 @@ startBattle()
     thread updateNumLivingPlayers();
 
     //using map zh_frenzy
-    originPlane = (5256, 118, 4742);
-    anglesPlane = (90, 0, 0);
+    originPlane = (-1160, -5346, 6333);
+    anglesPlane = (0, 90, 0);
     level.plane = spawn("script_model", originPlane);
     level.plane setModel(level.model_plane);
     level.plane.angles = anglesPlane;
@@ -892,8 +892,8 @@ startBattle()
         level.plane.angles[1],
         level.plane.angles[2]);
 
-    moveDistance = -9000;
-    moveDelay = 22;
+    moveDistance = 9500;
+    moveDelay = 15;
     level.planePov = spawn("script_origin", originPlanePov);
 
     //MAKE PLAYERS TO FOLLOW THE PLANE
@@ -919,9 +919,9 @@ startBattle()
         player thread checkPlayerInZone();
         player thread checkPlayerJumped();
     }
-    level.plane moveX(moveDistance, moveDelay);  //for brmap2
+    level.plane moveY(moveDistance, moveDelay);  //for brmap2
     level.plane playLoopSound("in_plane");
-    level.planePov moveX(moveDistance, moveDelay);
+    level.planePov moveY(moveDistance, moveDelay);
 
     wait moveDelay;
     for(i = 0; i < players.size; i++)
