@@ -878,7 +878,7 @@ startBattle()
 
     //using map zh_frenzy
     originPlane = (5256, 118, 4742);
-    anglesPlane = (0, 90, 0);
+    anglesPlane = (90, 0, 0);
     level.plane = spawn("script_model", originPlane);
     level.plane setModel(level.model_plane);
     level.plane.angles = anglesPlane;
@@ -919,7 +919,7 @@ startBattle()
         player thread checkPlayerInZone();
         player thread checkPlayerJumped();
     }
-    level.plane moveY(moveDistance, moveDelay);
+    level.plane moveX(moveDistance, moveDelay);  //for brmap2
     level.plane playLoopSound("in_plane");
     level.planePov moveY(moveDistance, moveDelay);
 
