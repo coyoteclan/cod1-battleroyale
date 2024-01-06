@@ -892,7 +892,7 @@ startBattle()
         level.plane.angles[1],
         level.plane.angles[2]);
 
-    moveDistance = 30000;
+    moveDistance = -9000;
     moveDelay = 22;
     level.planePov = spawn("script_origin", originPlanePov);
 
@@ -921,7 +921,7 @@ startBattle()
     }
     level.plane moveX(moveDistance, moveDelay);  //for brmap2
     level.plane playLoopSound("in_plane");
-    level.planePov moveY(moveDistance, moveDelay);
+    level.planePov moveX(moveDistance, moveDelay);
 
     wait moveDelay;
     for(i = 0; i < players.size; i++)
