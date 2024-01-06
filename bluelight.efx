@@ -1,0 +1,18 @@
+Light
+{
+	life				1000
+
+	rgb
+	{
+		start			0 0 0.66
+		end			0 0 0.66
+		flags			linear
+	}
+
+	size
+	{
+		start			300
+		end			300
+		flags			linear
+	}
+}
