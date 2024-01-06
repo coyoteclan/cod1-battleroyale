@@ -104,7 +104,6 @@ main()
     level.model_plane = "xmodel/c47";
     level.model_parachute = "xmodel/br_parachute2"; //This parachute looks better :)
     level.model_ammobox = "xmodel/crate_misc_green2";
-    level.effect["blue_light"] = loadfx("fx/zombie/light_blue_128.efx");
 
     level.camouflages = [];
     level.camouflages[0] = "american";
@@ -128,6 +127,9 @@ main()
     level.zone.angles = (270, 0, 0); //DEPENDS ON MODELS TAG
     level.zone.modelTag = "bip01 spine2";
     level.zone.objnum = 0;
+    //Effects
+    level.effect = [];
+    level.effect["light_blue"] = loadFx("fx/zombie/bluelight.efx");
 
     level.zone.modes = [];
 
