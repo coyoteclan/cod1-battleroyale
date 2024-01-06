@@ -269,7 +269,7 @@ getAmmo(abox) {
         oldamountprib = self getWeaponSlotAmmo("primaryb");
         oldamountpistol = self getWeaponSlotAmmo("pistol");
 
-        maxpri = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
+        maxpri = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primary"));
         maxprib = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
         maxpistol = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("pistol"));
 
@@ -334,6 +334,8 @@ getWeaponMaxWeaponAmmo( weapon )
 			return 120; break;
 		case "luger_mp": 
 			return 32; break;
+        case "colt_mp":
+            return 40; break;
 		case "mosin_nagant_mp":
 			return 250; break;
 		case "ppsh_mp":
