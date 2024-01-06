@@ -255,7 +255,7 @@ giveAmmo(abox) {
         players = getEntArray("player", "classname");
 
         for(i=0;i < players.size;i++) {
-            players[i] thread getAmmo(abox)
+            players[i] thread getAmmo(abox);
             wait 0.5;
         }
     }
