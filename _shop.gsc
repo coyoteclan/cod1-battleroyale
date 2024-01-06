@@ -297,7 +297,9 @@ emitBluelight()
 {
     while(1)
     {
-        playFx(level.effect["blue_light"], self.origin);
+        if(!isDefined(level.effect["blue_light"]))
+            break;
+        playFx(level.effect["blue_light"], self.origin + (0,0,38));
         iPrintLn("emitting blue light");
         
         wait 0.1;
