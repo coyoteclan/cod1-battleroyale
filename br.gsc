@@ -919,7 +919,7 @@ startBattle()
         player thread checkPlayerInZone();
         player thread checkPlayerJumped();
     }
-    level.plane moveY(moveDistance, moveDelay);  //for brmap2
+    level.plane moveY(moveDistance, moveDelay);
     level.plane playLoopSound("in_plane");
     level.planePov moveY(moveDistance, moveDelay);
 
