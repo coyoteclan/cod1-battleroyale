@@ -255,7 +255,7 @@ giveAmmo(abox) {
         players = getEntArray("player", "classname");
 
         for(i=0;i < players.size;i++) {
-            if(distance(box.origin, players[i].origin) < 50) {
+            if(distance(abox.origin, players[i].origin) < 50) {
                 oldamountpri = players[i] getWeaponSlotAmmo("primary");
                 oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
                 oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
