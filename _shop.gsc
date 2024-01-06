@@ -264,6 +264,7 @@ giveAmmo(abox) {
 getAmmo(abox) {
     self endon("removedAmmobox");
     while(distance(abox.origin, self.origin) < 50) {
+        wait 0.5;
         oldamountpri = self getWeaponSlotAmmo("primary");
         oldamountprib = self getWeaponSlotAmmo("primaryb");
         oldamountpistol = self getWeaponSlotAmmo("pistol");
