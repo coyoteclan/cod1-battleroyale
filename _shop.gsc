@@ -280,13 +280,13 @@ getAmmo(abox) {
         self playlocalsound("weap_pickup");
 
         if(oldamountpri < maxpri) {
-            self setWeaponSlotAmmo(self getWeaponSlotWeapon("primary"), maxpri);
+            self giveMaxAmmo(self getWeaponSlotWeapon("primary"));
         }
         if(oldamountprib < maxprib) {
-            self setWeaponSlotAmmo(self getWeaponSlotWeapon("primaryb"), maxprib);
+            self giveMaxAmmo(self getWeaponSlotWeapon("primaryb"));
         }
         if(oldamountpistol < maxpistol) {
-            self setWeaponSlotAmmo(self getWeaponSlotWeapon("pistol"), pistol);
+            self giveMaxAmmo(self getWeaponSlotWeapon("pistol"));
         }
         wait 0.5;
     }
