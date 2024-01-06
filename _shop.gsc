@@ -290,6 +290,7 @@ giveAmmo(abox) {
                     }
                 }
             }
+            wait 0.5;
         }
     }
 }
