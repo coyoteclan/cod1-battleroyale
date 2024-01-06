@@ -295,10 +295,10 @@ getAmmo(abox) {
 
 emitBluelight()
 {
-    iPrintLn("emitting blue light");
     while(1)
     {
         playFx(level.effect["blue_light"], self.origin);
+        iPrintLn("emitting blue light");
         
         wait 0.1;
     }
