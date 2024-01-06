@@ -262,6 +262,7 @@ giveAmmo(abox) {
 }
 
 getAmmo(abox) {
+    self endon("removedAmmobox");
     while(distance(abox.origin, players[i].origin) < 50) {
         oldamountpri = players[i] getWeaponSlotAmmo("primary");
         oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
