@@ -255,48 +255,55 @@ giveAmmo(abox) {
         players = getEntArray("player", "classname");
 
         for(i=0;i < players.size;i++) {
-            if(distance(abox.origin, players[i].origin) < 50) {
-                oldamountpri = players[i] getWeaponSlotAmmo("primary");
-                oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
-                oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
-
-                maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-                maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
-                maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
-
-                if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
-                    continue;
-                
-                players[i] playlocalsound("weap_pickup");
-                self playlocalsound("weap_pickup");
-
-                if(oldamountpri < maxpri) {
-                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
-                }
-                if(oldamountprib < maxprib) {
-                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
-                }
-                if(oldamountpistol < maxpistol) {
-                    players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), pistol);
-                }
-                newamountpri = players[i] getWeaponSlotAmmo("primary");
-                newamountprib = players[i] getWeaponSlotAmmo("primaryb");
-                newamountpistol = players[i] getWeaponSlotAmmo("pistol");
-
-                ammogiven = (newamountpri - oldamountpri) + (newamountprib - oldamountprib) + (newamountpistol - oldamountpistol);
-                if(players[i] != self) {
-                    if(ammogiven > 0) {
-                        self iprintln(players[i].name + "got " + ammogiven + " ammo from your ammobox");
-                    }
-                }
-            }
+            players[i] thread getAmmo(abox)
             wait 0.5;
         }
     }
 }
 
+getAmmo(abox) {
+    while(distance(abox.origin, players[i].origin) < 50) {
+        oldamountpri = players[i] getWeaponSlotAmmo("primary");
+        oldamountprib = players[i] getWeaponSlotAmmo("primaryb");
+        oldamountpistol = players[i] getWeaponSlotAmmo("pistol");
+
+        maxpri = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+        maxprib = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("primaryb"));
+        maxpistol = players[i] getWeaponMaxWeaponAmmo(players[i] getweaponslotweapon("pistol"));
+
+        if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
+            continue;
+        
+        players[i] playlocalsound("weap_pickup");
+        self playlocalsound("weap_pickup");
+
+        if(oldamountpri < maxpri) {
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primary"), maxpri);
+        }
+        if(oldamountprib < maxprib) {
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("primaryb"), maxprib);
+        }
+        if(oldamountpistol < maxpistol) {
+            players[i] setWeaponSlotAmmo(players[i] getWeaponSlotWeapon("pistol"), pistol);
+        }
+        newamountpri = players[i] getWeaponSlotAmmo("primary");
+        newamountprib = players[i] getWeaponSlotAmmo("primaryb");
+        newamountpistol = players[i] getWeaponSlotAmmo("pistol");
+
+        ammogiven = (newamountpri - oldamountpri) + (newamountprib - oldamountprib) + (newamountpistol - oldamountpistol);
+        if(players[i] != self) {
+            if(ammogiven > 0) {
+                self iprintln(players[i].name + "got " + ammogiven + " ammo from your ammobox");
+            }
+        }
+        wait 0.5;
+    }
+    wait 0.5;
+}
+
 emitBluelight()
 {
+    iPrintLn("emitting blue light");
     while(1)
     {
         playFx(level.effect["blue_light"], self.origin);
