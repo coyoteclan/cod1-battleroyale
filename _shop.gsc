@@ -295,7 +295,7 @@ getAmmo(abox) {
 
 emitBluelight()
 {
-    while(1)
+    while(isDefined(self))
     {
         if(!isDefined(level.effect["light_blue"]))
             break;
