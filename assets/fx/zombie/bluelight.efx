@@ -9,10 +9,12 @@ Light
 	rgb
 	{
 		start			32 26 209
+		end				32 26 209
 	}
 
 	size
 	{
 		start			128
+		end				128
 	}
 }
