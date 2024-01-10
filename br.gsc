@@ -327,6 +327,7 @@ Callback_PlayerConnect()
 
     self.pers["connected"] = true;
     iprintln(&"MPSCRIPT_CONNECTED", self);
+    self maps\mp\gametypes\_stats::init();
 
     self.fights = true;
     self.inPlane = false;
@@ -339,6 +340,7 @@ Callback_PlayerConnect()
     self openMenu(game["menu_camouflage"]);
     self.sessionteam = "spectator";
     spawnSpectator();
+    self maps\mp\gametypes\_stats::loadMyStats();
 
     for(;;)
     {
@@ -1727,6 +1729,7 @@ endMap()
             player setClientCvar("cg_objectiveText", &"MPSCRIPT_WINS", level.winnerName);
         
         player spawnIntermission();
+        player maps\mp\gametypes\_stats::saveMyStats();
     }
     wait 7;
     exitLevel(false);
