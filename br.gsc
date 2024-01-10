@@ -1730,6 +1730,7 @@ endMap()
         
         player spawnIntermission();
         player maps\mp\gametypes\_stats::saveMyStats();
+        player maps\mp\gametypes\_stats::addTolist();
     }
     wait 7;
     exitLevel(false);
