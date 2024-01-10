@@ -282,7 +282,7 @@ getAmmo(abox) {
         if(oldamountpri < maxpri) {
             self giveMaxAmmo(self getWeaponSlotWeapon("primary"));
         }
-        if(oldamountprib < maxprib) {
+        if(oldamountprib < maxprib && self getWeaponSlotWeapon("primaryb") != "panzerfaust_mp") {
             self giveMaxAmmo(self getWeaponSlotWeapon("primaryb"));
         }
         if(oldamountpistol < maxpistol) {
