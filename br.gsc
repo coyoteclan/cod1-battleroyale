@@ -27,6 +27,8 @@ main()
     level.text_parachuteNotDeployed = &"PARACHUTE NOT DEPLOYED";
     level.text_zoneIsShrinking = &"ZONE SHRINKING ";
     level.text_zoneWillShrink = &"ZONE SHRINKS IN ";
+    
+    level.workingdir = getCvar("fs_basepath") + "/main/";
 
     level.minPlayers = 15;
     if(getCvarInt("br_minPlayers")) {
