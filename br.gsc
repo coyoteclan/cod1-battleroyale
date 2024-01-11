@@ -329,7 +329,6 @@ Callback_PlayerConnect()
 
     self.pers["connected"] = true;
     iprintln(&"MPSCRIPT_CONNECTED", self);
-    self maps\mp\gametypes\_stats::init();
 
     self.fights = true;
     self.inPlane = false;
@@ -342,7 +341,6 @@ Callback_PlayerConnect()
     self openMenu(game["menu_camouflage"]);
     self.sessionteam = "spectator";
     spawnSpectator();
-    self maps\mp\gametypes\_stats::loadMyStats();
 
     for(;;)
     {
@@ -688,6 +686,7 @@ spawnSpectator(origin, angles, died)
     }
 
     self setClientCvar("cg_objectiveText", level.objectiveText);
+    self maps\mp\gametypes\_stats::init();
 }
 spawnPlayer(origin, angles)
 {
@@ -735,6 +734,7 @@ spawnPlayer(origin, angles)
     }
     
     self setClientCvar("cg_objectiveText", level.objectiveText);
+    self maps\mp\gametypes\_stats::loadMyStats();
     self maps\mp\gametypes\_shop::shophud();
     self maps\mp\gametypes\_classes::assignClass();
 }
