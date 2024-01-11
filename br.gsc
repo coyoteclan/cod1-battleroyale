@@ -223,13 +223,13 @@ main()
     level.healthqueuecurrent = 0;
 
     setarchive(true);
-    plistFile = level.workingdir + "br_stats/playerlist.dat";
+    /*plistFile = level.workingdir + "br_stats/playerlist.dat";
     if(!fexists(plistFile)) {
         file = fopen(plistFile, "w");
         data = "";
         fwrite(data, plistFile);
         fclose(plistFile);
-    }
+    }*/
 }
 //CALLBACKS
 Callback_StartGameType()
