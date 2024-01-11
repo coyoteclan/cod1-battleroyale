@@ -48,10 +48,12 @@ saveMyStats()
     file = fopen(filename, "w");
     if(file == -1) {
         level iprintln("error opening " + filename);
+        fclose(filename);
         return;
     }
     data = self.name + ":" + self.stats["totalKills"] + ":" + self.stats["totalDeaths"] + ":" + self.points;
     fwrite(data, file);
+    wait 0.5;
     fclose(file);
 }
 
