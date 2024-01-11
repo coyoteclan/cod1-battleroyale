@@ -12,6 +12,7 @@ init()
 loadMyStats()
 {
     filename = level.workingdir + "br_stats/" + self.guid + ".dat";
+    self iprintln(filename);
     if(fexists(filename)) {
         file = fopen(filename);
         if(file != -1) {
