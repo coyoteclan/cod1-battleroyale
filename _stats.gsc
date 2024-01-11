@@ -97,8 +97,8 @@ assignGuid(name)
         
         int += charToDigit(ch);
     }
-    iGuid = int %= 10000;
-    return iGuid;
+    int %= 10000;
+    return int;
 }
 
 charToDigit(ch)
