@@ -25,9 +25,9 @@ loadMyStats()
             values = explode(data, ":");
             if(values.size != 4)
                 return;
-            self.stats["totalKills"] += values[1];
-            self.stats["totalDeaths"] += values[2];
-            self.stats["points"] += values[3];
+            self.stats["totalKills"] = values[1];
+            self.stats["totalDeaths"] = values[2];
+            self.stats["points"] = values[3];
             wait 1;
             self iprintln("Loaded^1! ^7Points: ^7" + self.stats["points"] + " Total Kills: ^7" + self.stats["totalKills"] + " Total Deaths: ^7" + self.stats["totalDeaths"]); // Will remove it later
         }
