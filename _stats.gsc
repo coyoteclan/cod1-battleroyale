@@ -26,10 +26,10 @@ loadMyStats()
             if(values.size != 4) {
                 level iprintln(values.size);
             }
-            self.stats["totalKills"] = values[1];
+            /*self.stats["totalKills"] = values[1];
             self.stats["totalDeaths"] = values[2];
             self.stats["points"] = values[3];
-            wait 1;
+            wait 1;*/
             self iprintln("Loaded^1! ^7Points: ^7" + self.stats["points"] + " Total Kills: ^7" + self.stats["totalKills"] + " Total Deaths: ^7" + self.stats["totalDeaths"]); // Will remove it later
         }
         else {
