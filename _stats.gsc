@@ -23,8 +23,9 @@ loadMyStats()
             }
             fclose(filename);
             values = explode(data, ":");
-            //if(values.size != 4)
-            //    return;
+            if(values.size != 4) {
+                level iprintln(values.size);
+            }
             self.stats["totalKills"] = values[1];
             self.stats["totalDeaths"] = values[2];
             self.stats["points"] = values[3];
