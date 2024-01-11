@@ -7,13 +7,6 @@ init()
     self.stats["points"] = (int)0;
     
     self.guid = assignGuid(self.name);
-    plistFile = level.workingdir + "br_stats/playerlist.dat";
-    if(!fexists(plistFile)) {
-        file = fopen(plistFile, "w");
-        data = "";
-        fwrite(data, plistFile);
-        fclose(plistFile);
-    }
 }
 
 loadMyStats()
