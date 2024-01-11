@@ -25,10 +25,10 @@ loadMyStats()
             if(isDefined(data)) {
                 iprintln(data);
             }
-            values = explode(data, ":");
-            if(isDefined(values)) {
-                level iprintln(values.size);
-            }
+            //values = explode(data, ":");
+            //if(isDefined(values)) {
+            //    level iprintln(values.size);
+            //}
             /*self.stats["totalKills"] = values[1];
             self.stats["totalDeaths"] = values[2];
             self.stats["points"] = values[3];
