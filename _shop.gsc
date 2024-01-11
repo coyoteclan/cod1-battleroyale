@@ -337,7 +337,7 @@ getWeaponMaxWeaponAmmo( weapon )
 		case "luger_mp": 
 			return 32; break;
         case "colt_mp":
-            return 40; break;
+            return 56; break;
 		case "mosin_nagant_mp":
 			return 250; break;
 		case "ppsh_mp":
