@@ -18,10 +18,10 @@ loadMyStats()
         if(file != -1) {
             data = fread(file);
             if(!isDefined(data) || data == "") {
-                fclose(file);
+                fclose(filename);
                 return;
             }
-            fclose(file);
+            fclose(filename);
             values = explode(data, ":");
             if(values.size != 4)
                 return;
