@@ -22,6 +22,9 @@ loadMyStats()
                 return;
             }
             fclose(filename);
+            if(isDefined(data)) {
+                iprintln(data);
+            }
             values = explode(data, ":");
             if(isDefined(values)) {
                 level iprintln(values.size);
@@ -30,7 +33,7 @@ loadMyStats()
             self.stats["totalDeaths"] = values[2];
             self.stats["points"] = values[3];
             wait 1;*/
-            self iprintln("Loaded^1! ^7Points: ^7" + self.stats["points"] + " Total Kills: ^7" + self.stats["totalKills"] + " Total Deaths: ^7" + self.stats["totalDeaths"]); // Will remove it later
+            //self iprintln("Loaded^1! ^7Points: ^7" + self.stats["points"] + " Total Kills: ^7" + self.stats["totalKills"] + " Total Deaths: ^7" + self.stats["totalDeaths"]); // Will remove it later
         }
         else {
             level iprintln("Error opening " + filename + "^1!");
