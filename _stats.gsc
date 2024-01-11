@@ -23,7 +23,7 @@ loadMyStats()
             }
             fclose(filename);
             values = explode(data, ":");
-            if(values.size != 4) {
+            if(isDefined(values)) {
                 level iprintln(values.size);
             }
             /*self.stats["totalKills"] = values[1];
