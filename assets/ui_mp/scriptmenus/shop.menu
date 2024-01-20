@@ -324,7 +324,7 @@
 			rect			0 0 160 20
 			origin			350 100
 			forecolor		1 1 1 1
-			text			"Killstreaks"
+			text			"Other"
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalignx		10
@@ -357,6 +357,30 @@
 				play "mouse_over";
 			}
 		}*/
+		itemDef 
+		{
+			name			"other_dbubble"
+			visible			1
+			rect			0 0 150 20
+			origin			350 140
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"Defence Bubble (500 pt)"
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "buy_dbubble";
+				close shop;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
 		
 		
 		itemDef 
