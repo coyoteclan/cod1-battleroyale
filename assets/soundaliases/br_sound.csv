@@ -18,3 +18,6 @@ name,sequence,file,vol_min,vol_max,pitch_min,pitch_max,dist_min,dist_max,channel
 
 
 in_plane,,vehicles/c47_drone_loop.wav,0.75,1,,,1000,,voice,streamed,,looping,,
+armor_break,,misc/armor_break0.wav,1,1.1,,,10,,local,streamed,,nonlooping,,
+killsound,,misc/kill0.wav,1,1.1,,,10,,local,streamed,,nonlooping,,
+headshotkill,,misc/headshot_kill0.wav,1,1.1,,,10,,local,streamed,,nonlooping,,
