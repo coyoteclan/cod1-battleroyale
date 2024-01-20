@@ -106,6 +106,7 @@ main()
     level.model_plane = "xmodel/c47";
     level.model_parachute = "xmodel/br_parachute2"; //This parachute looks better :)
     level.model_ammobox = "xmodel/crate_misc_green2";
+    level.bubbleModel = "xmodel/br_defence_bubble";
 
     level.camouflages = [];
     level.camouflages[0] = "american";
@@ -132,6 +133,7 @@ main()
     //Effects
     level.effect = [];
     level.effect["light_blue"] = loadFx("fx/zombie/bluelight.efx");
+    level.effect["bubbleDeploy"] = loadFx("fx/zombie/bubble_create.efx")
 
     level.zone.modes = [];
 
@@ -1355,6 +1357,7 @@ checkPlayerDive()
                 self.hud_parachuteStateIndicator setText(level.text_parachuteDeployed);
                 self.parachuteEnabled = true;
                 self attach(level.model_parachute, "tag_belt_back");
+                self setClientCvar("cg_thirdPerson", "1");
             }
             else
             {
@@ -1363,6 +1366,7 @@ checkPlayerDive()
                 self.hud_parachuteStateIndicator setText(level.text_parachuteNotDeployed);
                 self.parachuteEnabled = false;
                 self detach(level.model_parachute, "tag_belt_back");
+                self setClientCvar("cg_thirdPerson", "0");
             }
         }
         
