@@ -4,11 +4,12 @@ init()
 	level.points = [];
 	level.points[ "buy_armor_10" ] = 100;
 	level.points[ "buy_armor_25" ] = 250;
-	level.points[ "buy_armor_50" ] = 500;
+	level.points[ "buy_armor_50" ] = 400;
 	level.points[ "buy_damage_10" ] = 100;
 	level.points[ "buy_damage_25" ] = 250;
 	level.points[ "buy_healthpack" ] = 100;
     level.points[ "buy_ammobox" ] = 150;
+    level.points[ "buy_dbubble" ] = 500;
 	//level.points[ "mortar" ] = 1000;
 	level.points[ "buy_panzer" ] = 500;
 	level.points[ "buy_nades" ] = 400;
@@ -16,11 +17,12 @@ init()
 	level.pointsnames = [];
 	level.pointsnames[ "buy_armor_10" ] = "100 Armor";
 	level.pointsnames[ "buy_armor_25" ] = "250 Armor";
-	level.pointsnames[ "buy_armor_50" ] = "500 Armor";
+	level.pointsnames[ "buy_armor_50" ] = "350 Armor";
 	level.pointsnames[ "buy_damage_10" ] = "+10 Damage Increase";
 	level.pointsnames[ "buy_damage_25" ] = "+25 Damage Increase";
 	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
     level.pointsnames[ "buy_ammobox" ] = "an Ammobox";
+    level.pointsnames[ "buy_dbubble" ] = "a Defence Bubble"
 	//level.pointsnames[ "mortar" ] = "Mortar Strike";
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
@@ -54,24 +56,22 @@ buyItem(response) {
     {
         case "buy_healthpack":
             self.hpacks++;
-            wait 0.5;
-            //self.hud_hpacks setValue(self.hpacks);
-            //break;
+            wait 0.1;
             return true;
         
         case "buy_ammobox":
             self.ammobox++;
-            wait 0.5;
+            wait 0.1;
             return true;
             
         case "buy_armor_10":
-            if(self.bodyarmor >= 500) {
+            if(self.bodyarmor >= 350) {
                 self iprintlnbold("You already have max armor!");
                 return false;
             }
-            else if(self.bodyarmor + 100 > 500) {
-                self.bodyarmor = 500;
-                wait 0.5;
+            else if(self.bodyarmor + 100 > 350) {
+                self.bodyarmor = 350;
+                wait 0.1;
                 return true;
             }
             else {
@@ -80,32 +80,29 @@ buyItem(response) {
             }
         
         case "buy_armor_25":
-            if(self.bodyarmor >= 500) {
+            if(self.bodyarmor >= 350) {
                 self iprintlnbold("You already have max armor!");
                 return false;
             }
-            else if(self.bodyarmor + 250 > 500) {
-                self.bodyarmor = 500;
-                wait 0.5;
+            else if(self.bodyarmor + 250 >= 350) {
+                self.bodyarmor = 350;
+                wait 0.1;
                 return true;
             }
             else {
                 self.bodyarmor += 250;
+                wait 0.1;
                 return true;
             }
         
         case "buy_armor_50":
-            if(self.bodyarmor >= 500) {
+            if(self.bodyarmor >= 350) {
                 self iprintlnbold("You already have max armor!");
                 return false;
             }
-            else if(self.bodyarmor == 0) {
-                self.bodyarmor += 500;
-                wait 0.5;
-                return true;
-            }
-            else if(self.bodyarmor > 0) {
-                self.bodyarmor = 500;
+            else if(self.bodyarmor == 0 || self.bodyarmor > 0) {
+                self.bodyarmor = 350;
+                wait 0.1;
                 return true;
             }
         
@@ -116,6 +113,7 @@ buyItem(response) {
             }
             else if(self.damageinc + 10 > 25) {
                 self.damageinc = 25;
+                wait 0.1;
                 return true;
             }
             else {
@@ -130,6 +128,7 @@ buyItem(response) {
             }
             else if(self.damageinc + 25 > 25) {
                 self.damageinc = 25;
+                wait 0.1;
                 return true;
             }
             else {
@@ -140,17 +139,32 @@ buyItem(response) {
         case "buy_panzer":
             self setWeaponSlotWeapon("primaryb", "panzerfaust_mp");
             self setWeaponSlotAmmo("primaryb", "3");
-            wait 0.5;
+            wait 0.1;
             self switchToWeapon( "panzerfaust_mp" );
             return true;
         
         case "buy_nades":
             self setWeaponSlotWeapon("grenade", "rgd-33russianfrag_mp");
             self setWeaponSlotAmmo("grenade", "6");
-            wait 0.5;
+            wait 0.1;
 
             self switchToWeapon( "rgd-33russianfrag_mp" );
             return true;
+        
+        case "buy_dbubble":
+            if(isDefined(self.dbubble)) {
+                self iprintlnbold("How many Defence Bubbles you need?");
+                return false;
+            }
+            self.dbubble = spawn("script_model", self.origin + (0, 0, 30));
+            self.dbubble setModel(level.bubbleModel);
+            self.dbubble hide();
+            playFx(level.effect["bubbleDeploy"], self.dbubble.origin);
+            wait 1;
+            return true;
+            self.dbubble solid();
+            wait 15;
+            self.dbubble delete();
 
         default:
             return false;
@@ -173,7 +187,7 @@ shophud() {
     if(getCvarInt("br_starthealthpacks")) {
         self.hpacks = getCvarInt("br_starthealthpacks");
     }
-    //hud_hpacks destroy();
+    
     self.bodyarmor = (int)0;
     if(getCvarInt("br_startbodyarmor")) {
         self.bodyarmor = getCvarInt("br_startbodyarmor");
@@ -273,13 +287,9 @@ getAmmo(abox) {
         maxprib = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("primaryb"));
         maxpistol = self getWeaponMaxWeaponAmmo(self getweaponslotweapon("pistol"));
 
-        //if(oldamountpri >= maxpri && oldamountprib >= maxprib && oldamountpistol >= maxpistol)
-            //continue;
-        
-        //players[i] playlocalsound("weap_pickup");
         self playlocalsound("weap_pickup");
 
-        if(oldamountpri < maxpri) {
+        if(oldamountpri < maxpri && self getWeaponSlotWeapon("primaryb") != "panzerfaust_mp") {
             self giveMaxAmmo(self getWeaponSlotWeapon("primary"));
         }
         if(oldamountprib < maxprib && self getWeaponSlotWeapon("primaryb") != "panzerfaust_mp") {
