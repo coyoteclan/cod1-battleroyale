@@ -16,7 +16,7 @@ loadMyStats()
     if(fexists(filename)) {
         file = fopen(filename, "r");
         if(file != -1) {
-            data = fread(file);
+            data = fread(0, file);
             if(!isDefined(data) || data == "") {
                 fclose(filename);
                 return;
