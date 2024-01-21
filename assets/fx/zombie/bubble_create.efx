@@ -8,7 +8,7 @@ Emitter
 
 	origin				0 0 0
 
-	angles				0 90 0
+	angles				0 0 0
 	
 	size
 	{
@@ -19,15 +19,7 @@ Emitter
 
 	models
 	[
- 		xmodel/bx_dbubble
+ 		xmodel/br_defence_bubble
 	]
 
-}
-
-sound
-{
-	sounds
-	[
-		bubble_create
-	]
 }
