@@ -549,6 +549,7 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
         if(self.bodyarmor < iDamage) {
             passthru = iDamage - self.bodyarmor;
             self.bodyarmor = 0;
+            eAttacker thread armorBreakIndicator();
             iDamage = passthru;
         }
         else {
@@ -594,26 +595,24 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
         sMeansOfDeath = "MOD_HEAD_SHOT";
         if(isPlayer(attacker))
             attacker.points += level.points_headshot;
-            //attacker.hud_points setValue(attacker.points);
+            attacker playlocalsound("headshotkill");
     }
 
-    // If the player was killed by a head shot, let players know it was a head shot kill
     if(sMeansOfDeath == "MOD_MELEE") {
         if(isPlayer(attacker))
             attacker.points += level.points_melee;
-            //attacker.hud_points setValue(attacker.points);
     }
     
-    // If the player was killed by a head shot, let players know it was a head shot kill
     if(sMeansOfDeath == "MOD_GRENADE") {
         if(isPlayer(attacker))
-            attacker.points += level.points_melee;
-            //attacker.hud_points setValue(attacker.points);
+            attacker.points += level.points_grenade;
     }
     if(sHitLoc != "head" && sMeansOfDeath != "MOD_MELEE" && sMeansOfDeath != "MOD_GRENADE") {
         if(isPlayer(attacker))
             attacker.points += level.points_kill;
-            //attacker.hud_points setValue(attacker.points);
+    }
+    if(sHitLoc != "head" && sMeansOfDeath != "MOD_HEAD_SHOT") {
+        attacker playlocalsound("killsound");
     }
 
     // send out an obituary message to all clients about the kill
@@ -1772,6 +1771,29 @@ showDamageFeedback()
     if(isDefined(self.hitBlip))
         self.hitBlip destroy();
 }
+
+armorBreakIndicator()
+{
+    self endon("spawned");
+    if(isDefined(self.armorBreakIcon))
+        self.armorBreakIcon destroy();
+    
+    self.armorBreakIcon = newClientHudElem(self);
+    self.armorBreakIcon.alignX = "center";
+    self.armorBreakIcon.alignY = "middle";
+    self.armorBreakIcon.x = 340;
+    self.armorBreakIcon.y = 240;
+    self.armorBreakIcon.alpha = 1;
+    self.armorBreakIcon setShader("gfx/hud/armor_break.dds", 24, 24);
+    
+    self.armorBreakIcon fadeOverTime(1);
+    self.armorBreakIcon.alpha = 0;
+    self playlocalsound("armor_break");
+    wait 0.30;
+    if(isDefined(self.armorBreakIcon))
+        self.armorBreakIcon destroy();
+}
+
 //KILLCAM FUNCTIONS
 doFinalKillcam()
 {
