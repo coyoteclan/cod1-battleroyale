@@ -22,7 +22,7 @@ init()
 	level.pointsnames[ "buy_damage_25" ] = "+25 Damage Increase";
 	level.pointsnames[ "buy_healthpack" ] = "a Healthpack";
     level.pointsnames[ "buy_ammobox" ] = "an Ammobox";
-    level.pointsnames[ "buy_dbubble" ] = "a Defence Bubble"
+    level.pointsnames[ "buy_dbubble" ] = "a Defence Bubble";
 	//level.pointsnames[ "mortar" ] = "Mortar Strike";
 	level.pointsnames[ "buy_panzer" ] = "a Panzerfaust";
 	level.pointsnames[ "buy_nades" ] = "Grenades";
