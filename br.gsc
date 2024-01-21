@@ -133,7 +133,7 @@ main()
     //Effects
     level.effect = [];
     level.effect["light_blue"] = loadFx("fx/zombie/bluelight.efx");
-    level.effect["bubbleDeploy"] = loadFx("fx/zombie/bubble_create.efx")
+    level.effect["bubbleDeploy"] = loadFx("fx/zombie/bubble_create.efx");
 
     level.zone.modes = [];
 
