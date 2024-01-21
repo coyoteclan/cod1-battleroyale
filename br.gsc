@@ -339,6 +339,7 @@ Callback_PlayerConnect()
 
     self.pers["connected"] = true;
     iprintln(&"MPSCRIPT_CONNECTED", self);
+    printLn("Joined: ^7" + self.name);
 
     self.fights = true;
     self.inPlane = false;
@@ -504,6 +505,7 @@ Callback_PlayerConnect()
 Callback_PlayerDisconnect()
 {
     iprintln(&"MPSCRIPT_DISCONNECTED", self);
+    printLn("Quit: ^7" + self.name);
     self notify("death");
     level thread checkVictoryRoyale();
 }
