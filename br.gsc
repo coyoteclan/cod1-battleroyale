@@ -618,6 +618,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 
     // send out an obituary message to all clients about the kill
     obituary(self, attacker, sWeapon, sMeansOfDeath);
+    printLn("kill: ^7" + attacker + ":" + self + ":" + sWeapon + ":" + sMeansOfDeath);
     self notify("death");
 
     self.sessionstate = "dead";
