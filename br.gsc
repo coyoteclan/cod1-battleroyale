@@ -323,6 +323,7 @@ Callback_StartGameType()
     thread manageZoneLifecycle();
     thread checkBattleReady();
     thread maps\mp\gametypes\_shop::init();
+    thread addBotClients();
 }
 Callback_PlayerConnect()
 {
@@ -2802,3 +2803,37 @@ anglesToBackward(angles)
     return backwardDirection;
 }
 //UTILS END
+addBotClients()
+{
+	wait 5;
+	
+	for(;;)
+	{
+		if(getCvarInt("scr_numbots") > 0)
+			break;
+		wait 1;
+	}
+	
+	iNumBots = getCvarInt("scr_numbots");
+	for(i = 0; i < iNumBots; i++)
+	{
+		ent[i] = addtestclient();
+		wait 0.5;
+
+		if(isPlayer(ent[i]))
+		{
+			if(i & 1)
+			{
+				ent[i] notify("menuresponse", game["menu_camouflage"], "american");
+				wait 0.5;
+				ent[i] notify("menuresponse", game["menu_weapon_all"], "kar98k_mp");
+			}
+			else
+			{
+				ent[i] notify("menuresponse", game["menu_camouflage"], "german");
+				wait 0.5;
+				ent[i] notify("menuresponse", game["menu_weapon_all"], "springfield_mp");
+			}
+		}
+	}
+}
