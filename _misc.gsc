@@ -56,9 +56,27 @@ log( type, a0, a1, a2, a3, a4, a5, a6, a7, a8,
 		logPrint( "A;" + name + ";" + action + "\n" );
 	  	break;
 	  default:
-	  	printLn( 0, "gamelog/log:: ^1WARNING: ^3UNKNOWN LOG TYPE^7 |", type, "|" );
+	  	printLn( 0, "log:: ^1WARNING: ^3UNKNOWN LOG TYPE^7 |", type, "|" );
 	  	break;
 	}
 
 	return;
+}
+
+explode(s, delimiter)
+{
+    j = 0;
+    temparr[j] = "";    
+    
+    for (i= 0; i < s.size; i++)
+    {
+        if (s[i] == delimiter)
+        {
+            j++;
+            temparr[j] = "";
+        }
+        else
+            temparr[j] += s[i];
+    }
+    return temparr;
 }
