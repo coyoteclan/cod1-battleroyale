@@ -339,7 +339,7 @@ Callback_PlayerConnect()
 
     self.pers["connected"] = true;
     iprintln(&"MPSCRIPT_CONNECTED", self);
-    printLn("Joined: ^7" + self.name);
+    maps\mp\gametypes\_misc::log("join", self);
 
     self.fights = true;
     self.inPlane = false;
@@ -505,7 +505,7 @@ Callback_PlayerConnect()
 Callback_PlayerDisconnect()
 {
     iprintln(&"MPSCRIPT_DISCONNECTED", self);
-    printLn("Quit: ^7" + self.name);
+    maps\mp\gametypes\_misc::log("quit", self);
     self notify("death");
     level thread checkVictoryRoyale();
 }
@@ -620,7 +620,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 
     // send out an obituary message to all clients about the kill
     obituary(self, attacker, sWeapon, sMeansOfDeath);
-    printLn("kill: ^7" + attacker + "%" + self + "%" + sWeapon + "%" + sMeansOfDeath);
+    maps\mp\gametypes\_misc::log("killed", self, attacker, iDamage, sMeansOfDeath, sWeapon, sHitLoc);
     self notify("death");
 
     self.sessionstate = "dead";
