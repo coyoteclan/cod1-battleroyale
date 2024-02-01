@@ -21,8 +21,10 @@
 		onClose
 		{
 			setCvar cl_bypassMouseInput "0";		
-			exec "setfromcvar password ui_password";
-            scriptMenuResponse "ui_password";
+			//exec "setfromcvar password ui_password";
+            char passwordText[MAX_STRING_CHARS];
+            getEditField password text passwordText;
+            scriptMenuResponse passwordText;
 		}
 		onEsc
 		{
