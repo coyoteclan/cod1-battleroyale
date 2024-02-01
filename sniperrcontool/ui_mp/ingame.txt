@@ -1,0 +1,23 @@
+// ingame menu defs
+// 
+{	
+ 	loadMenu { "ui_mp/ingame.menu" }
+	loadMenu { "ui_mp/ingame_controls.menu" }
+	loadMenu { "ui_mp/ingame_options.menu" }		// loadMenu { "ui_mp/ingame_options.menu" }
+	loadMenu { "ui_mp/ingame_system.menu" }		// loadMenu { "ui_mp/ingame_system.menu" }
+	loadMenu { "ui_mp/ingame_leave.menu" }
+	loadMenu { "ui_mp/ingame_callvote.menu" }
+	loadMenu { "ui_mp/wm_quickmessage.menu" }
+
+	loadMenu { "ui_mp/scriptmenus/mapcontrol.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/rconmenu.menu" }		//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/clientcontrol.menu" }	//HLCMOSES	
+	loadMenu { "ui_mp/scriptmenus/rconmessages.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/weaponcontrol.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/rconpassword.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/serversettings.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/banningcontrol.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/codamcommands.menu" }	//HLCMOSES
+	loadMenu { "ui_mp/scriptmenus/about.menu" }		//HLCMOSES
+			
+}

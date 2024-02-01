@@ -1,0 +1,359 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_RCONMENU		32 256
+
+{
+	menuDef
+	{
+		name			"rconmenu"
+		visible			0
+		fullscreen		0
+		rect			0 0 640 480 //0 0 640 480 
+		focuscolor		UI_FOCUS_COLOR
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+		onClose
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 220
+			origin			ORIGIN_RCONMENU
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			decoration
+		}
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			0 -32 128 32
+			origin			ORIGIN_RCONMENU
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			text			"^3~^1[^7$^4n^7!^4p^73^4r^1] R^7con too^1l^3~"
+			textfont		UI_FONT_NORMAL
+			textscale		.23
+			textalignx		7
+			textaligny		20
+			decoration
+		}
+		
+		
+		itemDef
+		{
+			name			client
+			group			ingamebox
+			visible			1
+			rect			10 25 110 20 //10 5 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1C^7ontrol your client^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open clientcontrol; 
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+			//mouseEnter		{ setitemcolor client forecolor 1 0 0 .85;play "mouse_over"; }
+			//mouseExit		{ setitemcolor client forecolor 1 1 1 1 }
+		}
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 45 110 20 //10 25 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1M^7ap option^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open mapcontrol; 
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 5 110 20 //10 45 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1S^7erver setting^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open serversettings;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 65 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1W^7eapon option^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open weaponcontrol;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 85 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1M^7esseges through consol^1e^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open rconmessages;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 105 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1C^7oDaM command^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open codamcommands;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+			//mouseEnter		{ setitemcolor client forecolor 1 0 0 .85;play "mouse_over"; }
+			//mouseExit		{ setitemcolor client forecolor 1 1 1 1 }
+		}
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 125 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1M^7atch command^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				close rconmenu;
+				open banningcontrol;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			default
+			group			ingamebox
+			visible			1
+			rect			10 145 110 20
+			origin			ORIGIN_RCONMENU
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1E^7nter Rcon PW her^1e^3~"
+			action
+			{ 
+				play "mouse_click";
+				open rconpassword;  
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		
+		}
+		itemDef
+		{
+			name			about
+			visible			1
+			rect			2 200 40 18
+			origin			ORIGIN_RCONMENU
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.20
+			text			"^3~^1A^7bout me bab^1y^3~"
+			textalignx		1
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close rconmenu;
+				open about;
+			}
+			mouseEnter		{ setitemcolor about backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor about backcolor 0 0 0 .75 }
+
+
+		}
+		itemDef
+		{
+			name			btgame
+			visible			1
+			rect			75 200 85 18
+			origin			ORIGIN_RCONMENU
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.185
+			text			"^3~#^1D^7ude get back 2 da gam^1e^3#~"
+			textalignx		10
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close rconmenu;
+				ingameclose main;
+			}
+			mouseEnter		{ setitemcolor btgame backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor btgame backcolor 0 0 0 .75 }
+
+			cvarTest "cl_ingame"
+			showCvar {"1"}
+			//HLC
+		}
+		itemDef
+		{
+			name			exit
+			visible			1
+			rect			183 200 40 18
+			origin			ORIGIN_RCONMENU
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.20
+			text			"^3~#^1E^7xi^1t^3#~"
+			textalignx		5
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close rconmenu;
+			}
+			mouseEnter		{ setitemcolor exit backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor exit backcolor 0 0 0 .75 }
+
+
+		}
+		
+		
+		
+	}
+}

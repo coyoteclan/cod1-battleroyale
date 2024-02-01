@@ -1,0 +1,3139 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_CODAMCOMMANDS		32 256
+
+{
+	menuDef
+	{
+		name			"Codamcommands"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		UI_FOCUS_COLOR
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+		onClose
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 220
+			origin			ORIGIN_CODAMCOMMANDS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			0 -32 128 32
+			origin			ORIGIN_CODAMCOMMANDS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			text			"^3~^1C^7oDaM Command^1s^3~"
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			textalignx		8
+			textaligny		20
+			decoration
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			80 04 60 13
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		1.5
+			textaligny		10 
+			text			"^3~^1S^7erver statu^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon status"; 
+				exec "toggleconsole"; 
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			150 04 60 13
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		14
+			textaligny		10 
+			text			"^1M^7atri^1x"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command matrix"; 
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 05 75 20
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient bur^1n^3 -:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c0
+			visible			1
+			rect			10 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 0";
+			}
+			mouseEnter		{ setitemcolor c0 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c0 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c1
+			visible			1
+			rect			21 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 1";
+			}
+			mouseEnter		{ setitemcolor c1 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c1 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c2
+			visible			1
+			rect			32 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 2";
+			}
+			mouseEnter		{ setitemcolor c2 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c2 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c3
+			visible			1
+			rect			43 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 3";
+			}
+			mouseEnter		{ setitemcolor c3 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c3 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c4
+			visible			1
+			rect			54 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 4";
+			}
+			mouseEnter		{ setitemcolor c4 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c4 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c5
+			visible			1
+			rect			65 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 5";
+			}
+			mouseEnter		{ setitemcolor c5 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c5 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c6
+			visible			1
+			rect			76 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 6";
+			}
+			mouseEnter		{ setitemcolor c6 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c6 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c7
+			visible			1
+			rect			87 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 7";
+			}
+			mouseEnter		{ setitemcolor c7 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c7 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c8
+			visible			1
+			rect			98 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 8";
+			}
+			mouseEnter		{ setitemcolor c8 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c8 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c9
+			visible			1
+			rect			109 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 9";
+			}
+			mouseEnter		{ setitemcolor c9 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c9 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c10
+			visible			1
+			rect			120 20 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 10";
+			}
+			mouseEnter		{ setitemcolor c10 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c10 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c11
+			visible			1
+			rect			15 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 11";
+			}
+			mouseEnter		{ setitemcolor c11 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c11 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c12
+			visible			1
+			rect			26 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 12";
+			}
+			mouseEnter		{ setitemcolor c12 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c12 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c13
+			visible			1
+			rect			37 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 13";
+			}
+			mouseEnter		{ setitemcolor c13 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c13 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c14
+			visible			1
+			rect			48 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 14";
+			}
+			mouseEnter		{ setitemcolor c14 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c14 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c15
+			visible			1
+			rect			59 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 15";
+			}
+			mouseEnter		{ setitemcolor c15 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c15 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c16
+			visible			1
+			rect			70 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 16";
+			}
+			mouseEnter		{ setitemcolor c16 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c16 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c17
+			visible			1
+			rect			81 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 17";
+			}
+			mouseEnter		{ setitemcolor c17 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c17 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c18
+			visible			1
+			rect			92 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 18";
+			}
+			mouseEnter		{ setitemcolor c18 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c18 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c19
+			visible			1
+			rect			103 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 19";
+			}
+			mouseEnter		{ setitemcolor c19 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c19 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c20
+			visible			1
+			rect			114 30 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 20";
+			}
+			mouseEnter		{ setitemcolor c20 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c20 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			burnall
+			visible			1
+			rect			140 23 75 15
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		19
+			textaligny		10 
+			text			"^1B^7urn all bitc^1h"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command burn 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"; 
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 45 75 20
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient co^1w^3 -:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c00
+			visible			1
+			rect			10 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 0";
+			}
+			mouseEnter		{ setitemcolor c00 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c00 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c101
+			visible			1
+			rect			21 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 1";
+			}
+			mouseEnter		{ setitemcolor c101 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c101 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c201
+			visible			1
+			rect			32 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 2";
+			}
+			mouseEnter		{ setitemcolor c201 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c201 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c30
+			visible			1
+			rect			43 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 3";
+			}
+			mouseEnter		{ setitemcolor c30 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c30 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c40
+			visible			1
+			rect			54 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 4";
+			}
+			mouseEnter		{ setitemcolor c40 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c40 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c50
+			visible			1
+			rect			65 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 5";
+			}
+			mouseEnter		{ setitemcolor c50 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c50 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c60
+			visible			1
+			rect			76 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 6";
+			}
+			mouseEnter		{ setitemcolor c60 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c60 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c70
+			visible			1
+			rect			87 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 7";
+			}
+			mouseEnter		{ setitemcolor c70 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c70 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c80
+			visible			1
+			rect			98 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 8";
+			}
+			mouseEnter		{ setitemcolor c80 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c80 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c90
+			visible			1
+			rect			109 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 9";
+			}
+			mouseEnter		{ setitemcolor c90 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c90 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c100
+			visible			1
+			rect			120 60 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 10";
+			}
+			mouseEnter		{ setitemcolor c100 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c100 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c110
+			visible			1
+			rect			15 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 11";
+			}
+			mouseEnter		{ setitemcolor c110 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c110 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c120
+			visible			1
+			rect			26 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 12";
+			}
+			mouseEnter		{ setitemcolor c120 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c120 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c130
+			visible			1
+			rect			37 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 13";
+			}
+			mouseEnter		{ setitemcolor c130 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c130 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c140
+			visible			1
+			rect			48 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 14";
+			}
+			mouseEnter		{ setitemcolor c140 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c140 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c150
+			visible			1
+			rect			59 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 15";
+			}
+			mouseEnter		{ setitemcolor c150 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c150 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c160
+			visible			1
+			rect			70 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 16";
+			}
+			mouseEnter		{ setitemcolor c160 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c160 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c170
+			visible			1
+			rect			81 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 17";
+			}
+			mouseEnter		{ setitemcolor c170 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c170 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c180
+			visible			1
+			rect			92 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 18";
+			}
+			mouseEnter		{ setitemcolor c180 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c180 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c190
+			visible			1
+			rect			103 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 19";
+			}
+			mouseEnter		{ setitemcolor c190 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c190 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c200
+			visible			1
+			rect			114 70 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 20";
+			}
+			mouseEnter		{ setitemcolor c200 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c200 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			cowall
+			visible			1
+			rect			140 63 75 15
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		19
+			textaligny		10 
+			text			"^1C^7ow all u batar^1d"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command cow 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"; 
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+				itemDef
+		{
+			name			default
+			visible			1
+			rect			10 83 75 20
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient explod^1e^3 -:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c09
+			visible			1
+			rect			10 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 0";
+			}
+			mouseEnter		{ setitemcolor c09 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c09 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c1999
+			visible			1
+			rect			21 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 1";
+			}
+			mouseEnter		{ setitemcolor c1999 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c1999 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c29
+			visible			1
+			rect			32 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 2";
+			}
+			mouseEnter		{ setitemcolor c29 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c29 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c39
+			visible			1
+			rect			43 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 3";
+			}
+			mouseEnter		{ setitemcolor c39 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c39 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c49
+			visible			1
+			rect			54 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 4";
+			}
+			mouseEnter		{ setitemcolor c49 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c49 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c59
+			visible			1
+			rect			65 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 5";
+			}
+			mouseEnter		{ setitemcolor c59 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c59 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c69
+			visible			1
+			rect			76 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 6";
+			}
+			mouseEnter		{ setitemcolor c69 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c69 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c79
+			visible			1
+			rect			87 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 7";
+			}
+			mouseEnter		{ setitemcolor c79 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c79 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c89
+			visible			1
+			rect			98 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 8";
+			}
+			mouseEnter		{ setitemcolor c89 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c89 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c99
+			visible			1
+			rect			109 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 9";
+			}
+			mouseEnter		{ setitemcolor c99 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c99 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c109
+			visible			1
+			rect			120 100 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 10";
+			}
+			mouseEnter		{ setitemcolor c109 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c109 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c119
+			visible			1
+			rect			15 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 11";
+			}
+			mouseEnter		{ setitemcolor c119 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c119 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c129
+			visible			1
+			rect			26 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 12";
+			}
+			mouseEnter		{ setitemcolor c129 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c129 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c139
+			visible			1
+			rect			37 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 13";
+			}
+			mouseEnter		{ setitemcolor c139 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c139 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c149
+			visible			1
+			rect			48 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 14";
+			}
+			mouseEnter		{ setitemcolor c149 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c149 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c159
+			visible			1
+			rect			59 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 15";
+			}
+			mouseEnter		{ setitemcolor c159 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c159 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c169
+			visible			1
+			rect			70 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 16";
+			}
+			mouseEnter		{ setitemcolor c169 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c169 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c179
+			visible			1
+			rect			81 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 17";
+			}
+			mouseEnter		{ setitemcolor c179 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c179 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c189
+			visible			1
+			rect			92 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 18";
+			}
+			mouseEnter		{ setitemcolor c189 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c189 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c199
+			visible			1
+			rect			103 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 19";
+			}
+			mouseEnter		{ setitemcolor c199 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c199 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c209
+			visible			1
+			rect			114 110 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 20";
+			}
+			mouseEnter		{ setitemcolor c209 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c209 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			Explodeall
+			visible			1
+			rect			140 103 75 15
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		12
+			textaligny		10 
+			text			"^1E^7xplode all bitc^1h"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command explode 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"; 
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 123 75 20
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient disar^1m^3 -:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c0c
+			visible			1
+			rect			10 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 0";
+			}
+			mouseEnter		{ setitemcolor c0c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c0c backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c1c
+			visible			1
+			rect			21 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 1";
+			}
+			mouseEnter		{ setitemcolor c1c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c1c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c2c
+			visible			1
+			rect			32 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 2";
+			}
+			mouseEnter		{ setitemcolor c2c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c2c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c3c
+			visible			1
+			rect			43 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 3";
+			}
+			mouseEnter		{ setitemcolor c3c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c3c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c4c
+			visible			1
+			rect			54 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 4";
+			}
+			mouseEnter		{ setitemcolor c4c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c4c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c5c
+			visible			1
+			rect			65 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 5";
+			}
+			mouseEnter		{ setitemcolor c5c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c5c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c6c
+			visible			1
+			rect			76 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 6";
+			}
+			mouseEnter		{ setitemcolor c6c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c6c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c7c
+			visible			1
+			rect			87 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 7";
+			}
+			mouseEnter		{ setitemcolor c7c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c7c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c8c
+			visible			1
+			rect			98 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 8";
+			}
+			mouseEnter		{ setitemcolor c8c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c8c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c9c
+			visible			1
+			rect			109 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 9";
+			}
+			mouseEnter		{ setitemcolor c9c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c9c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c10c
+			visible			1
+			rect			120 140 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 10";
+			}
+			mouseEnter		{ setitemcolor c10c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c10c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c11c
+			visible			1
+			rect			15 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 11";
+			}
+			mouseEnter		{ setitemcolor c11c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c11c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c12c
+			visible			1
+			rect			26 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 12";
+			}
+			mouseEnter		{ setitemcolor c12c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c12c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c13c
+			visible			1
+			rect			37 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 13";
+			}
+			mouseEnter		{ setitemcolor c13c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c13c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c14c
+			visible			1
+			rect			48 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 14";
+			}
+			mouseEnter		{ setitemcolor c14c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c14c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c15c
+			visible			1
+			rect			59 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 15";
+			}
+			mouseEnter		{ setitemcolor c15c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c15c backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c16c
+			visible			1
+			rect			70 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 16";
+			}
+			mouseEnter		{ setitemcolor c16c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c16c backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c17c
+			visible			1
+			rect			81 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 17";
+			}
+			mouseEnter		{ setitemcolor c17c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c17c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c18c
+			visible			1
+			rect			92 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 18";
+			}
+			mouseEnter		{ setitemcolor c18c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c18c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c19c
+			visible			1
+			rect			103 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 19";
+			}
+			mouseEnter		{ setitemcolor c19c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c19c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c20c
+			visible			1
+			rect			114 150 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 20";
+			}
+			mouseEnter		{ setitemcolor c20c backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c20c backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			disarmall
+			visible			1
+			rect			140 143 75 15
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		14
+			textaligny		10 
+			text			"^1D^7isarm all u bastar^1d"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command disarm 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";  
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+				itemDef
+		{
+			name			default
+			visible			1
+			rect			10 163 75 20
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient morta^1r^3 -:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c0d
+			visible			1
+			rect			10 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 0";
+			}
+			mouseEnter		{ setitemcolor c0d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c0d backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c1d
+			visible			1
+			rect			21 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 1";
+			}
+			mouseEnter		{ setitemcolor c1d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c1d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c2d
+			visible			1
+			rect			32 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 2";
+			}
+			mouseEnter		{ setitemcolor c2d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c2d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c3d
+			visible			1
+			rect			43 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 3";
+			}
+			mouseEnter		{ setitemcolor c3d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c3d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c4d
+			visible			1
+			rect			54 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 4";
+			}
+			mouseEnter		{ setitemcolor c4d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c4d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c5d
+			visible			1
+			rect			65 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 5";
+			}
+			mouseEnter		{ setitemcolor c5d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c5d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c6d
+			visible			1
+			rect			76 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 6";
+			}
+			mouseEnter		{ setitemcolor c6d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c6d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c7d
+			visible			1
+			rect			87 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 7";
+			}
+			mouseEnter		{ setitemcolor c7d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c7d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c8d
+			visible			1
+			rect			98 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 8";
+			}
+			mouseEnter		{ setitemcolor c8d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c8d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c9d
+			visible			1
+			rect			109 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 9";
+			}
+			mouseEnter		{ setitemcolor c9d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c9d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c10d
+			visible			1
+			rect			120 178 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 10";
+			}
+			mouseEnter		{ setitemcolor c10d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c10d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c11d
+			visible			1
+			rect			15 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 11";
+			}
+			mouseEnter		{ setitemcolor c11d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c11d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c12d
+			visible			1
+			rect			26 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 12";
+			}
+			mouseEnter		{ setitemcolor c12d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c12d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c13d
+			visible			1
+			rect			37 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 13";
+			}
+			mouseEnter		{ setitemcolor c13d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c13d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c14d
+			visible			1
+			rect			48 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 14";
+			}
+			mouseEnter		{ setitemcolor c14d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c14d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c15d
+			visible			1
+			rect			59 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 15";
+			}
+			mouseEnter		{ setitemcolor c15d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c15d backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c16d
+			visible			1
+			rect			70 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 16";
+			}
+			mouseEnter		{ setitemcolor c16d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c16d backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c17d
+			visible			1
+			rect			81 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 17";
+			}
+			mouseEnter		{ setitemcolor c17d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c17d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c18d
+			visible			1
+			rect			92 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 18";
+			}
+			mouseEnter		{ setitemcolor c18d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c18d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c19d
+			visible			1
+			rect			103 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 19";
+			}
+			mouseEnter		{ setitemcolor c19d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c19d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c20d
+			visible			1
+			rect			114 188 12 10
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		1
+			textaligny		6 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 20";
+			}
+			mouseEnter		{ setitemcolor c20d backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c20d backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			mortorall
+			visible			1
+			rect			140 182 75 15
+			origin			ORIGIN_CODAMCOMMANDS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			forecolor		1 1 1 1  
+			textscale		.20
+			textalignx		14
+			textaligny		10 
+			text			"^1M^7ortar all bitc^1h"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set command mortar 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+				
+			}
+			mouseEnter		{ setitemcolor status backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor status backcolor 0 0 0 .75 }
+		}
+
+		itemDef
+		{
+			name			back
+			visible			1
+			rect			2 200 40 18
+			origin			ORIGIN_CODAMCOMMANDS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR // 1 1 1 1
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			//textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1B^7ack dud^1e^3~"
+			textalignx		5
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close CODAMCOMMANDS;
+				open rconmenu;
+			}
+			mouseEnter		{ setitemcolor back backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor back backcolor 0 0 0 .75 }
+
+		}
+
+		itemDef
+		{
+			name			btgame
+			visible			1
+			rect			75 200 85 18
+			origin			ORIGIN_CODAMCOMMANDS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.185
+			text			"^3~^1D^7ude get back 2 da gam^1e^3~"
+			textalignx		10
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close Codamcommands;
+				ingameclose main;
+			}
+			mouseEnter		{ setitemcolor btgame backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor btgame backcolor 0 0 0 .75 }
+
+			cvarTest "cl_ingame"
+			showCvar {"1"}
+			//HLC
+		}
+
+	}
+}

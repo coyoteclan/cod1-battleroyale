@@ -1,0 +1,859 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_SERVERSETTINGS		32 256
+
+{
+	menuDef
+	{
+		name			"serversettings"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		UI_FOCUS_COLOR
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+		onClose
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 220
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			0 -32 128 32
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			text			"^3~^1S^7erver setting^1s^3~"
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			textalignx		20
+			textaligny		20
+			decoration
+		}
+	
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 5 75 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		10 
+			text			"^3~^1S^7erver statu^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon status"; 
+				exec "toggleconsole";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			150 5 75 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		10 
+			text			"^3~^1S^7erver Inf^1o^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon serverinfo"; 
+				exec "toggleconsole";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 30 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1C^7all vot^1e^3~"
+			textalignx		5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			cvoff
+			visible			1
+			rect			80 30 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";				
+				exec "rcon say  ^7^3~#^1H^7aha voting is disable^1d^3#~";
+				exec "wait 200";
+				exec "rcon scr_allow_vote 0";
+				exec "wait 200";
+				exec "rcon g_allowvote 0"; 
+			}
+			mouseEnter		{ setitemcolor cvoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor cvoff backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			cvon
+			visible			1
+			rect			107 30 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon say  ^7^3~#^1V^7oting has been enabled for you to us^1e^3#~";
+				exec "wait 200";
+				exec "rcon scr_allow_vote 1";
+				exec "wait 200";
+				exec "rcon g_allowvote 1"; 
+			}
+			mouseEnter		{ setitemcolor cvon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor cvon backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 45 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1A^7vatar^1s^3~"
+			textalignx		5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			avoff
+			visible			1
+			rect			80 45 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_drawfriend 0";
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1H^7aha friendly indicators have been disabled, sucker^1s^3#~";
+			}
+			mouseEnter		{ setitemcolor avoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor avoff backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			avon
+			visible			1
+			rect			107 45 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_drawfriend 1"; 
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1L^7ucky for you nice admin has enabled friendly indicator^1s^3#~";
+			}
+			mouseEnter		{ setitemcolor avon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor avon backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 60 65 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1F^7riendly fir^1e^3~"
+			textalignx		5
+			textaligny		10
+			decoration
+		}
+		itemDef
+		{
+			name			ffoff
+			visible			1
+			rect			80 60 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5
+			textaligny		7
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_friendlyfire 0";
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1F^7riendly fire is off, so shoot your team mate^1s^3#~";
+			}
+			mouseEnter		{ setitemcolor ffoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor ffoff backcolor 0 0 0 .75 }
+
+		}
+		
+		itemDef
+		{
+			name			ffon
+			visible			1
+			rect			107 60 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_friendlyfire 1";
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1B^7eware friendly fire is on so don't shoot your team mate^1s^3~";
+			}
+			mouseEnter		{ setitemcolor ffon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor ffon backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 150 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1R^7eflect fir^1e^3~"
+			textalignx		5
+			textaligny		10
+			decoration
+		}
+		itemDef
+		{
+			name			ffrf
+			visible			1
+			rect			107 150 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_friendlyfire 2";
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1R^7eflect damage is on, shoot your mate, shoot yoursel^1f^3#~";
+			}
+			mouseEnter		{ setitemcolor ffrf backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor ffrf backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			ffsh
+			visible			1
+			rect			80 150 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		4
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_friendlyfire 3";
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1R^7eflect fire is off, shoot your mate, have fu^1n^3#~";
+			}
+			mouseEnter		{ setitemcolor ffSH backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor ffSH backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 75 50 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1K^7illca^1m^3~"
+			textalignx		5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			kcoff
+			visible			1
+			rect			80 75 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_killcam 0";
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1K^7illcam is off, dont watch yourself di^1e^3#~";
+			}
+			mouseEnter		{ setitemcolor kcoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor kcoff backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			kcon
+			visible			1
+			rect			107 75 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_killcam 1"; 
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1Y^7ou can now watch yourself die, killcam is o^1n^3#~";
+			}
+			mouseEnter		{ setitemcolor kcon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor kcon backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			hp
+			visible			1
+			rect			10 90 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1F^7ree Spectat^1e^3~"
+			textalignx		5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			hpoff
+			visible			1
+			rect			80 90 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_specmode free 0";
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1F^7ree spectating has been disable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor hpoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor hpoff backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			hpon
+			visible			1
+			rect			107 90 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_specmode free 1"; 
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1F^7ree spectating has been enable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor hpon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor hpon backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 120 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1T^7eam balanc^1e^3~"
+			textalignx		5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			bmoff
+			visible			1
+			rect			80 120 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_teambalance 0";
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1T^7eam balancing is disable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor bmoff backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor bmoff backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			bmon
+			visible			1
+			rect			107 120 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_teambalance 1"; 
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1T^7eam balancing is enable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor bmon backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor bmon backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 105 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1E^7nemy Spe^1c^3~"
+			textalignx		4.5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			SEON
+			visible			1
+			rect			80 105 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_spectateenemy 0";
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1E^7nemy spectating has been disable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor SEON backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor SEON backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			SEOFF
+			visible			1
+			rect			107 105 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon set scr_spectateenemy 1"; 
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1E^7nemy spectating has been enable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor SEOFF backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor SEOFF backcolor 0 0 0 .75 }
+		}
+
+		itemDef
+		{
+			name			teamspec
+			visible			1
+			rect			10 135 60 10
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1T^7eam Spe^1c^3~"
+			textalignx		4.5
+			textaligny		10
+			decoration			
+		}
+		
+		itemDef
+		{
+			name			SETON
+			visible			1
+			rect			80 135 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		3.5 
+			textaligny		7 
+			text			"^3~^1O^7f^1f^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_specmode team 0";
+				exec "wait 200";
+				exec "rcon say ^7^3~#^1T^7eam spectating has been disable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor SETON backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor SETON backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			SETOFF
+			visible			1
+			rect			107 135 25 10
+			origin			ORIGIN_SERVERSETTINGS
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.15
+			textalignx		5
+			textaligny		7 
+			text			"^3~^1On^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon scr_specmode team 1"; 
+				exec "wait 200";
+				exec "rcon say  ^7^3~#^1T^7eam spectating has been enable^1d^3#~";
+			}
+			mouseEnter		{ setitemcolor SETOFF backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor SETOFF backcolor 0 0 0 .75 }
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		itemDef
+		{
+			name			back
+			visible			1
+			rect			2 200 40 18
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			//textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1B^7ack dud^1e^3~"
+			textalignx		5
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close serversettings;
+				open rconmenu;
+			}
+			mouseEnter		{ setitemcolor back backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor back backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			btgame
+			visible			1
+			rect			75 200 85 18
+			origin			ORIGIN_SERVERSETTINGS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.185
+			text			"^3~^1D^7ude get back 2 da gam^1e^3~"
+			textalignx		10
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close serversettings;
+				ingameclose main;
+			}
+			mouseEnter		{ setitemcolor btgame backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor btgame backcolor 0 0 0 .75 }
+
+			cvarTest "cl_ingame"
+			showCvar {"1"}
+			//HLC
+		}
+		
+
+	}
+}

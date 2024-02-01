@@ -1,0 +1,780 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_CLIENTCONTROL		32 256
+
+{
+	menuDef
+	{
+		name			"Clientcontrol"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		UI_FOCUS_COLOR
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+		onClose
+		{
+			setCvar cl_bypassMouseInput "0"
+		}
+
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 220
+			origin			ORIGIN_CLIENTCONTROL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			0 -32 128 32
+			origin			ORIGIN_CLIENTCONTROL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		1 1 1 1
+			type			ITEM_TYPE_TEXT
+			text			"^3~^1C^7lient contro^1l^3~"
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			textalignx		23
+			textaligny		20
+			decoration
+		}
+	
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 5 75 20
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1S^7erver's statu^1s^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon status"; 
+				exec "toggleconsole";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			150 5 75 20
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^3~^1S^7erver inf^1o^3~"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon serverinfo"; 
+				exec "toggleconsole";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			name			default
+			visible			1
+			rect			10 25 75 20
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_TEXT
+			forecolor		1 1 1 1  
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		5
+			textaligny		12 
+			text			"^1C^7lient kic^1k ^3-:"
+			decoration
+		}
+
+		itemDef
+		{
+			name			c0
+			visible			1
+			rect			14 50 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 0";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 00 ^7has been kicked for being a total twa^1t^3#~";
+}
+			mouseEnter		{ setitemcolor c0 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c0 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c1
+			visible			1
+			rect			34 65 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 1";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 01 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c1 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c1 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c2
+			visible			1
+			rect			54 80 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 2";
+                                exec "wait 200";
+                                exec "rcon say  ^7^3~#^1C^7lient ^1# 02 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c2 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c2 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c3
+			visible			1
+			rect			74 90 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 3";
+                                exec "wait 200";
+                                exec "rcon say  ^7^3~#^1C^7lient ^1# 03 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c3 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c3 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c4
+			visible			1
+			rect			94 100 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 4";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 04 ^7has been kicked for being a total twa^1t^3#~";
+
+
+			}
+			mouseEnter		{ setitemcolor c4 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c4 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c5
+			visible			1
+			rect			114 100 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 5";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 05 ^7has been kicked for being a total twa^1t^3#~";
+
+			
+			mouseEnter		{ setitemcolor c5 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c5 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c6
+			visible			1
+			rect			134 90 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 6";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 06 ^7has been kicked for being a total twa^1t^3#~";
+
+			}
+			mouseEnter		{ setitemcolor c6 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c6 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c7
+			visible			1
+			rect			154 80 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 7";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 07 ^7has been kicked for being a total twa^1t^3#~";
+
+			}
+			mouseEnter		{ setitemcolor c7 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c7 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c8
+			visible			1
+			rect			174 65 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 8";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 08 ^7has been kicked for being a total twa^1t^3#~";
+
+			
+			mouseEnter		{ setitemcolor c8 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c8 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c9
+			visible			1
+			rect			194 50 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^10^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 9";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 09 ^7has been kicked for being a total twa^1t^3#~";
+
+			}
+			mouseEnter		{ setitemcolor c9 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c9 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c10
+			visible			1
+			rect			14 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 10";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 10 ^7has been kicked for being a total twa^1t^3#~";
+
+			}
+			mouseEnter		{ setitemcolor c10 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c10 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c11
+			visible			1
+			rect			34 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^71"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 11";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 11 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c11 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c11 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c12
+			visible			1
+			rect			54 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^72"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 12";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 12 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c12 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c12 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c13
+			visible			1
+			rect			74 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^73"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 13";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 13 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c13 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c13 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c14
+			visible			1
+			rect			94 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^74"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 14";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 14 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c14 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c14 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c15
+			visible			1
+			rect			114 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^75"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 15";
+                                exec "wait 200";
+                                exec "rcon say ^7^3~#^1C^7lient ^1# 15 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c15 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c15 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c16
+			visible			1
+			rect			134 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^76"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 16";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 16 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c16 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c16 backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			c17
+			visible			1
+			rect			154 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^77"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 17";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 17 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c17 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c17 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c18
+			visible			1
+			rect			174 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^78"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 18";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 18 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c18 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c18 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c19
+			visible			1
+			rect			194 120 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		3
+			textaligny		10 
+			text			"^11^79"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 19";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 19 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c19 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c19 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			c20
+			visible			1
+			rect			104 140 17 15
+			origin			ORIGIN_CLIENTCONTROL
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR 
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1 
+			textfont		UI_FONT_NORMAL
+			textscale		.20
+			textalignx		1
+			textaligny		10 
+			text			"^12^70"
+			action
+			{ 
+				play "mouse_click";
+				exec "rcon clientkick 20";
+				exec "rcon say ^7^3~#^1C^7lient ^1# 20 ^7has been kicked for being a total twa^1t^3#~";
+			}
+			mouseEnter		{ setitemcolor c20 backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor c20 backcolor 0 0 0 .75 }
+		}
+		itemDef
+		{
+			name			back
+			visible			1
+			rect			2 200 40 18
+			origin			ORIGIN_CLIENTCONTROL
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR // 1 1 1 1
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			//textfont		UI_FONT_NORMAL
+			textscale		.20
+			text			"^3~^1B^7ack dud^1e^3~"
+			textalignx		5
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close CLIENTCONTROL;
+				open rconmenu;
+			}
+			mouseEnter		{ setitemcolor back backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor back backcolor 0 0 0 .75 }
+
+		}
+		itemDef
+		{
+			name			btgame
+			visible			1
+			rect			75 200 85 18
+			origin			ORIGIN_CLIENTCONTROL
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			style			UI_BUTTON_STYLE
+			textstyle		UI_BUTTON_TEXT_STYLE
+			forecolor		UI_BUTTON_TEXT_COLOR
+			backcolor		0 0 0 .75
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			textscale		.185
+			text			"^3~^1D^7ude get back 2 da gam^1e^3~"
+			textalignx		10
+			textaligny		12
+			action
+			{
+				play "mouse_click";
+				close Clientcontrol;
+				ingameclose main;
+			}
+			mouseEnter		{ setitemcolor btgame backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor btgame backcolor 0 0 0 .75 }
+
+			cvarTest "cl_ingame"
+			showCvar {"1"}
+			//HLC
+		}
+
+	}
+}
