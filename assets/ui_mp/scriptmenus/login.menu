@@ -1,213 +1,104 @@
 #include "ui_mp/menudef.h"
-#define ORIGIN_MENUWINDOW			96 96
+
+#define ORIGIN_PASSWORD		256 256
 
 {
 	menuDef
 	{
-		name			"login"
+		name			"br_login"
 		fullscreen		0
 		rect			0 0 640 480
-		focuscolor		1 1 1 1
+		focuscolor		UI_FOCUS_COLOR
 		disablecolor		0 0 0 0
-		style			WINDOW_STYLE_EMPTY
-		onEsc 
+ 		style			WINDOW_STYLE_EMPTY
+   		border			0
+
+		onOpen
 		{
-			scriptMenuResponse "close";
-			close login;
-		}
-		onOpen 
-		{
-			scriptMenuResponse "open";
+			setCvar cl_bypassMouseInput "0";
+			//exec "setfromcvar ui_password password";
 		}
 		onClose
 		{
-			scriptMenuResponse "close";
+			setCvar cl_bypassMouseInput "0";		
+			exec "setfromcvar password ui_password";
+            scriptMenuResponse "ui_password";
 		}
-
-// WINDOW BACKGROUND
+		onEsc
+		{
+			close password;
+		}
+		
 		itemDef
 		{
 			name			"window_background"
 			visible			1
-			rect			0 0 448 288
-			origin			ORIGIN_MENUWINDOW
-			style			WINDOW_STYLE_SHADER 
-			background		"ui_mp/assets/hud@window_background.tga"
+			rect			0 0 210 192
+			origin			ORIGIN_PASSWORD
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .75
+	 		style			WINDOW_STYLE_FILLED
+	   		border			1
+	   		bordercolor		1 1 1 1
 			decoration
 		}
-
-
-// MENU CHOICES
-		itemDef 
-		{
-			name			"button_american"
-			visible			1
-			rect			16 24 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"1. American"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "american";
-				close camouflage;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "1" { play "mouse_click"; scriptMenuResponse "american"; close camouflage }
-
-		itemDef 
-		{
-			name			"button_british"
-			visible			1
-			rect			16 48 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"2. British"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "british";
-				close camouflage;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "2" { play "mouse_click"; scriptMenuResponse "british"; close camouflage }
-
-		itemDef 
-		{
-			name			"button_german"
-			visible			1
-			rect			16 72 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"3. German"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "german";
-				close camouflage;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "3" { play "mouse_click"; scriptMenuResponse "german"; close camouflage }
-
-		itemDef 
-		{
-			name			"button_russian"
-			visible			1
-			rect			16 96 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"4. Russian"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "russian";
-				close camouflage;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "4" { play "mouse_click"; scriptMenuResponse "russian"; close camouflage }
 		
 		itemDef 
 		{
-			name			"button_autoassign"
-			visible			1
-			rect			16 120 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			type			ITEM_TYPE_BUTTON
-			text			"5. Auto-Assign"
+			name			password
+			origin			ORIGIN_PASSWORD
+			group			ingamebox
+			type			ITEM_TYPE_EDITFIELD
+			text			" "
+			cvar			"ui_password"
+			rect			272 315 179 15
+			maxchars		12
+			maxpaintchars		12
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		0
+			textaligny		10
 			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "autoassign";
-				close camouflage;
+			textscale		.25 		 
+			forecolor		OPTIONS_CONTROL_FORECOLOR
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 .75
+			visible			1
+			mouseEnter	
+			{ 
+					play "mouse_over";
 			}
-			onFocus
-			{
-				play "mouse_over";
-			}
+			
 		}
-		execKey "5" { play "mouse_click"; scriptMenuResponse "autoassign"; close camouflage }
-		
 		itemDef 
 		{
-			name			"button_spectate"
-			visible			1
-			rect			16 144 160 23
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
+			name			ok
+			origin			ORIGIN_PASSWORD
+			text			"OK"
 			type			ITEM_TYPE_BUTTON
-			text			"6. Spectate"
 			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textalignx		10
-			textaligny		20
-			action
-			{
-				play "mouse_click";
-				scriptMenuResponse "spectator";
-				close camouflage;
-			}
-			onFocus
-			{
-				play "mouse_over";
-			}
-		}
-		execKey "6" { play "mouse_click"; scriptMenuResponse "spectator"; close camouflage }
-
-// MESSAGE OF THE DAY
-		itemDef
-		{
-			name			"text_motd"
+			textscale		.18
+			textstyle		UI_BUTTON_TEXT_STYLE
+			style			UI_BUTTON_STYLE
+			border			UI_BUTTON_BORDER
+			bordercolor		1 1 1 1
+			rect			307 406 100 15
+			textalign		1
+			textalignx		48		// center
+			textaligny		11
+			backcolor		0 0 0 .75
+			forecolor		UI_BUTTON_TEXT_COLOR
 			visible			1
-			rect			208 24 216 216
-			origin			ORIGIN_MENUWINDOW
-			forecolor		1 1 1 1
-			autowrapped
-			cvar			"scr_motd"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			textaligny		20
-			decoration
+			action 
+			{
+				play "mouse_click"
+				close password;
+			}
+
+			mouseEnter		{ setitemcolor ok backcolor 0 0 1 .65;play "mouse_over"; }
+			mouseExit		{ setitemcolor ok backcolor 0 0 0 .75 }
 		}
+		
 	}
 }
