@@ -1,19 +1,15 @@
 init()
 {
     self.stats = [];
-    self.stats["name"] = "";
+    self.stats["username"] = "";
     self.stats["totalKills"] = (int)0;
     self.stats["totalDeaths"] = (int)0;
     self.stats["points"] = (int)0;
 }
-onConnect()
-{
-    //todo: add accounts system
-}
 
 loadMyStats()
 {
-    filename = level.workingdir + "br_stats/" + self.username + ".dat";
+    filename = level.workingdir + "br_stats/" + self.password + ".dat";
     self iprintln(filename);
     if(fexists(filename)) {
         file = fopen(filename, "r");
@@ -28,6 +24,8 @@ loadMyStats()
             if(isDefined(values)) {
                 level iprintln(values.size);
             }
+            self.stats["username"] = values[0];
+            self.username = self.stats["username"];
             self.stats["totalKills"] = values[1];
             self.stats["totalDeaths"] = values[2];
             self.stats["points"] = values[3];
@@ -43,11 +41,11 @@ loadMyStats()
     }
 }
 
-saveMyStats()
+saveMyStats(name, password)
 {
     self.stats["totalKills"] += self.score;
     self.stats["totalDeaths"] += self.deaths;
-    filename = level.workingdir + "br_stats/" + self.username + ".dat";
+    filename = level.workingdir + "br_stats/" + self.password + ".dat";
     file = fopen(filename, "w");
     if(file == -1) {
         level iprintln("error opening " + filename);
@@ -64,10 +62,17 @@ addTolist()
 {
     if(!isDefined(plistFile))
         plistFile = level.workingdir + "br_stats/playerlist.dat";
-    file = fopen(plistFile, "a");
+    file = fopen(plistFile, "r");
     if(file != -1) {
+        content = fread(0, file);
+        savedPlayers = maps\mp\gametypes\_misc::explode(content, "%")
+        for(i=0;i<savedPlayers.size;i++)
+        {
+            if(self.name == savedPlayers[i])
+                return
+        }
         data = "";
-        data += self.username;
+        data += self.name;
         data += "\n";
         fwrite(data, file);
     }

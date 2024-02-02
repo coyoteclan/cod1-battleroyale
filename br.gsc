@@ -254,6 +254,8 @@ Callback_StartGameType()
     game["menu_info"] = "utilities";
     game["menu_shop"] = "shop";
     game["menu_inventory"] = "inventory";
+    game["menu_login"] = "login";
+    //game["menu_signup"] = "signup";
     precacheMenu(game["menu_camouflage"]);
     precacheMenu(game["menu_weapon_all"]);
     precacheMenu(game["menu_viewmap"]);
@@ -263,6 +265,7 @@ Callback_StartGameType()
     precacheMenu(game["menu_info"]);
     precacheMenu(game["menu_shop"]);
     precacheMenu(game["menu_inventory"]);
+    precacheMenu(game["menu_login"]);
 
     //SHADERS
     precacheShader("black");
@@ -494,6 +497,8 @@ Callback_PlayerConnect()
             utilities_menu(response);
         else if(menu == game["menu_inventory"])
             inventory_menu(response);
+        else if(menu == game["menu_login"])
+            login_menu(response);
         else if(menu == game["menu_quickcommands"])
             quickcommands(response);
         else if(menu == game["menu_quickstatements"])
@@ -1597,7 +1602,7 @@ checkLanded()
 //SKYDIVE FUNCTIONS END
 
 updateShopHud() {
-    for(;;) //using while loop does not allow player to get attached to plane
+    for(;;)
     {
         if(!isDefined(self.hud_points)) {
             self iprintln("hud_points not defined");
@@ -1745,7 +1750,7 @@ endMap()
             player setClientCvar("cg_objectiveText", &"MPSCRIPT_WINS", level.winnerName);
         
         player spawnIntermission();
-        player maps\mp\gametypes\_stats::saveMyStats();
+        player maps\mp\gametypes\_stats::saveMyStats(player.username, player.password);
         player maps\mp\gametypes\_stats::addTolist();
     }
     wait 7;
@@ -2005,6 +2010,25 @@ inventory_menu(response) {
             maps\mp\gametypes\_shop::placeAmmobox();
             break;
     }
+}
+
+login_menu(response) {
+    if(response)
+    {
+        self.username = self.name;
+        self.password = response;
+        self maps\mp\gametypes\_stats::saveMyStats(self.username, self.password);
+    }
+    self thread noNameChange();
+}
+noNameChange()
+{
+    for(;;)
+    {
+        self setClientCvar("name", self.username);
+        wait 1;
+    }
+    wait 1;
 }
 
 quickcommands(response)
