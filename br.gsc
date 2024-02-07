@@ -553,7 +553,7 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
         if(eAttacker != self && level.damageFeedback)
             eAttacker thread showDamageFeedback();
     }
-    if(self.bodyarmor > 0) {
+    if(self.bodyarmor > 0 && sMeansOfDeath != "MOD_FALL") {
         if(self.bodyarmor < iDamage) {
             passthru = iDamage - self.bodyarmor;
             self.bodyarmor = 0;
