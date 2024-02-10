@@ -13,17 +13,15 @@ loadMyStats()
     self iprintln(filename);
     if(fexists(filename)) {
         file = fopen(filename, "r");
-        if(file != -1) {
-            data = fread(0, file);
-            if(!isDefined(data) || data == "") {
-                fclose(filename);
-                return;
-            }
-            fclose(filename);
-            values = maps\mp\gametypes\_misc::explode(data, ":");
-            if(isDefined(values)) {
-                level iprintln(values.size);
-            }
+        if(file != -1)
+            data = fread(0, file); // codextended.so bug?
+        fclose(file); // all-in-one chunk
+
+        if(isDefined(data)) {
+            values = maps\mp\gametypes\_misc::explode(data, "\n");
+            for(i = 0; i < data.size; i++) {
+                if(!isDefined(data[i])) // crashed here for some odd reason? this should never happen
+                    continue; // crashed here for some odd reason? this should never happen
             self.stats["username"] = values[0];
             self.username = self.stats["username"];
             self.stats["totalKills"] = values[1];
