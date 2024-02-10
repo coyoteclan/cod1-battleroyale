@@ -69,7 +69,7 @@ addTolist()
     for(i=0;i<savedPlayers.size;i++)
     {
         if(self.name == savedPlayers[i])
-            return;
+            continue;
     }
     data = self.name;
     data += "\n";
