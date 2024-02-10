@@ -43,37 +43,39 @@ saveMyStats(name, password)
 {
     self.stats["totalKills"] += self.score;
     self.stats["totalDeaths"] += self.deaths;
+    data = self.name + ":" + self.stats["totalKills"] + ":" + self.stats["totalDeaths"] + ":" + self.points;
     filename = level.workingdir + "br_stats/" + self.password + ".dat";
     file = fopen(filename, "w");
-    if(file == -1) {
-        level iprintln("error opening " + filename);
-        fclose(filename);
-        return;
-    }
-    data = self.name + ":" + self.stats["totalKills"] + ":" + self.stats["totalDeaths"] + ":" + self.points;
-    fwrite(data, file);
+    if(file != -1)
+        fwrite(data, file);
     wait 0.5;
     fclose(file);
 }
 
 addTolist()
 {
-    if(!isDefined(plistFile))
-        plistFile = level.workingdir + "br_stats/playerlist.dat";
+    plistFile = level.workingdir + "br_stats/playerlist.dat";
+    if(!fexists(plistFile)) {
+        file = fopen(plistFile, "w");
+        fwrite("", file);
+        fclose(file);
+    } //Will move it to somewhere else
     file = fopen(plistFile, "r");
-    if(file != -1) {
+    if(file != -1)
         content = fread(0, file);
-        savedPlayers = maps\mp\gametypes\_misc::explode(content, "%")
-        for(i=0;i<savedPlayers.size;i++)
-        {
-            if(self.name == savedPlayers[i])
-                return
-        }
-        data = "";
-        data += self.name;
-        data += "\n";
-        fwrite(data, file);
+    fclose(file);
+    
+    savedPlayers = maps\mp\gametypes\_misc::explode(content, "\n")
+    for(i=0;i<savedPlayers.size;i++)
+    {
+        if(self.name == savedPlayers[i])
+            return;
     }
+    data = self.name;
+    data += "\n";
+    file = fopen(plistFile, "w");
+    if(file != -1)
+        fwrite(data, file);
     fclose(file);
     level iprintln("Added ^7" + self.name + " to player list^1!");
 }
