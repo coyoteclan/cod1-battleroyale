@@ -45,8 +45,9 @@ menuHandler(response) {
         //self buyItem(response);
         if(self buyItem(response)) {
             self iprintlnbold( "You bought ^2" + level.pointsnames[ response ] + "^7 for " + level.points[ response ] + " points." );
-            self maps\mp\gametypes\_misc::log("action", "buy_" + level.pointsnames[response] + "_for_" + level.points[response];
+            actionDetails = self.colorlessName + "_bought_" + level.pointsnames[response] + "_for_" + level.points[response];
             self.points -= level.points[response];
+            self maps\mp\gametypes\_misc::log("action", actionDetails);
 
         }
     }
