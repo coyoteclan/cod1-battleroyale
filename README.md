@@ -8,18 +8,17 @@ ___
 ___
 ### Some TODO
 - Implement a way for defining plane coordinates per map
-- Prevent players from getting stuck in each other when exiting plane
-  - MiscMod's [_newspawn function](https://github.com/cato-a/CoDaM_MiscMod/blob/4db1d420b87b766eb9bffb352a7d9c13eaa0c851/___CoDaM_MiscMod/codam/_mm_mmm.gsc#L379) might help
+- ~~Prevent players from getting stuck in each other when exiting plane~~
+  - ~~MiscMod's [_newspawn function](https://github.com/cato-a/CoDaM_MiscMod/blob/4db1d420b87b766eb9bffb352a7d9c13eaa0c851/___CoDaM_MiscMod/codam/_mm_mmm.gsc#L379) might help~~
 - Make the zone to move when shrinking
 - Fill roofs and holes on the map
 - Show the full zone on compass instead of just the center
-- Create models and animations for skydiving
+- Create ~~models and~~ animations for skydiving
   - applying animations might require to add a `setAnim` GSC command to CoDExtended, like libcod
 - Fix the bugs that you may find :)
 Tell us the bugs you may find and we will fix them.
 ___
 #### [Some videos](https://www.youtube.com/playlist?list=PLTiI1XPSd-uVS_saGvqfgk7hgguxHc1Y0)
-#### [More](https://coyote.rf.gd/battleroyale)
 ___
 #### Some credits
 - ***zh_frenzy*** map: thanks to zilch
