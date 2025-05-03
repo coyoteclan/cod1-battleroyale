@@ -31,3 +31,13 @@ ___
 - ***Shop*** from Cheese's [Zombies Mod](https://github.com/thecheeseman/zombies_v5_r13)
 - ***Ammobox*** functionality logic from both Cheese and kill3r.
 - ***Blue light*** fx from BraXi's [Zombie Mod](https://github.com/BraXi/CoD1_Zombies_1.2_Mod)
+
+## Star History
+
+<a href="https://www.star-history.com/#coyoteclan/cod1-battleroyale&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=coyoteclan/cod1-battleroyale&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=coyoteclan/cod1-battleroyale&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=coyoteclan/cod1-battleroyale&type=Date" />
+ </picture>
+</a>
