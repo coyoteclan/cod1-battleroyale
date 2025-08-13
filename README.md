@@ -1,3 +1,7 @@
+# INFO
+Migrated to GitLab:
+https://gitlab.com/kazam0180/cod1-battleroyale
+
 ## Battle royale gametype for Call of Duty 1 (2003)
 Supported multiplayer patch: **1.1**
 Not compatible with CoDaM.
